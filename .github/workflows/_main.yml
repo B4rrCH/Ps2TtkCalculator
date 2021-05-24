@@ -17,7 +17,7 @@ jobs:
         dotnet-version: 5.0.x
         
     - name: Publish
-      run: dotnet publish Ps2TtkCalculator.csproj -c -Release -o release
+      run: dotnet publish ./BlazorApp/Ps2TtkCalculator.csproj -c -Release -o release
         
     - name: Change base-tag in index.html from / to Ps2TtkCalculator
       run: sed -i 's/<base href="\/" \/>/<base href="\/Ps2TtkCalculator\/" \/>/g' release/wwwroot/index.html
