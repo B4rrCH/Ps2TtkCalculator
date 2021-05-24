@@ -20,6 +20,12 @@
             </td>
         </tr>
         <tr style="margin-top: 1rem">
+            <td style="margin-top: 2rem">Muzzle Velocity (m/s)</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MuzzleVelocity_mps />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
             <td style="margin-top: 2rem">Max Damage</td>
             <td>
                 <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamage />
@@ -49,12 +55,6 @@
 @code {
     [Parameter]
     public Weapon Weapon { get; set; }
-
-    private decimal HeadshotMultiplier
-    {
-        get => (decimal)Weapon.HeadshotMultiplier;
-        set => Weapon.HeadshotMultiplier = (double)value;
-    }
     protected override Task OnInitializedAsync()
     {
         Weapon ??= new Weapon
@@ -70,6 +70,7 @@
             HeadshotMultiplier = 2,
             MagazineSize = 30,
             RefireTime_ms = 80,
+            MuzzleVelocity_mps = 540,
         };
         return base.OnInitializedAsync();
     }
