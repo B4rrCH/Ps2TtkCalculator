@@ -1,4 +1,4 @@
-namespace Ps2TtkCalculator
+namespace Ps2TtkCalculator.Shared.Model
 {
     public static class DamageCalculator
     {
