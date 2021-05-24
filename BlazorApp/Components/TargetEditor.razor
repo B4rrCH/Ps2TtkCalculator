@@ -1,0 +1,47 @@
+<RadzenCard>
+    <h3>@Title</h3>
+    <table>
+        <tr style="margin-top: 1rem">
+            <td>HP Pool</td>
+            <td style="text-align:">
+                <RadzenNumeric TValue="int" Min="0" Step="100" @bind-Value=@Target.MaxHp />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>
+                Small arms resistance<br />
+                Bodyshot
+            </td>
+            <td style="text-align:">
+                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" @bind-Value=@Target.ResistanceBodyshot />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>
+                Small arms resistance<br />
+                Headshot
+            </td>
+            <td style="text-align:">
+                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" @bind-Value=@Target.ResistanceHeadshot />
+            </td>
+        </tr>
+    </table>
+</RadzenCard>
+
+@code {
+    [Parameter]
+    public Target Target { get; set; }
+    [Parameter]
+    public string Title { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Target ??= new Target
+        {
+            MaxHp = 1000,
+            ResistanceBodyshot = 0.0,
+            ResistanceHeadshot = 0.0
+        };
+        await base.OnInitializedAsync();
+    }
+}

@@ -8,7 +8,16 @@
             <WeaponEditor Weapon="@null" />
         </td>
     </tr>
+    <tr>
+        <td>
+            <TargetEditor Target="@null" Title="Target 1" />
+        </td>
+        <td>
+            <TargetEditor Target="@null" Title="Target 2" />
+        </td>
+    </tr>
 </table>
+
 @code {
     public Target Target { get; set; }
     public Weapon Weapon { get; set; }

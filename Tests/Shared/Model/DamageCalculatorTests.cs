@@ -31,7 +31,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target defaultTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.0,
                 ResistanceHeadshot = 0.0
             };
@@ -55,7 +55,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target defaultTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.0,
                 ResistanceHeadshot = 0.0
             };
@@ -79,7 +79,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target nanoWeaveTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.2,
                 ResistanceHeadshot = 0.0
             };
@@ -103,7 +103,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target nanoWeaveTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.2,
                 ResistanceHeadshot = 0.0
             };
@@ -127,7 +127,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target symbioteTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.2,
                 ResistanceHeadshot = 0.2
             };
@@ -151,7 +151,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target symbioteTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.2,
                 ResistanceHeadshot = 0.2
             };
@@ -175,7 +175,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target resistShieldTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.35,
                 ResistanceHeadshot = 0.35
             };
@@ -199,7 +199,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             Target resistShieldTarget = new Target
             {
-                MaxHP = 1000,
+                MaxHp = 1000,
                 ResistanceBodyshot = 0.35,
                 ResistanceHeadshot = 0.35
             };
