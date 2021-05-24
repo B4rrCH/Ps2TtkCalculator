@@ -16,6 +16,14 @@
             <TargetEditor Target="@null" Title="Target 2" />
         </td>
     </tr>
+    <tr>
+        <td colspan="2">
+            <RadzenCard>
+                <span>Range between the targets <RadzenNumeric TValue="int" Min="0" Max="400" Step="50" Format="0 m" @bind-Value=@Range /></span><br />
+                 <RadzenSlider @bind-Value=@Range TValue="int" Min="0" Max="400" Style="width:100%" />
+            </RadzenCard>
+        </td>
+    </tr>
 </table>
 
 @code {

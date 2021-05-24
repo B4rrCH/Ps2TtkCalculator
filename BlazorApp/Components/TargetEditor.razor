@@ -3,7 +3,7 @@
     <table>
         <tr style="margin-top: 1rem">
             <td>HP Pool</td>
-            <td style="text-align:">
+            <td>
                 <RadzenNumeric TValue="int" Min="0" Step="100" @bind-Value=@Target.MaxHp />
             </td>
         </tr>
@@ -12,7 +12,7 @@
                 Small arms resistance<br />
                 Bodyshot
             </td>
-            <td style="text-align:">
+            <td>
                 <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" @bind-Value=@Target.ResistanceBodyshot />
             </td>
         </tr>
@@ -21,7 +21,7 @@
                 Small arms resistance<br />
                 Headshot
             </td>
-            <td style="text-align:">
+            <td>
                 <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" @bind-Value=@Target.ResistanceHeadshot />
             </td>
         </tr>
