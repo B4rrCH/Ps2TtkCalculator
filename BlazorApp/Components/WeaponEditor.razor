@@ -1,0 +1,76 @@
+<RadzenCard>
+    <h3>@Weapon.Name</h3>
+    <table>
+        <tr>
+            <td style="margin-top: 2rem">Headshot multiplier</td>
+            <td>
+                <RadzenNumeric TValue="double" Format="0.00" Step="0.5" @bind-Value=@Weapon.HeadshotMultiplier />
+            </td>
+        </tr>
+        <tr>
+            <td style="margin-top: 2rem">Magazine size</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MagazineSize />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td style="margin-top: 2rem">Refire Time (ms)</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.RefireTime_ms />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td style="margin-top: 2rem">Max Damage</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamage />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td style="margin-top: 2rem">Max Damage Range</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamageRange_m />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td style="margin-top: 2rem">Max Damage</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamage />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td style="margin-top: 2rem">Max Damage Range</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamageRange_m />
+            </td>
+        </tr>
+    </table>
+</RadzenCard>
+
+@code {
+    [Parameter]
+    public Weapon Weapon { get; set; }
+
+    private decimal HeadshotMultiplier
+    {
+        get => (decimal)Weapon.HeadshotMultiplier;
+        set => Weapon.HeadshotMultiplier = (double)value;
+    }
+    protected override Task OnInitializedAsync()
+    {
+        Weapon ??= new Weapon
+        {
+            Name = "Custom Weapon",
+            DamageModel = new DamageModel
+            {
+                MaxDamage = 143,
+                MaxDamageRange_m = 10,
+                MinDamage = 112,
+                MinDamageRange_m = 65
+            },
+            HeadshotMultiplier = 2,
+            MagazineSize = 30,
+            RefireTime_ms = 80,
+        };
+        return base.OnInitializedAsync();
+    }
+}

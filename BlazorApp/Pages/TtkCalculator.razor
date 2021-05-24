@@ -1,7 +1,14 @@
 @page "/ttk-calculator"
-
-<RadzenGrid TItem="@Target" />
-
+<table>
+    <tr>
+        <td>
+            <WeaponEditor Weapon="@null" />
+        </td>
+        <td>
+            <WeaponEditor Weapon="@null" />
+        </td>
+    </tr>
+</table>
 @code {
     public Target Target { get; set; }
     public Weapon Weapon { get; set; }
