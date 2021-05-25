@@ -1,3 +1,4 @@
+@if (Weapon != null) {
 <RadzenCard>
     <h3>@Weapon.Name</h3>
     <table>
@@ -51,27 +52,9 @@
         </tr>
     </table>
 </RadzenCard>
+}
 
 @code {
     [Parameter]
-    public Weapon Weapon { get; set; }
-    protected override Task OnInitializedAsync()
-    {
-        Weapon ??= new Weapon
-        {
-            Name = "Custom Weapon",
-            DamageModel = new DamageModel
-            {
-                MaxDamage = 143,
-                MaxDamageRange_m = 10,
-                MinDamage = 112,
-                MinDamageRange_m = 65
-            },
-            HeadshotMultiplier = 2,
-            MagazineSize = 30,
-            RefireTime_ms = 80,
-            MuzzleVelocity_mps = 540,
-        };
-        return base.OnInitializedAsync();
-    }
+    public Weapon Weapon { get; set; } = null;
 }

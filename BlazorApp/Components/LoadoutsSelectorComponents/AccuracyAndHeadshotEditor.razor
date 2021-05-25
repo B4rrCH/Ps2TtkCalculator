@@ -1,3 +1,4 @@
+@if (Shooter != null) {
 <RadzenCard>
     <table Style="width:100%">
         <tr>
@@ -28,6 +29,8 @@
         </tr>
     </table>
 </RadzenCard>
+}
+
 @code {
     [Parameter]
     public Shooter Shooter { get; set; }
