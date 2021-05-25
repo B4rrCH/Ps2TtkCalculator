@@ -1,0 +1,27 @@
+@using CurvePoint=System.Tuple<int, double>
+
+<RadzenCard >
+    <RadzenPanel AllowCollapse="true" >
+        <HeaderTemplate><h2>Probability Graph</h2></HeaderTemplate>
+        <ChildContent>
+            <RadzenChart>
+                <RadzenLineSeries Data=Curve1 CategoryProperty="Item1" ValueProperty="Item2" Title="First Player">
+
+                </RadzenLineSeries>
+                <RadzenLineSeries Data=Curve2 CategoryProperty="Item1" ValueProperty="Item2" Title="Second Player">
+
+                </RadzenLineSeries>
+                <RadzenCategoryAxis  />
+                <RadzenValueAxis  Step="1" FormatString="0" />
+            </RadzenChart>
+        </ChildContent>
+    </RadzenPanel>
+</RadzenCard>
+
+@code{
+    [Parameter]
+    public IEnumerable<CurvePoint> Curve1 { get; set; }
+    [Parameter]
+    public IEnumerable<CurvePoint> Curve2 { get; set; }
+
+}

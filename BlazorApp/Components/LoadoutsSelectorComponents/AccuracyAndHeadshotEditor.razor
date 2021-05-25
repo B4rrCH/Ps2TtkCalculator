@@ -1,0 +1,34 @@
+<RadzenCard>
+    <table Style="width:100%">
+        <tr>
+            <td>
+                <span>Accuracy</span>
+            </td>
+            <td>
+                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" Format="P0" @bind-Value=@Shooter.Acc />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <RadzenSlider @bind-Value=@Shooter.Acc TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Headshot Ratio</span>
+            </td>
+            <td>
+                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" Format="P0" @bind-Value=@Shooter.Hsr />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <RadzenSlider @bind-Value=@Shooter.Hsr TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />
+            </td>
+        </tr>
+    </table>
+</RadzenCard>
+@code {
+    [Parameter]
+    public Shooter Shooter { get; set; }
+}

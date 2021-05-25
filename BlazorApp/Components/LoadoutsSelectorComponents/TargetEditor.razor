@@ -13,7 +13,7 @@
                 Bodyshot
             </td>
             <td>
-                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" @bind-Value=@Target.ResistanceBodyshot />
+                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.05" Format="P1" @bind-Value=@Target.ResistanceBodyshot />
             </td>
         </tr>
         <tr style="margin-top: 1rem">
@@ -22,7 +22,7 @@
                 Headshot
             </td>
             <td>
-                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" @bind-Value=@Target.ResistanceHeadshot />
+                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.05" Format="P1" @bind-Value=@Target.ResistanceHeadshot />
             </td>
         </tr>
     </table>

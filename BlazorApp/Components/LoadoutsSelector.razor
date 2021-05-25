@@ -1,0 +1,64 @@
+@using CurvePoint = System.Tuple<int, double>
+
+<RadzenCard>
+    <RadzenPanel AllowCollapse="true" Style="">
+        <HeaderTemplate>
+            <h2>Loadouts Selection</h2>
+        </HeaderTemplate>
+        <ChildContent>
+            <table>
+                <tr>
+                    <td>
+                        <WeaponEditor Weapon="@null" />
+                    </td>
+                    <td>
+                        <WeaponEditor Weapon="@null" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <TargetEditor Target="@null" Title="Target 1" />
+                    </td>
+                    <td>
+                        <TargetEditor Target="@null" Title="Target 2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
+                    </td>
+                    <td>
+                        <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <RadzenCard>
+                            <span>Range between the players
+                                <RadzenNumeric TValue="int" Min="0" Max="400" Step="50" Format="0 m"
+                                    @bind-Value=@Range />
+                            </span><br />
+                            <RadzenSlider @bind-Value=@Range TValue="int" Min="0" Max="400" Style="width:100%" />
+                        </RadzenCard>
+                    </td>
+                </tr>
+            </table>
+        </ChildContent>
+    </RadzenPanel>
+</RadzenCard>
+
+@code {
+    [Parameter]
+    public Player Player1 { get; set; }
+    [Parameter]
+    public Player Player2 { get; set; }
+    [Parameter]
+    public int Range { get; set; }
+
+    [Parameter]
+    public EventCallback OnChangedCallback { get; set; }
+    public IEnumerable<CurvePoint> CalculateCurve(int player)
+    {
+        return null;
+    }
+}
