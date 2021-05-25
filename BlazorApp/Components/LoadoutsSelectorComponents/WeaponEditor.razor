@@ -1,0 +1,60 @@
+@if (Weapon != null) {
+<RadzenCard>
+    <h3>@Weapon.Name</h3>
+    <table>
+        <tr>
+            <td>Headshot multiplier</td>
+            <td>
+                <RadzenNumeric TValue="double" Format="0.00" Step="0.5" @bind-Value=@Weapon.HeadshotMultiplier />
+            </td>
+        </tr>
+        <tr>
+            <td>Magazine size</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MagazineSize />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>Refire Time (ms)</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.RefireTime_ms />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>Muzzle Velocity (m/s)</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MuzzleVelocity_mps />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>Max Damage</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamage />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>Max Damage Range (m)</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamageRange_m />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>Max Damage</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamage />
+            </td>
+        </tr>
+        <tr style="margin-top: 1rem">
+            <td>Max Damage Range (m)</td>
+            <td>
+                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamageRange_m />
+            </td>
+        </tr>
+    </table>
+</RadzenCard>
+}
+
+@code {
+    [Parameter]
+    public Weapon Weapon { get; set; } = null;
+}

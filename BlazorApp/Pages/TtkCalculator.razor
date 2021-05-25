@@ -1,9 +1,31 @@
-@page "/ttk-calculator"
+@using CurvePoint = System.Tuple<double, double>
 
-<RadzenGrid TItem="@Target" />
+@page "/ttk-calculator"
+<LoadoutsSelector Player1=@Player1 Player2=@Player2 @ref=@Selector />
+<TtkGraph Curve1=Curve1 Curve2=Curve2 OnCalculateRequest=RefreshCurve />
 
 @code {
-    public Target Target { get; set; }
-    public Weapon Weapon { get; set; }
-    public int Range { get; set; }
+    public Player Player1 { get; set; } = new();
+    public Player Player2 { get; set; } = new();
+    public int Range => Selector.Range;
+    private LoadoutsSelector Selector { get; set; }
+
+    public IEnumerable<CurvePoint> Curve1 { get; set; }
+    public IEnumerable<CurvePoint> Curve2 { get; set; }
+
+    async Task RefreshCurve()
+    {
+        Console.WriteLine("Refresh Curve Started");
+
+        var curveCalculator1 = new TtkCurveCalculator(Player1.Weapon, Player1.Shooter, Player2.Target, Range);
+        Curve1 = await curveCalculator1.GetCurve();
+
+        Console.WriteLine("First Curve Done");
+
+        var curveCalculator2 = new TtkCurveCalculator(Player2.Weapon, Player2.Shooter, Player1.Target, Range);
+        Curve2 = await curveCalculator2.GetCurve();
+
+        Console.WriteLine("Second Curve Done");
+    }
+
 }
