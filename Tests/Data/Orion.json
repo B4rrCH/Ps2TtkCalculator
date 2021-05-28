@@ -1,0 +1,29 @@
+{
+    "item_id": "80",
+    "item_category_id": "6",
+    "name": {
+        "en": "Orion VS54"
+    },
+    "faction_id": "1",
+    "fire_mode": {
+        "fire_mode_id": "119",
+        "pellets_per_shot": "1",
+        "muzzle_velocity": "540",
+        "fire_mode_id_join_fire_group_to_fire_mode": {
+            "fire_group_id": "19",
+            "fire_mode_id": "119",
+            "fire_mode_index": "1"
+        },
+        "fire_mode_2": {
+            "damage_head_multiplier": "1",
+            "fire_refire_ms": "80",
+            "max_damage": "143",
+            "max_damage_range": "10",
+            "min_damage": "112",
+            "min_damage_range": "65"
+        }
+    },
+    "ammo": {
+        "clip_size": "50"
+    }
+}

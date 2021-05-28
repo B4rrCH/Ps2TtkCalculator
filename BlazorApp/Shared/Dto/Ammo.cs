@@ -1,7 +1,10 @@
+using System.Text.Json.Serialization;
+
 namespace Ps2TtkCalculator.Shared.Dto
 {
     public class Ammo
     {
-        public int fire_rate_ms { get; set; }
+        [JsonPropertyName("clip_size")]
+        public string ClipSize { get; set; }
     }
 }

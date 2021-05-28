@@ -1,9 +1,9 @@
-namespace Ps2TtkCalculator.Shared.Dto
+namespace Ps2TtkCalculator.Shared.Model
 {
     public enum WeaponCategory
     {
         Pistol = 3,
-        Shotgun = 2,
+        Shotgun = 4,
         SMG = 5,
         LMG = 6,
         AssaultRifle = 7,

@@ -1,18 +1,28 @@
-using System.Collections.Generic;
-
-using LocalisedString = System.Collections.Generic.Dictionary<string, string>;
+using System.Text.Json.Serialization;
 
 namespace Ps2TtkCalculator.Shared.Dto
 {
     public class Item
     {
-        public int item_id { get; set; }
-        public int item_category_id { get; set; }
-        public LocalisedString name { get; set; }
-        public LocalisedString description { get; set; }
-        public int faction_id { get; set; }
-        public string image_path { get; set; }
-        public Ammo ammo { get; set; }
-        public List<FireMode> fire_mode { get; set; }
+        [JsonPropertyName("item_id")]
+        public string ItemId { get; set; }
+
+        [JsonPropertyName("item_category_id")]
+        public string WeaponCategory { get; set; }
+
+        [JsonPropertyName("name")]
+        public Name Name { get; set; }
+
+        [JsonPropertyName("faction_id")]
+        public string Faction { get; set; }
+
+        [JsonPropertyName("image_path")]
+        public string ImagePath { get; set; }
+
+        [JsonPropertyName("fire_mode")]
+        public FireMode FireMode { get; set; }
+
+        [JsonPropertyName("ammo")]
+        public Ammo Ammo { get; set; }
     }
 }
