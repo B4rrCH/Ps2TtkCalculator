@@ -1,0 +1,37 @@
+﻿@using Ps2TtkCalculator.Shared.Dto
+@using System.Text.Json 
+@inject HttpClient httpClient
+
+<h3>WeaponSelector</h3>
+
+@if (Weapons != null)
+{
+<RadzenDataGrid AllowFiltering="true" TItem="WeaponPreview" AllowPaging="true" PageSize="10" Data="@Weapons" FilterMode="FilterMode.Simple" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" LogicalFilterOperator="LogicalFilterOperator.And">
+    <Columns>
+        <RadzenDataGridColumn TItem="WeaponPreview" Property="Name" Title="Name" />
+        <RadzenDataGridColumn TItem="WeaponPreview" Property="Faction" Title="Faction" />
+        <RadzenDataGridColumn TItem="WeaponPreview" Property="WeaponCategory" Title="Weapon Category" />
+        <RadzenDataGridColumn TItem="WeaponPreview" Property="ImagePath" Sortable="false" Filterable="false" Width="256" Frozen="true">
+            <Template Context="weaponPreview" >
+                <RadzenImage Path="@(censusUri+weaponPreview.ImagePath)" />
+            </Template>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
+}
+
+@code {
+    const string censusUri = "https://census.daybreakgames.com";
+    public IEnumerable<WeaponPreview> Weapons { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var weaponListQueryUri = QueryUris.GetWeaponListRequestUri();
+        var itemList = await httpClient.GetFromJsonAsync<ItemList>(weaponListQueryUri);
+        //var itemListJson = await httpClient.GetAsync(weaponListQueryUri);
+        //var itemList = await itemListJson.Content.ReadFromJsonAsync<ItemList>();
+
+        Weapons = itemList.Items.Where(item => !string.IsNullOrEmpty(item.Name?.En)).Select(WeaponPreview.FromItem);
+        await base.OnInitializedAsync();
+    }
+}

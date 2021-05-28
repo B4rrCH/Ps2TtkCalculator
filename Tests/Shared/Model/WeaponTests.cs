@@ -1,7 +1,8 @@
-using System;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using Xunit;
+using Ps2TtkCalculator.Shared.Dto;
 
 namespace Ps2TtkCalculator.Shared.Model.Tests
 {
@@ -18,9 +19,10 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             // Arrange
             var orionFilePath = Path.Combine("Data", "Orion.json");
             var orionJson = File.ReadAllText(orionFilePath);
+            var orionItem = JsonSerializer.Deserialize<Item>(orionJson);
 
             // Act
-            var orion = Weapon.FromJson(orionJson);
+            var orion = Weapon.FromItem(orionItem);
 
             // Assert
             Assert.Equal(WeaponCategory.LMG, orion.WeaponCategory);
@@ -30,18 +32,19 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
         }
 
         [Fact]
-        public void FromJsonList_QueryResult_HasRightNumber()
+        public void FromJsonList_ExampleQueryResult_NoExceptions()
         {
             // Arrange
             var exampleQueryPath = Path.Combine("Data", "ExampleQueryResult.json");
             var exampleQueryJson = File.ReadAllText(exampleQueryPath);
-            var count = System.Text.Json.JsonSerializer.Deserialize<Counter>(exampleQueryJson).returned;
+            var itemList = JsonSerializer.Deserialize<ItemList>(exampleQueryJson);
 
             // Act
-            var weapons = Weapon.FromJsonList(exampleQueryJson).ToList();
+            var weapons = itemList.Items.Select(Weapon.FromItem);
 
             // Assert
-            Assert.Equal(count, weapons.Count());
+            var weaponList = weapons.ToList();
+            Assert.NotEmpty(weaponList);
         }
     }
 }

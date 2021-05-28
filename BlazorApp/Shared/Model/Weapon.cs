@@ -17,13 +17,7 @@ namespace Ps2TtkCalculator.Shared.Model
         public int MuzzleVelocity_mps { get; set; } = 540;
         public DamageModel DamageModel { get; set; } = new();
 
-
-        public static Weapon FromJson(string json)
-        {
-            Dto.Item item = JsonSerializer.Deserialize<Dto.Item>(json);
-            return FromItem(item);
-        }
-        private static Weapon FromItem(Dto.Item item)
+        public static Weapon FromItem(Dto.Item item)
         {
             string name = item.Name?.En;
             if (string.IsNullOrEmpty(name))
@@ -121,12 +115,6 @@ namespace Ps2TtkCalculator.Shared.Model
                    name.Contains("SR-200") ? 600 :
                    name.Contains("Punisher") ? 350 :
                    throw new System.Exception($"Could not determine Muzzle Velocity of {name}.");
-        }
-
-        public static IEnumerable<Weapon> FromJsonList(string json)
-        {
-            Dto.ItemList itemList = JsonSerializer.Deserialize<Dto.ItemList>(json);
-            return itemList.Items.Select(FromItem);
         }
     }
 }

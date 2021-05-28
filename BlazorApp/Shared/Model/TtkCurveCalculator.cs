@@ -10,12 +10,12 @@ namespace Ps2TtkCalculator.Shared.Model
 {
     public class TtkCurveCalculator
     {
-        private Weapon weapon;
-        private Target target;
-        private int range_m;
-        private double[] weights;
-        private int damagePerBodyShot;
-        private int damagePerHeadShot;
+        private readonly Weapon weapon;
+        private readonly Target target;
+        private readonly int range_m;
+        private readonly double[] weights;
+        private readonly int damagePerBodyShot;
+        private readonly int damagePerHeadShot;
 
         private CurvePoint[] curve = null;
         public TtkCurveCalculator(Weapon weapon, Shooter shooter, Target target, int range_m)
