@@ -1,19 +1,132 @@
 using System;
+using Microsoft.AspNetCore.Components;
 using Ps2TtkCalculator.Shared.Dto;
 
 namespace Ps2TtkCalculator.Shared.Model
 {
     public class Weapon
     {
-        public string Name { get; set; } = "Default Weapon";
-        public Faction Faction { get; set; } = Faction.NaniteSystems;
-        public WeaponCategory WeaponCategory { get; set; } = WeaponCategory.LMG;
-        public string ImagePath { get; set; } = null;
-        public int MagazineSize { get; set; } = 50;
-        public int RefireTime_ms { get; set; } = 80;
-        public double HeadshotMultiplier { get; set; } = 2.0;
-        public int MuzzleVelocity_mps { get; set; } = 540;
-        public DamageModel DamageModel { get; set; } = new();
+        private string name = "Default Weapon";
+        private Faction faction = Faction.NaniteSystems;
+        private WeaponCategory weaponCategory = WeaponCategory.LMG;
+        private string imagePath = null;
+        private int magazineSize = 50;
+        private int refireTime_ms = 80;
+        private double headshotMultiplier = 2.0;
+        private int muzzleVelocity_mps = 540;
+        private DamageModel damageModel = new();
+
+        public string Name
+        {
+            get => name;
+            set
+            {
+                if (name != value)
+                {
+                    name = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public Faction Faction
+        {
+            get => faction;
+            set
+            {
+                if (faction != value)
+                {
+                    faction = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public WeaponCategory WeaponCategory
+        {
+            get => weaponCategory;
+            set
+            {
+                if (weaponCategory != value)
+                {
+                    weaponCategory = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public string ImagePath
+        {
+            get => imagePath;
+            set
+            {
+                if (imagePath != value)
+                {
+                    imagePath = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public int MagazineSize
+        {
+            get => magazineSize;
+            set
+            {
+                if (magazineSize != value)
+                {
+                    magazineSize = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public int RefireTime_ms
+        {
+            get => refireTime_ms;
+            set
+            {
+                if (refireTime_ms != value)
+                {
+                    refireTime_ms = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public double HeadshotMultiplier
+        {
+            get => headshotMultiplier;
+            set
+            {
+                if (headshotMultiplier != value)
+                {
+                    headshotMultiplier = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public int MuzzleVelocity_mps
+        {
+            get => muzzleVelocity_mps;
+            set
+            {
+                if (muzzleVelocity_mps != value)
+                {
+                    muzzleVelocity_mps = value;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+        public DamageModel DamageModel
+        {
+            get => damageModel;
+            set
+            {
+                if (damageModel != value)
+                {
+                    damageModel = value;
+                    damageModel.PropertiesChanged = this.PropertiesChanged;
+                    PropertiesChanged.InvokeAsync();
+                }
+            }
+        }
+
+        public EventCallback PropertiesChanged { get; set; }
 
         public static Weapon FromItem(Dto.Item item)
         {
