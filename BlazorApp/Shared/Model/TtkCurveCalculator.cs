@@ -10,12 +10,13 @@ namespace Ps2TtkCalculator.Shared.Model
 {
     public class TtkCurveCalculator
     {
-        private Weapon weapon;
-        private Target target;
-        private int range_m;
-        private double[] weights;
-        private int damagePerBodyShot;
-        private int damagePerHeadShot;
+        private readonly Weapon weapon;
+        private readonly Target target;
+        private readonly int range_m;
+        private readonly double[] weights;
+        private readonly int damagePerBodyShot;
+        private readonly int damagePerHeadShot;
+        private readonly double bulletTravelTime_s;
 
         private CurvePoint[] curve = null;
         public TtkCurveCalculator(Weapon weapon, Shooter shooter, Target target, int range_m)
@@ -33,6 +34,8 @@ namespace Ps2TtkCalculator.Shared.Model
 
             this.damagePerBodyShot = DamageCalculator.DamagePerBodyShot(weapon, target, range_m);
             this.damagePerHeadShot = DamageCalculator.DamagePerHeadShot(weapon, target, range_m);
+
+            this.bulletTravelTime_s = (double)range_m / weapon.MuzzleVelocity_mps;
         }
 
         public async Task<IEnumerable<CurvePoint>> GetCurve()
@@ -42,12 +45,11 @@ namespace Ps2TtkCalculator.Shared.Model
 
         private IEnumerable<CurvePoint> CalculateCurve()
         {
-            yield return Tuple.Create(0.0, 0.0);
             var cdf = CummulativeDistribution();
             foreach ((var earlier, var later) in cdf.Zip(cdf.Skip(1)))
             {
-                yield return Tuple.Create(((double)later.Time_ms / 1000)
-                                           + range_m / weapon.MuzzleVelocity_mps,
+                yield return Tuple.Create(((double)earlier.Time_ms / 1000)
+                                           + bulletTravelTime_s,
                                           later.Probability - earlier.Probability);
             }
         }

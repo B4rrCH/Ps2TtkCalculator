@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ps2TtkCalculator", "BlazorApp\Ps2TtkCalculator.csproj", "{63079A0B-49C7-443C-91F8-E6236F4E830B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps2TtkCalculator", "BlazorApp\Ps2TtkCalculator.csproj", "{63079A0B-49C7-443C-91F8-E6236F4E830B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{69F2762D-7E1E-4FD8-9FC9-1AB433E0D682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{69F2762D-7E1E-4FD8-9FC9-1AB433E0D682}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{63079A0B-49C7-443C-91F8-E6236F4E830B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +41,11 @@ Global
 		{69F2762D-7E1E-4FD8-9FC9-1AB433E0D682}.Release|x64.Build.0 = Release|Any CPU
 		{69F2762D-7E1E-4FD8-9FC9-1AB433E0D682}.Release|x86.ActiveCfg = Release|Any CPU
 		{69F2762D-7E1E-4FD8-9FC9-1AB433E0D682}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {741F1C4A-1898-436B-806F-5A3AE61DC5F9}
 	EndGlobalSection
 EndGlobal

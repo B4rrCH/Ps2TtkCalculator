@@ -38,7 +38,7 @@
                             <RadzenCard>
                                 <span>Range between the players
                                     <RadzenNumeric TValue="int" Min="0" Max="400" Step="50" Format="0 m"
-                            @bind-Value=@Range />
+                                    @bind-Value=@Range />
                                 </span><br />
                                 <RadzenSlider @bind-Value=@Range TValue="int" Min="0" Max="400" Style="width:100%" />
                             </RadzenCard>
@@ -51,10 +51,59 @@
 }
 
 @code {
+    private int range;
+    private Player player1;
+    private Player player2;
+
     [Parameter]
-    public Player Player1 { get; set; }
+    public Player Player1
+    {
+        get => player1;
+        set
+        {
+            if (player1 != value)
+            {
+                player1 = value;
+                PropertiesChanged.InvokeAsync();
+            }
+        }
+    }
     [Parameter]
-    public Player Player2 { get; set; }
+    public Player Player2
+    {
+        get => player2;
+        set
+        {
+            if (player2 != value)
+            {
+                player2 = value;
+                PropertiesChanged.InvokeAsync();
+            }
+        }
+    }
+
     [Parameter]
-    public int Range { get; set; }
+    public int Range
+    {
+        get => range;
+        set
+        {
+            if (range != value)
+            {
+                range = value;
+                PropertiesChanged.InvokeAsync();
+            }
+        }
+    }
+    [Parameter]
+    public EventCallback PropertiesChanged { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        if (Player1 != null)
+            Player1.PropertiesChanged = this.PropertiesChanged;
+        if (Player2 != null)
+            Player2.PropertiesChanged = this.PropertiesChanged;
+        return base.OnInitializedAsync();
+    }
 }
