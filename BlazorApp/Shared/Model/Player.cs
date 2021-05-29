@@ -7,6 +7,7 @@ namespace Ps2TtkCalculator.Shared.Model
         private Weapon weapon = new();
         private Target target = new();
         private Shooter shooter = new();
+        private EventCallback propertiesChanged;
 
         public Weapon Weapon
         {
@@ -47,6 +48,16 @@ namespace Ps2TtkCalculator.Shared.Model
                 }
             }
         }
-        public EventCallback PropertiesChanged { get; set; }
+        public EventCallback PropertiesChanged
+        {
+            get => propertiesChanged;
+            set
+            {
+                propertiesChanged = value;
+                Weapon.PropertiesChanged = value;
+                Target.PropertiesChanged = value;
+                Shooter.PropertiesChanged = value;
+            }
+        }
     }
 }

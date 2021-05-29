@@ -1,20 +1,43 @@
 @using CurvePoint = System.Tuple<double, double>
 
 @page "/ttk-calculator"
-<LoadoutsSelector Player1=@Player1 Player2=@Player2 @ref=@Selector />
+<LoadoutsSelector Player1=@Player1 Player2=@Player2 @ref=@Selector PropertiesChanged="@OnPropertiesChanged" />
 <TtkGraph Curve1=Curve1 Curve2=Curve2 OnCalculateRequest=RefreshCurve />
 
 @code {
+
     public Player Player1 { get; set; } = new();
     public Player Player2 { get; set; } = new();
     public int Range => Selector.Range;
     private LoadoutsSelector Selector { get; set; }
-
     public IEnumerable<CurvePoint> Curve1 { get; set; }
     public IEnumerable<CurvePoint> Curve2 { get; set; }
 
-    async Task RefreshCurve()
+    private System.Timers.Timer CurveRefreshDebounce;
+
+    protected override async Task OnInitializedAsync()
     {
+        CurveRefreshDebounce = new()
+        {
+            AutoReset = false,
+            Interval = 200,
+            Enabled = true
+        };
+        CurveRefreshDebounce.Elapsed += (s, e) => { Console.WriteLine("Debounce Timer Elapsed");  _ = RefreshCurve(); };
+        await base.OnInitializedAsync();
+    }
+
+
+    private void OnPropertiesChanged()
+    {
+        Console.WriteLine("Properties Changed");
+        CurveRefreshDebounce?.Stop();
+        CurveRefreshDebounce?.Start();
+    }
+
+    private async Task RefreshCurve()
+    {
+        var start = DateTime.Now;
         Console.WriteLine("Refresh Curve Started");
 
         var curveCalculator1 = new TtkCurveCalculator(Player1.Weapon, Player1.Shooter, Player2.Target, Range);
@@ -26,6 +49,8 @@
         Curve2 = await curveCalculator2.GetCurve();
 
         Console.WriteLine("Second Curve Done");
+        Console.WriteLine($"Finished in {DateTime.Now - start}");
+        StateHasChanged();
     }
 
 }

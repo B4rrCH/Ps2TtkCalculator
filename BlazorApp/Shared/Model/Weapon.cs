@@ -15,6 +15,7 @@ namespace Ps2TtkCalculator.Shared.Model
         private double headshotMultiplier = 2.0;
         private int muzzleVelocity_mps = 540;
         private DamageModel damageModel = new();
+        private EventCallback propertiesChanged;
 
         public string Name
         {
@@ -126,7 +127,15 @@ namespace Ps2TtkCalculator.Shared.Model
             }
         }
 
-        public EventCallback PropertiesChanged { get; set; }
+        public EventCallback PropertiesChanged 
+        { 
+            get => propertiesChanged;
+            set 
+            { 
+                propertiesChanged = value;
+                damageModel.PropertiesChanged = value;
+            }
+        }
 
         public static Weapon FromItem(Dto.Item item)
         {
