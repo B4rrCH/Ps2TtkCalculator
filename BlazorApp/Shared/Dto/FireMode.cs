@@ -13,6 +13,9 @@ namespace Ps2TtkCalculator.Shared.Dto
         [JsonPropertyName("muzzle_velocity")]
         public string MuzzleVelocity { get; set; }
 
+        [JsonPropertyName("speed")]
+        public string Speed { get; set; }
+
         [JsonPropertyName("fire_mode_id_join_fire_group_to_fire_mode")]
         public FireModeToFireGroup FireModeToFireGroup { get; set; }
 

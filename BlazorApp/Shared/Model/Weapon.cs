@@ -37,17 +37,9 @@ namespace Ps2TtkCalculator.Shared.Model
             Faction faction = (Faction)int.Parse(item.Faction ?? "0");
             WeaponCategory weaponCategory = (Model.WeaponCategory)int.Parse(item.WeaponCategory);
 
-            if (int.TryParse(item.Ammo?.ClipSize, out int clipSize))
+            if (!int.TryParse(item.Ammo?.ClipSize, out int clipSize))
             {
-                // Do nothing, TryParse succeeded
-            }
-            else if (name.Contains("Phaseshift"))
-            {
-                clipSize = 100;
-            }
-            else
-            {
-                throw new ArgumentException($"The item with name '{item.Name.En}' does not have a clip size.", nameof(item));
+                clipSize = GetClipSizeHardcodedCases(item);
             }
 
             int refireTimeNonBoltAction_ms = int.Parse(item.FireMode.FireMode2.FireRefireMs);
@@ -62,9 +54,11 @@ namespace Ps2TtkCalculator.Shared.Model
                 }
             }
 
-            if (!int.TryParse(item.FireMode.MuzzleVelocity ?? "", out int muzzleVelocity_mps))
+            if (!int.TryParse(item.FireMode.MuzzleVelocity
+                              ?? item.FireMode.Speed,
+                              out int muzzleVelocity_mps))
             {
-                muzzleVelocity_mps = GetMuzzleVelocityHardcodedCases(item);
+                throw new ArgumentException($"Could not determine muzzle velocity of {name}.");
             }
 
             var weapon = new Weapon
@@ -83,43 +77,17 @@ namespace Ps2TtkCalculator.Shared.Model
             return weapon;
         }
 
-        private static int GetMuzzleVelocityHardcodedCases(Item item)
+        private static int GetClipSizeHardcodedCases(Item item)
         {
-            if ((Model.WeaponCategory)int.Parse(item.WeaponCategory) == WeaponCategory.Crossbow)
-            {
-                return 150;
-            }
-
             string name = item.Name.En;
-
-            return name.Contains("Flare Gun") ? 50 :
-                   name.Contains("Deep Freeze") ? 50 :
-                   name.Contains("Naginata") ? 490 :
-                   name.Contains("Tomoe") ? 750 :
-                   name.Contains("Daimyo") ? 600 :
-                   name.Contains("Pilot") ? 350 :
-                   name.Contains("Canis") ? 375 :
+            return name.Contains("Phaseshift") ? 100 :
                    name.Contains("Soldier Soaker") ? 100 :
-                   name.Contains("Ectoblaster") ? 150 :
-                   name.Contains("Kindred") ? 480 :
-                   name.Contains("Charger") ? 500 :
-                   name.Contains("Horizon") ? 500 :
-                   name.Contains("Yawara") ? 500 :
-                   name.Contains("Sesshin") ? 520 :
-                   name.Contains("Vanquisher") ? 600 :
-                   name.Contains("Arbalest") ? 600 :
-                   name.Contains("Lacerta") ? 600 :
-                   name.Contains("SR-200") ? 600 :
-                   name.Contains("Punisher") ? 350 :
-                   name.Contains("Showdown") ? 550 :
-                   name.Contains("Maw") ? 550 :
-                   name.Contains("Watchman") ? 550 :
-                   name.Contains("Bishop") ? 550 :
-                   name.Contains("Obelisk") ? 550 :
-                   name.Contains("Dragoon") ? 550 :
-                   name.Contains("Promise") ? 550 :
-                   name.Contains("Tranquility") ? 550 :
-                   throw new System.Exception($"Could not determine Muzzle Velocity of {name}.");
+                   name.Contains("Flare Gun") ? 2 :
+                   name.Contains("Deep Freeze") ? 2 :
+                   name.Contains("CandyCannon") ? 3 :
+                   name.Contains("Blackhand") ? 4 :
+                   name.Contains("Showdown") ? 4 :
+                   throw new ArgumentException($"Could not determine clip size of {name}.");
         }
     }
 }

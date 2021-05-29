@@ -12,6 +12,7 @@
                 "fire_mode_id": "102",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7379",
                     "fire_mode_id": "102",
@@ -42,6 +43,7 @@
                 "fire_mode_id": "103",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "3",
                     "fire_mode_id": "103",
@@ -72,6 +74,7 @@
                 "fire_mode_id": "104",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "4",
                     "fire_mode_id": "104",
@@ -102,6 +105,7 @@
                 "fire_mode_id": "1108",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "1008",
                     "fire_mode_id": "1108",
@@ -132,6 +136,7 @@
                 "fire_mode_id": "110",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7391",
                     "fire_mode_id": "110",
@@ -162,6 +167,7 @@
                 "fire_mode_id": "1109",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "615",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "1009",
                     "fire_mode_id": "1109",
@@ -192,6 +198,7 @@
                 "fire_mode_id": "111",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "325",
+                "speed": "325",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7403",
                     "fire_mode_id": "111",
@@ -222,6 +229,7 @@
                 "fire_mode_id": "113",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "13",
                     "fire_mode_id": "113",
@@ -252,6 +260,7 @@
                 "fire_mode_id": "1114",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "490",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "1014",
                     "fire_mode_id": "1114",
@@ -282,6 +291,7 @@
                 "fire_mode_id": "115",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "515",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "15",
                     "fire_mode_id": "115",
@@ -312,6 +322,7 @@
                 "fire_mode_id": "7272",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7100",
                     "fire_mode_id": "7272",
@@ -342,6 +353,7 @@
                 "fire_mode_id": "120",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "20",
                     "fire_mode_id": "120",
@@ -372,6 +384,7 @@
                 "fire_mode_id": "121",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "21",
                     "fire_mode_id": "121",
@@ -402,6 +415,7 @@
                 "fire_mode_id": "119",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "540",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "19",
                     "fire_mode_id": "119",
@@ -432,6 +446,7 @@
                 "fire_mode_id": "128",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "28",
                     "fire_mode_id": "128",
@@ -465,6 +480,7 @@
                 "fire_mode_id": "129",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "29",
                     "fire_mode_id": "129",
@@ -495,6 +511,7 @@
                 "fire_mode_id": "130",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "30",
                     "fire_mode_id": "130",
@@ -525,6 +542,7 @@
                 "fire_mode_id": "137",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "37",
                     "fire_mode_id": "137",
@@ -555,6 +573,7 @@
                 "fire_mode_id": "138",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "255",
+                "speed": "275",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "38",
                     "fire_mode_id": "138",
@@ -584,6 +603,7 @@
                 "fire_mode_id": "70019",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70008",
                     "fire_mode_id": "70019",
@@ -613,6 +633,7 @@
                 "fire_mode_id": "70051",
                 "pellets_per_shot": "7",
                 "muzzle_velocity": "400",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70012",
                     "fire_mode_id": "70051",
@@ -642,6 +663,7 @@
                 "fire_mode_id": "70051",
                 "pellets_per_shot": "7",
                 "muzzle_velocity": "400",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70012",
                     "fire_mode_id": "70051",
@@ -672,6 +694,7 @@
                 "fire_mode_id": "762",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "475",
+                "speed": "475",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "730",
                     "fire_mode_id": "762",
@@ -702,6 +725,7 @@
                 "fire_mode_id": "770",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "670",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "734",
                     "fire_mode_id": "770",
@@ -732,6 +756,7 @@
                 "fire_mode_id": "774",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "736",
                     "fire_mode_id": "774",
@@ -762,6 +787,7 @@
                 "fire_mode_id": "778",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "188",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "738",
                     "fire_mode_id": "778",
@@ -792,6 +818,7 @@
                 "fire_mode_id": "782",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "540",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "740",
                     "fire_mode_id": "782",
@@ -822,6 +849,7 @@
                 "fire_mode_id": "786",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "396",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "742",
                     "fire_mode_id": "786",
@@ -852,6 +880,7 @@
                 "fire_mode_id": "790",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "551",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "744",
                     "fire_mode_id": "790",
@@ -882,6 +911,7 @@
                 "fire_mode_id": "794",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "615",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "746",
                     "fire_mode_id": "794",
@@ -912,6 +942,7 @@
                 "fire_mode_id": "798",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "465",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "748",
                     "fire_mode_id": "798",
@@ -942,6 +973,7 @@
                 "fire_mode_id": "804",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "515",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "751",
                     "fire_mode_id": "804",
@@ -972,6 +1004,7 @@
                 "fire_mode_id": "806",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "752",
                     "fire_mode_id": "806",
@@ -1002,6 +1035,7 @@
                 "fire_mode_id": "814",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "756",
                     "fire_mode_id": "814",
@@ -1032,6 +1066,7 @@
                 "fire_mode_id": "818",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "275",
+                "speed": "275",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "758",
                     "fire_mode_id": "818",
@@ -1062,6 +1097,7 @@
                 "fire_mode_id": "822",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "407",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "760",
                     "fire_mode_id": "822",
@@ -1092,6 +1128,7 @@
                 "fire_mode_id": "826",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "396",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "762",
                     "fire_mode_id": "826",
@@ -1122,6 +1159,7 @@
                 "fire_mode_id": "830",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "764",
                     "fire_mode_id": "830",
@@ -1152,6 +1190,7 @@
                 "fire_mode_id": "834",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "325",
+                "speed": "325",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "766",
                     "fire_mode_id": "834",
@@ -1182,6 +1221,7 @@
                 "fire_mode_id": "842",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "680",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "770",
                     "fire_mode_id": "842",
@@ -1215,6 +1255,7 @@
                 "fire_mode_id": "846",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "680",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "772",
                     "fire_mode_id": "846",
@@ -1248,6 +1289,7 @@
                 "fire_mode_id": "850",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "680",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "774",
                     "fire_mode_id": "850",
@@ -1281,6 +1323,7 @@
                 "fire_mode_id": "854",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "680",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "776",
                     "fire_mode_id": "854",
@@ -1311,6 +1354,7 @@
                 "fire_mode_id": "858",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "650",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "778",
                     "fire_mode_id": "858",
@@ -1341,6 +1385,7 @@
                 "fire_mode_id": "862",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "780",
                     "fire_mode_id": "862",
@@ -1370,6 +1415,7 @@
                 "fire_mode_id": "70021",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70009",
                     "fire_mode_id": "70021",
@@ -1398,6 +1444,7 @@
             "fire_mode": {
                 "fire_mode_id": "70025",
                 "pellets_per_shot": "1",
+                "speed": "150",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70022",
                     "fire_mode_id": "70025",
@@ -1429,6 +1476,7 @@
             "fire_mode": {
                 "fire_mode_id": "70029",
                 "pellets_per_shot": "1",
+                "speed": "150",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70025",
                     "fire_mode_id": "70029",
@@ -1460,6 +1508,7 @@
             "fire_mode": {
                 "fire_mode_id": "70031",
                 "pellets_per_shot": "1",
+                "speed": "150",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70026",
                     "fire_mode_id": "70031",
@@ -1493,6 +1542,7 @@
                 "fire_mode_id": "70027",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "520",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70023",
                     "fire_mode_id": "70027",
@@ -1523,6 +1573,7 @@
                 "fire_mode_id": "70027",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "520",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70023",
                     "fire_mode_id": "70027",
@@ -1553,6 +1604,7 @@
                 "fire_mode_id": "70027",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "520",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70023",
                     "fire_mode_id": "70027",
@@ -1582,6 +1634,7 @@
                 "fire_mode_id": "7976",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70024",
                     "fire_mode_id": "7976",
@@ -1611,6 +1664,7 @@
                 "fire_mode_id": "7976",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70024",
                     "fire_mode_id": "7976",
@@ -1640,6 +1694,7 @@
                 "fire_mode_id": "7976",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70024",
                     "fire_mode_id": "7976",
@@ -1668,6 +1723,7 @@
             "fire_mode": {
                 "fire_mode_id": "80924",
                 "pellets_per_shot": "1",
+                "speed": "150",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80670",
                     "fire_mode_id": "80924",
@@ -1699,6 +1755,7 @@
             "fire_mode": {
                 "fire_mode_id": "80926",
                 "pellets_per_shot": "1",
+                "speed": "150",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80671",
                     "fire_mode_id": "80926",
@@ -1732,6 +1789,7 @@
                 "fire_mode_id": "8096",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18095",
                     "fire_mode_id": "8096",
@@ -1762,6 +1820,7 @@
                 "fire_mode_id": "8223",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7627",
                     "fire_mode_id": "8223",
@@ -1792,6 +1851,7 @@
                 "fire_mode_id": "8100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18099",
                     "fire_mode_id": "8100",
@@ -1822,6 +1882,7 @@
                 "fire_mode_id": "7276",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7104",
                     "fire_mode_id": "7276",
@@ -1852,6 +1913,7 @@
                 "fire_mode_id": "7280",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "615",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7108",
                     "fire_mode_id": "7280",
@@ -1882,6 +1944,7 @@
                 "fire_mode_id": "7296",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7124",
                     "fire_mode_id": "7296",
@@ -1912,6 +1975,7 @@
                 "fire_mode_id": "17297",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "650",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "17125",
                     "fire_mode_id": "17297",
@@ -1942,6 +2006,7 @@
                 "fire_mode_id": "8075",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18076",
                     "fire_mode_id": "8075",
@@ -1972,6 +2037,7 @@
                 "fire_mode_id": "8215",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7623",
                     "fire_mode_id": "8215",
@@ -2002,6 +2068,7 @@
                 "fire_mode_id": "8080",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18079",
                     "fire_mode_id": "8080",
@@ -2032,6 +2099,7 @@
                 "fire_mode_id": "7301",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7129",
                     "fire_mode_id": "7301",
@@ -2062,6 +2130,7 @@
                 "fire_mode_id": "17320",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "565",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "17148",
                     "fire_mode_id": "17320",
@@ -2092,6 +2161,7 @@
                 "fire_mode_id": "17321",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "670",
+                "speed": "665",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "17149",
                     "fire_mode_id": "17321",
@@ -2122,6 +2192,7 @@
                 "fire_mode_id": "7322",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "615",
+                "speed": "565",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7150",
                     "fire_mode_id": "7322",
@@ -2152,6 +2223,7 @@
                 "fire_mode_id": "8231",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "615",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7631",
                     "fire_mode_id": "8231",
@@ -2182,6 +2254,7 @@
                 "fire_mode_id": "7324",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7152",
                     "fire_mode_id": "7324",
@@ -2212,6 +2285,7 @@
                 "fire_mode_id": "7325",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7153",
                     "fire_mode_id": "7325",
@@ -2242,6 +2316,7 @@
                 "fire_mode_id": "7404",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7169",
                     "fire_mode_id": "7404",
@@ -2272,6 +2347,7 @@
                 "fire_mode_id": "7405",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "520",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7170",
                     "fire_mode_id": "7405",
@@ -2302,6 +2378,7 @@
                 "fire_mode_id": "8205",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7618",
                     "fire_mode_id": "8205",
@@ -2332,6 +2409,7 @@
                 "fire_mode_id": "8221",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7626",
                     "fire_mode_id": "8221",
@@ -2362,6 +2440,7 @@
                 "fire_mode_id": "7408",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "560",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7173",
                     "fire_mode_id": "7408",
@@ -2392,6 +2471,7 @@
                 "fire_mode_id": "8144",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "440",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80322",
                     "fire_mode_id": "8144",
@@ -2422,6 +2502,7 @@
                 "fire_mode_id": "17425",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "17190",
                     "fire_mode_id": "17425",
@@ -2452,6 +2533,7 @@
                 "fire_mode_id": "8207",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "515",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7619",
                     "fire_mode_id": "8207",
@@ -2482,6 +2564,7 @@
                 "fire_mode_id": "7427",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "490",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7192",
                     "fire_mode_id": "7427",
@@ -2512,6 +2595,7 @@
                 "fire_mode_id": "7432",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "440",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "1023",
                     "fire_mode_id": "7432",
@@ -2542,6 +2626,7 @@
                 "fire_mode_id": "8132",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "520",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18131",
                     "fire_mode_id": "8132",
@@ -2572,6 +2657,7 @@
                 "fire_mode_id": "7446",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "515",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7211",
                     "fire_mode_id": "7446",
@@ -2602,6 +2688,7 @@
                 "fire_mode_id": "7447",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "540",
+                "speed": "465",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7212",
                     "fire_mode_id": "7447",
@@ -2632,6 +2719,7 @@
                 "fire_mode_id": "7448",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "515",
+                "speed": "465",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7213",
                     "fire_mode_id": "7448",
@@ -2662,6 +2750,7 @@
                 "fire_mode_id": "7392",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "420",
+                "speed": "465",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "1022",
                     "fire_mode_id": "7392",
@@ -2692,6 +2781,7 @@
                 "fire_mode_id": "7450",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "460",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80321",
                     "fire_mode_id": "7450",
@@ -2722,6 +2812,7 @@
                 "fire_mode_id": "7530",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "630",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7232",
                     "fire_mode_id": "7530",
@@ -2752,6 +2843,7 @@
                 "fire_mode_id": "7518",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "650",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7282",
                     "fire_mode_id": "7518",
@@ -2782,6 +2874,7 @@
                 "fire_mode_id": "8172",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "630",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18171",
                     "fire_mode_id": "8172",
@@ -2812,6 +2905,7 @@
                 "fire_mode_id": "7533",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7235",
                     "fire_mode_id": "7533",
@@ -2842,6 +2936,7 @@
                 "fire_mode_id": "7534",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7236",
                     "fire_mode_id": "7534",
@@ -2872,6 +2967,7 @@
                 "fire_mode_id": "7551",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "650",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7253",
                     "fire_mode_id": "7551",
@@ -2902,6 +2998,7 @@
                 "fire_mode_id": "7552",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7254",
                     "fire_mode_id": "7552",
@@ -2932,6 +3029,7 @@
                 "fire_mode_id": "7553",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7255",
                     "fire_mode_id": "7553",
@@ -2962,6 +3060,7 @@
                 "fire_mode_id": "7554",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "615",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7256",
                     "fire_mode_id": "7554",
@@ -2992,6 +3091,7 @@
                 "fire_mode_id": "7555",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7257",
                     "fire_mode_id": "7555",
@@ -3022,6 +3122,7 @@
                 "fire_mode_id": "7572",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "625",
+                "speed": "665",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7274",
                     "fire_mode_id": "7572",
@@ -3052,6 +3153,7 @@
                 "fire_mode_id": "7573",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "620",
+                "speed": "615",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7275",
                     "fire_mode_id": "7573",
@@ -3082,6 +3184,7 @@
                 "fire_mode_id": "8180",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "630",
+                "speed": "565",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18179",
                     "fire_mode_id": "8180",
@@ -3112,6 +3215,7 @@
                 "fire_mode_id": "8182",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "565",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18181",
                     "fire_mode_id": "8182",
@@ -3142,6 +3246,7 @@
                 "fire_mode_id": "7576",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "565",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7278",
                     "fire_mode_id": "7576",
@@ -3172,6 +3277,7 @@
                 "fire_mode_id": "7662",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "850",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7301",
                     "fire_mode_id": "7662",
@@ -3205,6 +3311,7 @@
                 "fire_mode_id": "7677",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7318",
                     "fire_mode_id": "7677",
@@ -3235,6 +3342,7 @@
                 "fire_mode_id": "7637",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80217",
                     "fire_mode_id": "7637",
@@ -3262,6 +3370,7 @@
                 "fire_mode_id": "7740",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80325",
                     "fire_mode_id": "7740",
@@ -3292,6 +3401,7 @@
                 "fire_mode_id": "7747",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80742",
                     "fire_mode_id": "7747",
@@ -3322,6 +3432,7 @@
                 "fire_mode_id": "7754",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80741",
                     "fire_mode_id": "7754",
@@ -3352,6 +3463,7 @@
                 "fire_mode_id": "102",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7379",
                     "fire_mode_id": "102",
@@ -3382,6 +3494,7 @@
                 "fire_mode_id": "7806",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7388",
                     "fire_mode_id": "7806",
@@ -3412,6 +3525,7 @@
                 "fire_mode_id": "1102",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "350",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80551",
                     "fire_mode_id": "1102",
@@ -3442,6 +3556,7 @@
                 "fire_mode_id": "7808",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7390",
                     "fire_mode_id": "7808",
@@ -3475,6 +3590,7 @@
                 "fire_mode_id": "110",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7391",
                     "fire_mode_id": "110",
@@ -3505,6 +3621,7 @@
                 "fire_mode_id": "7811",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "390",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80550",
                     "fire_mode_id": "7811",
@@ -3535,6 +3652,7 @@
                 "fire_mode_id": "7819",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7401",
                     "fire_mode_id": "7819",
@@ -3565,6 +3683,7 @@
                 "fire_mode_id": "7820",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "375",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7402",
                     "fire_mode_id": "7820",
@@ -3595,6 +3714,7 @@
                 "fire_mode_id": "111",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "325",
+                "speed": "325",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7403",
                     "fire_mode_id": "111",
@@ -3625,6 +3745,7 @@
                 "fire_mode_id": "7830",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "325",
+                "speed": "325",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7412",
                     "fire_mode_id": "7830",
@@ -3655,6 +3776,7 @@
                 "fire_mode_id": "7831",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "300",
+                "speed": "325",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80549",
                     "fire_mode_id": "7831",
@@ -3685,6 +3807,7 @@
                 "fire_mode_id": "7995",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "150",
+                "speed": "325",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80021",
                     "fire_mode_id": "7995",
@@ -3715,6 +3838,7 @@
                 "fire_mode_id": "7868",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "275",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7423",
                     "fire_mode_id": "7868",
@@ -3745,6 +3869,7 @@
                 "fire_mode_id": "7877",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "275",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7432",
                     "fire_mode_id": "7877",
@@ -3775,6 +3900,7 @@
                 "fire_mode_id": "7886",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "275",
+                "speed": "275",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7441",
                     "fire_mode_id": "7886",
@@ -3804,6 +3930,7 @@
                 "fire_mode_id": "8002",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "400",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7494",
                     "fire_mode_id": "8002",
@@ -3833,6 +3960,7 @@
                 "fire_mode_id": "8003",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "400",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7495",
                     "fire_mode_id": "8003",
@@ -3862,6 +3990,7 @@
                 "fire_mode_id": "8004",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "400",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7496",
                     "fire_mode_id": "8004",
@@ -3892,6 +4021,7 @@
                 "fire_mode_id": "19300",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80324",
                     "fire_mode_id": "19300",
@@ -3922,6 +4052,7 @@
                 "fire_mode_id": "20100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "465",
+                "speed": "465",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "20000",
                     "fire_mode_id": "20100",
@@ -3952,6 +4083,7 @@
                 "fire_mode_id": "24100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24000",
                     "fire_mode_id": "24100",
@@ -3982,6 +4114,7 @@
                 "fire_mode_id": "24101",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24001",
                     "fire_mode_id": "24101",
@@ -4015,6 +4148,7 @@
                 "fire_mode_id": "24102",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24002",
                     "fire_mode_id": "24102",
@@ -4045,6 +4179,7 @@
                 "fire_mode_id": "24103",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24003",
                     "fire_mode_id": "24103",
@@ -4078,6 +4213,7 @@
                 "fire_mode_id": "24104",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "650",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24004",
                     "fire_mode_id": "24104",
@@ -4111,6 +4247,7 @@
                 "fire_mode_id": "24107",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24007",
                     "fire_mode_id": "24107",
@@ -4141,6 +4278,7 @@
                 "fire_mode_id": "24108",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24008",
                     "fire_mode_id": "24108",
@@ -4171,6 +4309,7 @@
                 "fire_mode_id": "25100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25000",
                     "fire_mode_id": "25100",
@@ -4204,6 +4343,7 @@
                 "fire_mode_id": "25101",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25001",
                     "fire_mode_id": "25101",
@@ -4237,6 +4377,7 @@
                 "fire_mode_id": "25102",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25002",
                     "fire_mode_id": "25102",
@@ -4267,6 +4408,7 @@
                 "fire_mode_id": "25103",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25003",
                     "fire_mode_id": "25103",
@@ -4300,6 +4442,7 @@
                 "fire_mode_id": "25104",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "650",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25004",
                     "fire_mode_id": "25104",
@@ -4333,6 +4476,7 @@
                 "fire_mode_id": "25107",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25007",
                     "fire_mode_id": "25107",
@@ -4363,6 +4507,7 @@
                 "fire_mode_id": "25108",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25008",
                     "fire_mode_id": "25108",
@@ -4393,6 +4538,7 @@
                 "fire_mode_id": "26100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26000",
                     "fire_mode_id": "26100",
@@ -4426,6 +4572,7 @@
                 "fire_mode_id": "26101",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "500",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26001",
                     "fire_mode_id": "26101",
@@ -4459,6 +4606,7 @@
                 "fire_mode_id": "26102",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26002",
                     "fire_mode_id": "26102",
@@ -4489,6 +4637,7 @@
                 "fire_mode_id": "26103",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26003",
                     "fire_mode_id": "26103",
@@ -4522,6 +4671,7 @@
                 "fire_mode_id": "26104",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "650",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26004",
                     "fire_mode_id": "26104",
@@ -4555,6 +4705,7 @@
                 "fire_mode_id": "26107",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "540",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26007",
                     "fire_mode_id": "26107",
@@ -4585,6 +4736,7 @@
                 "fire_mode_id": "26108",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26008",
                     "fire_mode_id": "26108",
@@ -4615,6 +4767,7 @@
                 "fire_mode_id": "27100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "27005",
                     "fire_mode_id": "27100",
@@ -4645,6 +4798,7 @@
                 "fire_mode_id": "27101",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "27001",
                     "fire_mode_id": "27101",
@@ -4675,6 +4829,7 @@
                 "fire_mode_id": "27100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "27005",
                     "fire_mode_id": "27100",
@@ -4705,6 +4860,7 @@
                 "fire_mode_id": "28100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "370",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "28005",
                     "fire_mode_id": "28100",
@@ -4735,6 +4891,7 @@
                 "fire_mode_id": "28101",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "28001",
                     "fire_mode_id": "28101",
@@ -4765,6 +4922,7 @@
                 "fire_mode_id": "28100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "370",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "28005",
                     "fire_mode_id": "28100",
@@ -4795,6 +4953,7 @@
                 "fire_mode_id": "29100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "29005",
                     "fire_mode_id": "29100",
@@ -4825,6 +4984,7 @@
                 "fire_mode_id": "29101",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "400",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "29001",
                     "fire_mode_id": "29101",
@@ -4855,6 +5015,7 @@
                 "fire_mode_id": "29100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "29005",
                     "fire_mode_id": "29100",
@@ -4885,6 +5046,7 @@
                 "fire_mode_id": "39100",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "39000",
                     "fire_mode_id": "39100",
@@ -4915,6 +5077,7 @@
                 "fire_mode_id": "39101",
                 "pellets_per_shot": "10",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "39001",
                     "fire_mode_id": "39101",
@@ -4948,6 +5111,7 @@
                 "fire_mode_id": "39102",
                 "pellets_per_shot": "11",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "39002",
                     "fire_mode_id": "39102",
@@ -4981,6 +5145,7 @@
                 "fire_mode_id": "40100",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "40000",
                     "fire_mode_id": "40100",
@@ -5011,6 +5176,7 @@
                 "fire_mode_id": "40101",
                 "pellets_per_shot": "10",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "40001",
                     "fire_mode_id": "40101",
@@ -5044,6 +5210,7 @@
                 "fire_mode_id": "40102",
                 "pellets_per_shot": "11",
                 "muzzle_velocity": "300",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "40002",
                     "fire_mode_id": "40102",
@@ -5077,6 +5244,7 @@
                 "fire_mode_id": "41100",
                 "pellets_per_shot": "6",
                 "muzzle_velocity": "275",
+                "speed": "275",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "41000",
                     "fire_mode_id": "41100",
@@ -5107,6 +5275,7 @@
                 "fire_mode_id": "41101",
                 "pellets_per_shot": "10",
                 "muzzle_velocity": "275",
+                "speed": "275",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "41001",
                     "fire_mode_id": "41101",
@@ -5140,6 +5309,7 @@
                 "fire_mode_id": "41102",
                 "pellets_per_shot": "11",
                 "muzzle_velocity": "275",
+                "speed": "275",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "41002",
                     "fire_mode_id": "41102",
@@ -5171,6 +5341,7 @@
             "fire_mode": {
                 "fire_mode_id": "80928",
                 "pellets_per_shot": "1",
+                "speed": "150",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80672",
                     "fire_mode_id": "80928",
@@ -5204,6 +5375,7 @@
                 "fire_mode_id": "2001",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "21500",
                     "fire_mode_id": "2001",
@@ -5234,6 +5406,7 @@
                 "fire_mode_id": "2001",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "21500",
                     "fire_mode_id": "2001",
@@ -5263,6 +5436,7 @@
                 "fire_mode_id": "70057",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70015",
                     "fire_mode_id": "70057",
@@ -5292,6 +5466,7 @@
                 "fire_mode_id": "70019",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70008",
                     "fire_mode_id": "70019",
@@ -5321,6 +5496,7 @@
                 "fire_mode_id": "70021",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70009",
                     "fire_mode_id": "70021",
@@ -5350,6 +5526,7 @@
                 "fire_mode_id": "70023",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "350",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70010",
                     "fire_mode_id": "70023",
@@ -5379,6 +5556,7 @@
                 "fire_mode_id": "70051",
                 "pellets_per_shot": "7",
                 "muzzle_velocity": "400",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70012",
                     "fire_mode_id": "70051",
@@ -5408,6 +5586,7 @@
                 "fire_mode_id": "70021",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70009",
                     "fire_mode_id": "70021",
@@ -5437,6 +5616,7 @@
                 "fire_mode_id": "70023",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "350",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70010",
                     "fire_mode_id": "70023",
@@ -5466,6 +5646,7 @@
                 "fire_mode_id": "70021",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70009",
                     "fire_mode_id": "70021",
@@ -5495,6 +5676,7 @@
                 "fire_mode_id": "70023",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "350",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70010",
                     "fire_mode_id": "70023",
@@ -5524,6 +5706,7 @@
                 "fire_mode_id": "70057",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70015",
                     "fire_mode_id": "70057",
@@ -5553,6 +5736,7 @@
                 "fire_mode_id": "70023",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "350",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70010",
                     "fire_mode_id": "70023",
@@ -5582,6 +5766,7 @@
             "fire_mode": {
                 "fire_mode_id": "75494",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "75490",
                     "fire_mode_id": "75494",
@@ -5608,6 +5793,7 @@
             "fire_mode": {
                 "fire_mode_id": "75495",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "75491",
                     "fire_mode_id": "75495",
@@ -5634,6 +5820,7 @@
             "fire_mode": {
                 "fire_mode_id": "75496",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "75492",
                     "fire_mode_id": "75496",
@@ -5660,6 +5847,7 @@
             "fire_mode": {
                 "fire_mode_id": "75497",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "75493",
                     "fire_mode_id": "75497",
@@ -5686,6 +5874,7 @@
             "fire_mode": {
                 "fire_mode_id": "80018",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80014",
                     "fire_mode_id": "80018",
@@ -5713,6 +5902,7 @@
                 "fire_mode_id": "70069",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "682",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70066",
                     "fire_mode_id": "70069",
@@ -5743,6 +5933,7 @@
                 "fire_mode_id": "80025",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "100",
+                "speed": "100",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80018",
                     "fire_mode_id": "80025",
@@ -5770,6 +5961,7 @@
                 "fire_mode_id": "2001",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "21500",
                     "fire_mode_id": "2001",
@@ -5799,6 +5991,7 @@
                 "fire_mode_id": "70057",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70015",
                     "fire_mode_id": "70057",
@@ -5829,6 +6022,7 @@
                 "fire_mode_id": "2001",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "21500",
                     "fire_mode_id": "2001",
@@ -5858,6 +6052,7 @@
                 "fire_mode_id": "70057",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70015",
                     "fire_mode_id": "70057",
@@ -5887,6 +6082,7 @@
                 "fire_mode_id": "70019",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70008",
                     "fire_mode_id": "70019",
@@ -5916,6 +6112,7 @@
                 "fire_mode_id": "70019",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70008",
                     "fire_mode_id": "70019",
@@ -5945,6 +6142,7 @@
                 "fire_mode_id": "70019",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70008",
                     "fire_mode_id": "70019",
@@ -5974,6 +6172,7 @@
                 "fire_mode_id": "70019",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70008",
                     "fire_mode_id": "70019",
@@ -6003,6 +6202,7 @@
                 "fire_mode_id": "70051",
                 "pellets_per_shot": "7",
                 "muzzle_velocity": "400",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70012",
                     "fire_mode_id": "70051",
@@ -6032,6 +6232,7 @@
                 "fire_mode_id": "80043",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80032",
                     "fire_mode_id": "80043",
@@ -6059,6 +6260,7 @@
                 "fire_mode_id": "8180",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "630",
+                "speed": "565",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18179",
                     "fire_mode_id": "8180",
@@ -6089,6 +6291,7 @@
                 "fire_mode_id": "80058",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80040",
                     "fire_mode_id": "80058",
@@ -6121,6 +6324,7 @@
                 "fire_mode_id": "80043",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80032",
                     "fire_mode_id": "80043",
@@ -6150,6 +6354,7 @@
                 "fire_mode_id": "80043",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80032",
                     "fire_mode_id": "80043",
@@ -6177,6 +6382,7 @@
                 "fire_mode_id": "80058",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80040",
                     "fire_mode_id": "80058",
@@ -6210,6 +6416,7 @@
                 "fire_mode_id": "80058",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80040",
                     "fire_mode_id": "80058",
@@ -6242,6 +6449,7 @@
             "fire_mode": {
                 "fire_mode_id": "80141",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80095",
                     "fire_mode_id": "80141",
@@ -6268,6 +6476,7 @@
             "fire_mode": {
                 "fire_mode_id": "80142",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80096",
                     "fire_mode_id": "80142",
@@ -6294,6 +6503,7 @@
             "fire_mode": {
                 "fire_mode_id": "80143",
                 "pellets_per_shot": "1",
+                "speed": "50",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80097",
                     "fire_mode_id": "80143",
@@ -6320,6 +6530,7 @@
                 "fire_mode_id": "70019",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70008",
                     "fire_mode_id": "70019",
@@ -6350,6 +6561,7 @@
                 "fire_mode_id": "80152",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80102",
                     "fire_mode_id": "80152",
@@ -6380,6 +6592,7 @@
                 "fire_mode_id": "80152",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80102",
                     "fire_mode_id": "80152",
@@ -6410,6 +6623,7 @@
                 "fire_mode_id": "80152",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80102",
                     "fire_mode_id": "80152",
@@ -6439,6 +6653,7 @@
                 "fire_mode_id": "80159",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "360",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80108",
                     "fire_mode_id": "80159",
@@ -6468,6 +6683,7 @@
                 "fire_mode_id": "80164",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "520",
+                "speed": "530",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80111",
                     "fire_mode_id": "80164",
@@ -6498,6 +6714,7 @@
                 "fire_mode_id": "80166",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "580",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80112",
                     "fire_mode_id": "80166",
@@ -6526,6 +6743,7 @@
             "fire_mode": {
                 "fire_mode_id": "80168",
                 "pellets_per_shot": "1",
+                "speed": "490",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80524",
                     "fire_mode_id": "80168",
@@ -6555,6 +6773,7 @@
             "fire_mode": {
                 "fire_mode_id": "80170",
                 "pellets_per_shot": "1",
+                "speed": "520",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80744",
                     "fire_mode_id": "80170",
@@ -6584,6 +6803,7 @@
             "fire_mode": {
                 "fire_mode_id": "80172",
                 "pellets_per_shot": "1",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80115",
                     "fire_mode_id": "80172",
@@ -6613,6 +6833,7 @@
                 "fire_mode_id": "80175",
                 "pellets_per_shot": "4",
                 "muzzle_velocity": "380",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80561",
                     "fire_mode_id": "80175",
@@ -6642,6 +6863,7 @@
                 "fire_mode_id": "80159",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "360",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80108",
                     "fire_mode_id": "80159",
@@ -6671,6 +6893,7 @@
                 "fire_mode_id": "80159",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "360",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80108",
                     "fire_mode_id": "80159",
@@ -6700,6 +6923,7 @@
                 "fire_mode_id": "80043",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80032",
                     "fire_mode_id": "80043",
@@ -6726,6 +6950,7 @@
                 "fire_mode_id": "80159",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "360",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80108",
                     "fire_mode_id": "80159",
@@ -6755,6 +6980,7 @@
                 "fire_mode_id": "80043",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80032",
                     "fire_mode_id": "80043",
@@ -6782,6 +7008,7 @@
                 "fire_mode_id": "26104",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "650",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "26004",
                     "fire_mode_id": "26104",
@@ -6815,6 +7042,7 @@
                 "fire_mode_id": "25104",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "650",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "25004",
                     "fire_mode_id": "25104",
@@ -6848,6 +7076,7 @@
                 "fire_mode_id": "24104",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "650",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "24004",
                     "fire_mode_id": "24104",
@@ -6881,6 +7110,7 @@
                 "fire_mode_id": "29100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "29005",
                     "fire_mode_id": "29100",
@@ -6911,6 +7141,7 @@
                 "fire_mode_id": "28100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "370",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "28005",
                     "fire_mode_id": "28100",
@@ -6941,6 +7172,7 @@
                 "fire_mode_id": "27100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "27005",
                     "fire_mode_id": "27100",
@@ -6971,6 +7203,7 @@
                 "fire_mode_id": "7320",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "565",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7148",
                     "fire_mode_id": "7320",
@@ -7001,6 +7234,7 @@
                 "fire_mode_id": "8080",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "18079",
                     "fire_mode_id": "8080",
@@ -7031,6 +7265,7 @@
                 "fire_mode_id": "17272",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "17100",
                     "fire_mode_id": "17272",
@@ -7061,6 +7296,7 @@
                 "fire_mode_id": "80058",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80040",
                     "fire_mode_id": "80058",
@@ -7094,6 +7330,7 @@
                 "fire_mode_id": "80058",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80040",
                     "fire_mode_id": "80058",
@@ -7127,6 +7364,7 @@
                 "fire_mode_id": "80058",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80040",
                     "fire_mode_id": "80058",
@@ -7159,6 +7397,7 @@
                 "fire_mode_id": "7976",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "70024",
                     "fire_mode_id": "7976",
@@ -7189,6 +7428,7 @@
                 "fire_mode_id": "2001",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "21500",
                     "fire_mode_id": "2001",
@@ -7217,6 +7457,7 @@
             "fire_mode": {
                 "fire_mode_id": "80388",
                 "pellets_per_shot": "1",
+                "speed": "350",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80287",
                     "fire_mode_id": "80388",
@@ -7245,6 +7486,7 @@
             "fire_mode": {
                 "fire_mode_id": "80388",
                 "pellets_per_shot": "1",
+                "speed": "350",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80287",
                     "fire_mode_id": "80388",
@@ -7274,6 +7516,7 @@
                 "fire_mode_id": "80164",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "520",
+                "speed": "530",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80111",
                     "fire_mode_id": "80164",
@@ -7302,6 +7545,7 @@
             "fire_mode": {
                 "fire_mode_id": "80394",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80293",
                     "fire_mode_id": "80394",
@@ -7329,6 +7573,7 @@
                 "fire_mode_id": "80432",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "400",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80301",
                     "fire_mode_id": "80432",
@@ -7359,6 +7604,7 @@
                 "fire_mode_id": "80411",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "400",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80302",
                     "fire_mode_id": "80411",
@@ -7388,6 +7634,7 @@
             "fire_mode": {
                 "fire_mode_id": "80436",
                 "pellets_per_shot": "1",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80316",
                     "fire_mode_id": "80436",
@@ -7417,6 +7664,7 @@
                 "fire_mode_id": "80438",
                 "pellets_per_shot": "2",
                 "muzzle_velocity": "300",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80317",
                     "fire_mode_id": "80438",
@@ -7447,6 +7695,7 @@
                 "fire_mode_id": "7409",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "440",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80318",
                     "fire_mode_id": "7409",
@@ -7477,6 +7726,7 @@
                 "fire_mode_id": "8235",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "460",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80320",
                     "fire_mode_id": "8235",
@@ -7507,6 +7757,7 @@
                 "fire_mode_id": "19100",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "450",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80323",
                     "fire_mode_id": "19100",
@@ -7537,6 +7788,7 @@
                 "fire_mode_id": "7740",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80325",
                     "fire_mode_id": "7740",
@@ -7567,6 +7819,7 @@
                 "fire_mode_id": "7747",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80742",
                     "fire_mode_id": "7747",
@@ -7597,6 +7850,7 @@
                 "fire_mode_id": "7754",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80741",
                     "fire_mode_id": "7754",
@@ -7626,6 +7880,7 @@
             "fire_mode": {
                 "fire_mode_id": "80453",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80455",
                     "fire_mode_id": "80453",
@@ -7655,6 +7910,7 @@
             "fire_mode": {
                 "fire_mode_id": "80442",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80457",
                     "fire_mode_id": "80442",
@@ -7683,6 +7939,7 @@
             "fire_mode": {
                 "fire_mode_id": "80168",
                 "pellets_per_shot": "1",
+                "speed": "490",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80524",
                     "fire_mode_id": "80168",
@@ -7721,6 +7978,7 @@
             "fire_mode": {
                 "fire_mode_id": "80444",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80334",
                     "fire_mode_id": "80444",
@@ -7750,6 +8008,7 @@
             "fire_mode": {
                 "fire_mode_id": "80447",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80336",
                     "fire_mode_id": "80447",
@@ -7779,6 +8038,7 @@
             "fire_mode": {
                 "fire_mode_id": "80449",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80337",
                     "fire_mode_id": "80449",
@@ -7808,6 +8068,7 @@
             "fire_mode": {
                 "fire_mode_id": "80451",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80456",
                     "fire_mode_id": "80451",
@@ -7838,6 +8099,7 @@
                 "fire_mode_id": "80469",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80347",
                     "fire_mode_id": "80469",
@@ -7870,6 +8132,7 @@
                 "fire_mode_id": "80810",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "360",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80351",
                     "fire_mode_id": "80810",
@@ -7899,6 +8162,7 @@
                 "fire_mode_id": "80481",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80359",
                     "fire_mode_id": "80481",
@@ -7927,6 +8191,7 @@
             "fire_mode": {
                 "fire_mode_id": "80484",
                 "pellets_per_shot": "1",
+                "speed": "100",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80361",
                     "fire_mode_id": "80484",
@@ -7953,6 +8218,7 @@
                 "fire_mode_id": "80548",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80412",
                     "fire_mode_id": "80548",
@@ -7984,6 +8250,7 @@
             "fire_mode": {
                 "fire_mode_id": "80549",
                 "pellets_per_shot": "1",
+                "speed": "150",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80413",
                     "fire_mode_id": "80549",
@@ -8013,6 +8280,7 @@
             "fire_mode": {
                 "fire_mode_id": "80569",
                 "pellets_per_shot": "1",
+                "speed": "480",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80416",
                     "fire_mode_id": "80569",
@@ -8042,6 +8310,7 @@
             "fire_mode": {
                 "fire_mode_id": "80573",
                 "pellets_per_shot": "1",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80420",
                     "fire_mode_id": "80573",
@@ -8071,6 +8340,7 @@
             "fire_mode": {
                 "fire_mode_id": "80590",
                 "pellets_per_shot": "3",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80429",
                     "fire_mode_id": "80590",
@@ -8100,6 +8370,7 @@
             "fire_mode": {
                 "fire_mode_id": "80451",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80456",
                     "fire_mode_id": "80451",
@@ -8129,6 +8400,7 @@
             "fire_mode": {
                 "fire_mode_id": "80442",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80457",
                     "fire_mode_id": "80442",
@@ -8158,6 +8430,7 @@
             "fire_mode": {
                 "fire_mode_id": "80453",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80455",
                     "fire_mode_id": "80453",
@@ -8187,6 +8460,7 @@
                 "fire_mode_id": "80728",
                 "pellets_per_shot": "7",
                 "muzzle_velocity": "400",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80526",
                     "fire_mode_id": "80728",
@@ -8216,6 +8490,7 @@
                 "fire_mode_id": "80742",
                 "pellets_per_shot": "3",
                 "muzzle_velocity": "380",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80539",
                     "fire_mode_id": "80742",
@@ -8244,6 +8519,7 @@
             "fire_mode": {
                 "fire_mode_id": "80744",
                 "pellets_per_shot": "1",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80540",
                     "fire_mode_id": "80744",
@@ -8273,6 +8549,7 @@
             "fire_mode": {
                 "fire_mode_id": "80748",
                 "pellets_per_shot": "1",
+                "speed": "520",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80542",
                     "fire_mode_id": "80748",
@@ -8303,6 +8580,7 @@
                 "fire_mode_id": "7831",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "300",
+                "speed": "325",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80549",
                     "fire_mode_id": "7831",
@@ -8333,6 +8611,7 @@
                 "fire_mode_id": "7811",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "390",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80550",
                     "fire_mode_id": "7811",
@@ -8363,6 +8642,7 @@
                 "fire_mode_id": "7807",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "350",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80552",
                     "fire_mode_id": "7807",
@@ -8392,6 +8672,7 @@
             "fire_mode": {
                 "fire_mode_id": "80768",
                 "pellets_per_shot": "1",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80556",
                     "fire_mode_id": "80768",
@@ -8421,6 +8702,7 @@
             "fire_mode": {
                 "fire_mode_id": "80770",
                 "pellets_per_shot": "1",
+                "speed": "580",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80557",
                     "fire_mode_id": "80770",
@@ -8450,6 +8732,7 @@
             "fire_mode": {
                 "fire_mode_id": "80772",
                 "pellets_per_shot": "1",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80558",
                     "fire_mode_id": "80772",
@@ -8479,6 +8762,7 @@
                 "fire_mode_id": "80175",
                 "pellets_per_shot": "4",
                 "muzzle_velocity": "380",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80561",
                     "fire_mode_id": "80175",
@@ -8509,6 +8793,7 @@
                 "fire_mode_id": "7534",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "570",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "7236",
                     "fire_mode_id": "7534",
@@ -8538,6 +8823,7 @@
             "fire_mode": {
                 "fire_mode_id": "80785",
                 "pellets_per_shot": "1",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80579",
                     "fire_mode_id": "80785",
@@ -8571,6 +8857,7 @@
                 "fire_mode_id": "80801",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80591",
                     "fire_mode_id": "80801",
@@ -8601,6 +8888,7 @@
                 "fire_mode_id": "80799",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "525",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80590",
                     "fire_mode_id": "80799",
@@ -8632,6 +8920,7 @@
             "fire_mode": {
                 "fire_mode_id": "80168",
                 "pellets_per_shot": "1",
+                "speed": "490",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80524",
                     "fire_mode_id": "80168",
@@ -8662,6 +8951,7 @@
                 "fire_mode_id": "80166",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "580",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80112",
                     "fire_mode_id": "80166",
@@ -8691,6 +8981,7 @@
             "fire_mode": {
                 "fire_mode_id": "80172",
                 "pellets_per_shot": "1",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80115",
                     "fire_mode_id": "80172",
@@ -8720,6 +9011,7 @@
             "fire_mode": {
                 "fire_mode_id": "80170",
                 "pellets_per_shot": "1",
+                "speed": "520",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80744",
                     "fire_mode_id": "80170",
@@ -8749,6 +9041,7 @@
                 "fire_mode_id": "80175",
                 "pellets_per_shot": "4",
                 "muzzle_velocity": "380",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80561",
                     "fire_mode_id": "80175",
@@ -8779,6 +9072,7 @@
                 "fire_mode_id": "80166",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "580",
+                "speed": "580",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80112",
                     "fire_mode_id": "80166",
@@ -8808,6 +9102,7 @@
                 "fire_mode_id": "80810",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "360",
+                "speed": "360",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80351",
                     "fire_mode_id": "80810",
@@ -8836,6 +9131,7 @@
             "fire_mode": {
                 "fire_mode_id": "80168",
                 "pellets_per_shot": "1",
+                "speed": "490",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80524",
                     "fire_mode_id": "80168",
@@ -8865,6 +9161,7 @@
             "fire_mode": {
                 "fire_mode_id": "80170",
                 "pellets_per_shot": "1",
+                "speed": "520",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80744",
                     "fire_mode_id": "80170",
@@ -8894,6 +9191,7 @@
             "fire_mode": {
                 "fire_mode_id": "80172",
                 "pellets_per_shot": "1",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80115",
                     "fire_mode_id": "80172",
@@ -8923,6 +9221,7 @@
                 "fire_mode_id": "80175",
                 "pellets_per_shot": "4",
                 "muzzle_velocity": "380",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80561",
                     "fire_mode_id": "80175",
@@ -8952,6 +9251,7 @@
             "fire_mode": {
                 "fire_mode_id": "80866",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80636",
                     "fire_mode_id": "80866",
@@ -8980,6 +9280,7 @@
             "fire_mode": {
                 "fire_mode_id": "80868",
                 "pellets_per_shot": "1",
+                "speed": "350",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80637",
                     "fire_mode_id": "80868",
@@ -9010,6 +9311,7 @@
                 "fire_mode_id": "80963",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "640",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80699",
                     "fire_mode_id": "80963",
@@ -9039,6 +9341,7 @@
                 "fire_mode_id": "80966",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "400",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80700",
                     "fire_mode_id": "80966",
@@ -9068,6 +9371,7 @@
                 "fire_mode_id": "80971",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "350",
+                "speed": "375",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80702",
                     "fire_mode_id": "80971",
@@ -9097,6 +9401,7 @@
                 "fire_mode_id": "80975",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80704",
                     "fire_mode_id": "80975",
@@ -9126,6 +9431,7 @@
                 "fire_mode_id": "80977",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "600",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80705",
                     "fire_mode_id": "80977",
@@ -9154,6 +9460,7 @@
             "fire_mode": {
                 "fire_mode_id": "80388",
                 "pellets_per_shot": "1",
+                "speed": "350",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80287",
                     "fire_mode_id": "80388",
@@ -9180,6 +9487,7 @@
             "fire_mode": {
                 "fire_mode_id": "80993",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80716",
                     "fire_mode_id": "80993",
@@ -9209,6 +9517,7 @@
                 "fire_mode_id": "80995",
                 "pellets_per_shot": "7",
                 "muzzle_velocity": "400",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80717",
                     "fire_mode_id": "80995",
@@ -9235,6 +9544,7 @@
             "fire_mode": {
                 "fire_mode_id": "80997",
                 "pellets_per_shot": "1",
+                "speed": "550",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80718",
                     "fire_mode_id": "80997",
@@ -9261,6 +9571,7 @@
             "fire_mode": {
                 "fire_mode_id": "80999",
                 "pellets_per_shot": "1",
+                "speed": "600",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80719",
                     "fire_mode_id": "80999",
@@ -9286,6 +9597,7 @@
             "fire_mode": {
                 "fire_mode_id": "81001",
                 "pellets_per_shot": "1",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80720",
                     "fire_mode_id": "81001",
@@ -9311,6 +9623,7 @@
             "fire_mode": {
                 "fire_mode_id": "81003",
                 "pellets_per_shot": "1",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80721",
                     "fire_mode_id": "81003",
@@ -9336,6 +9649,7 @@
             "fire_mode": {
                 "fire_mode_id": "81005",
                 "pellets_per_shot": "1",
+                "speed": "525",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80722",
                     "fire_mode_id": "81005",
@@ -9361,6 +9675,7 @@
             "fire_mode": {
                 "fire_mode_id": "81007",
                 "pellets_per_shot": "1",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80723",
                     "fire_mode_id": "81007",
@@ -9386,6 +9701,7 @@
             "fire_mode": {
                 "fire_mode_id": "81009",
                 "pellets_per_shot": "1",
+                "speed": "450",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80724",
                     "fire_mode_id": "81009",
@@ -9411,6 +9727,7 @@
             "fire_mode": {
                 "fire_mode_id": "81011",
                 "pellets_per_shot": "1",
+                "speed": "475",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80725",
                     "fire_mode_id": "81011",
@@ -9436,6 +9753,7 @@
             "fire_mode": {
                 "fire_mode_id": "81013",
                 "pellets_per_shot": "1",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80726",
                     "fire_mode_id": "81013",
@@ -9461,6 +9779,7 @@
             "fire_mode": {
                 "fire_mode_id": "81015",
                 "pellets_per_shot": "1",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80727",
                     "fire_mode_id": "81015",
@@ -9486,6 +9805,7 @@
             "fire_mode": {
                 "fire_mode_id": "81017",
                 "pellets_per_shot": "1",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80728",
                     "fire_mode_id": "81017",
@@ -9511,6 +9831,7 @@
             "fire_mode": {
                 "fire_mode_id": "81019",
                 "pellets_per_shot": "1",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80729",
                     "fire_mode_id": "81019",
@@ -9536,6 +9857,7 @@
             "fire_mode": {
                 "fire_mode_id": "81021",
                 "pellets_per_shot": "1",
+                "speed": "350",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80730",
                     "fire_mode_id": "81021",
@@ -9561,6 +9883,7 @@
             "fire_mode": {
                 "fire_mode_id": "81021",
                 "pellets_per_shot": "1",
+                "speed": "350",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80730",
                     "fire_mode_id": "81021",
@@ -9586,6 +9909,7 @@
             "fire_mode": {
                 "fire_mode_id": "81035",
                 "pellets_per_shot": "11",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80737",
                     "fire_mode_id": "81035",
@@ -9614,6 +9938,7 @@
             "fire_mode": {
                 "fire_mode_id": "81033",
                 "pellets_per_shot": "6",
+                "speed": "300",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80736",
                     "fire_mode_id": "81033",
@@ -9639,6 +9964,7 @@
             "fire_mode": {
                 "fire_mode_id": "81031",
                 "pellets_per_shot": "6",
+                "speed": "275",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80735",
                     "fire_mode_id": "81031",
@@ -9669,6 +9995,7 @@
                 "fire_mode_id": "7747",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80742",
                     "fire_mode_id": "7747",
@@ -9699,6 +10026,7 @@
                 "fire_mode_id": "7754",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "530",
+                "speed": "515",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80741",
                     "fire_mode_id": "7754",
@@ -9729,6 +10057,7 @@
                 "fire_mode_id": "7740",
                 "pellets_per_shot": "1",
                 "muzzle_velocity": "550",
+                "speed": "500",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80325",
                     "fire_mode_id": "7740",
@@ -9758,6 +10087,7 @@
             "fire_mode": {
                 "fire_mode_id": "80170",
                 "pellets_per_shot": "1",
+                "speed": "520",
                 "fire_mode_id_join_fire_group_to_fire_mode": {
                     "fire_group_id": "80744",
                     "fire_mode_id": "80170",

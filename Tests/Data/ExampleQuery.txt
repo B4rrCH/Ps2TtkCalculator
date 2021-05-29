@@ -7,7 +7,7 @@ item?item_category_id=3,4,5,6,7,8,11,12,19,24
 &c:show=item_id,item_category_id,name,faction_id,image_path
 &c:has=name,image_path
 &c:join=fire_mode
-    ^show:fire_mode_id'pellets_per_shot'muzzle_velocity
+    ^show:fire_mode_id'pellets_per_shot'muzzle_velocity'speed
     ^inject_at:fire_mode
     (
         fire_mode_2
