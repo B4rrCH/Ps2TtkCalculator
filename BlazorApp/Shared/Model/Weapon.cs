@@ -1,6 +1,4 @@
-using System.Text.Json;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using Ps2TtkCalculator.Shared.Dto;
 
 namespace Ps2TtkCalculator.Shared.Model
@@ -35,17 +33,28 @@ namespace Ps2TtkCalculator.Shared.Model
                 MinDamageRange_m = int.Parse(item.FireMode.FireMode2.MinDamageRange)
             };
 
-            int boltActionCyclingTime_ms = int.Parse(item.FireMode.FireModeToFireGroup.FireGroup?.ChamberDurationMs ?? "0");
 
             Faction faction = (Faction)int.Parse(item.Faction ?? "0");
             WeaponCategory weaponCategory = (Model.WeaponCategory)int.Parse(item.WeaponCategory);
 
-            if (!int.TryParse(item.Ammo?.ClipSize, out int clipSize))
+            if (int.TryParse(item.Ammo?.ClipSize, out int clipSize))
             {
-                if (name.Contains("Phaseshift")) clipSize = 100;
+                // Do nothing, TryParse succeeded
             }
-            int v1 = int.Parse(item.FireMode.FireMode2.FireRefireMs);
-            if (!double.TryParse(item.FireMode.FireMode2.DamageHeadMultiplier, out double damageHeadMultiplier))
+            else if (name.Contains("Phaseshift"))
+            {
+                clipSize = 100;
+            }
+            else
+            {
+                throw new ArgumentException($"The item with name '{item.Name.En}' does not have a clip size.", nameof(item));
+            }
+
+            int refireTimeNonBoltAction_ms = int.Parse(item.FireMode.FireMode2.FireRefireMs);
+            int boltActionCyclingTime_ms = int.Parse(item.FireMode.FireModeToFireGroup.FireGroup?.ChamberDurationMs ?? "0");
+
+            if (!double.TryParse(item.FireMode.FireMode2.DamageHeadMultiplier,
+                                 out double damageHeadMultiplier))
             {
                 if (name.Contains("Soldier Soaker"))
                 {
@@ -65,8 +74,7 @@ namespace Ps2TtkCalculator.Shared.Model
                 WeaponCategory = weaponCategory,
                 ImagePath = item.ImagePath,
                 MagazineSize = clipSize,
-                RefireTime_ms = v1
-                                + boltActionCyclingTime_ms,
+                RefireTime_ms = refireTimeNonBoltAction_ms + boltActionCyclingTime_ms,
                 HeadshotMultiplier = 1.0 + damageHeadMultiplier,
                 MuzzleVelocity_mps = muzzleVelocity_mps,
                 DamageModel = damageModel
@@ -77,23 +85,12 @@ namespace Ps2TtkCalculator.Shared.Model
 
         private static int GetMuzzleVelocityHardcodedCases(Item item)
         {
-            if (int.TryParse(item.FireMode.MuzzleVelocity, out int muzzleVelocity))
-            {
-                return muzzleVelocity;
-            }
-
-            else if ((Model.WeaponCategory)int.Parse(item.WeaponCategory) == WeaponCategory.Crossbow)
+            if ((Model.WeaponCategory)int.Parse(item.WeaponCategory) == WeaponCategory.Crossbow)
             {
                 return 150;
             }
 
             string name = item.Name.En;
-            string[] weaponsWithMuzzleVelocity550 = { "Showdown", "Maw", "Watchman", "Bishop", "Obelisk", "Dragoon", "Promise", "Tranquility" };
-
-            if (weaponsWithMuzzleVelocity550.Any(x => name.Contains(x)))
-            {
-                return 550;
-            }
 
             return name.Contains("Flare Gun") ? 50 :
                    name.Contains("Deep Freeze") ? 50 :
@@ -114,6 +111,14 @@ namespace Ps2TtkCalculator.Shared.Model
                    name.Contains("Lacerta") ? 600 :
                    name.Contains("SR-200") ? 600 :
                    name.Contains("Punisher") ? 350 :
+                   name.Contains("Showdown") ? 550 :
+                   name.Contains("Maw") ? 550 :
+                   name.Contains("Watchman") ? 550 :
+                   name.Contains("Bishop") ? 550 :
+                   name.Contains("Obelisk") ? 550 :
+                   name.Contains("Dragoon") ? 550 :
+                   name.Contains("Promise") ? 550 :
+                   name.Contains("Tranquility") ? 550 :
                    throw new System.Exception($"Could not determine Muzzle Velocity of {name}.");
         }
     }

@@ -29,6 +29,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
             Assert.Equal(2.0, orion.HeadshotMultiplier);
             Assert.Equal(50, orion.MagazineSize);
             Assert.Equal(540, orion.MuzzleVelocity_mps);
+            Assert.Contains("Orion", orion.Name, System.StringComparison.InvariantCultureIgnoreCase);
         }
 
         [Fact]
