@@ -1,4 +1,4 @@
-@using CurvePoint=System.Tuple<double, double>
+@using CurvePoint = System.Tuple<double, double>
 
 <RadzenCard>
     <RadzenPanel AllowCollapse="true">
@@ -8,19 +8,16 @@
         <ChildContent>
             <RadzenChart Visible=@(Curve1 != null && Curve2 != null)>
                 <RadzenLineSeries Data=Curve1 CategoryProperty="Item1" ValueProperty="Item2" Title="First Player">
-
+                    <RadzenMarkers MarkerType="MarkerType.Circle" />
                 </RadzenLineSeries>
                 <RadzenLineSeries Data=Curve2 CategoryProperty="Item1" ValueProperty="Item2" Title="Second Player">
-
+                    <RadzenMarkers MarkerType="MarkerType.Circle" />
                 </RadzenLineSeries>
-                <RadzenCategoryAxis FormatString="{0:0.00} s"/>
-                <RadzenValueAxis FormatString="{0:P2}"/>
+                <RadzenCategoryAxis FormatString="{0:0.00} s" />
+                <RadzenValueAxis FormatString="{0:P2}" />
             </RadzenChart>
         </ChildContent>
     </RadzenPanel>
-    <RadzenButton Click="e => OnCalculateRequest.InvokeAsync()">
-        Calculate curves
-    </RadzenButton>
 </RadzenCard>
 
 @code{
@@ -28,7 +25,4 @@
     public IEnumerable<CurvePoint> Curve1 { get; set; }
     [Parameter]
     public IEnumerable<CurvePoint> Curve2 { get; set; }
-    [Parameter]
-    public EventCallback OnCalculateRequest { get; set; }
-
 }

@@ -137,7 +137,7 @@ namespace Ps2TtkCalculator.Shared.Model
             }
         }
 
-        public static Weapon FromItem(Dto.Item item)
+        public static Weapon FromItem(Item item)
         {
             string name = item.Name?.En;
             if (string.IsNullOrEmpty(name))
@@ -157,7 +157,7 @@ namespace Ps2TtkCalculator.Shared.Model
 
 
             Faction faction = (Faction)int.Parse(item.Faction ?? "0");
-            WeaponCategory weaponCategory = (Model.WeaponCategory)int.Parse(item.WeaponCategory);
+            WeaponCategory weaponCategory = (WeaponCategory)int.Parse(item.WeaponCategory);
 
             if (!int.TryParse(item.Ammo?.ClipSize, out int clipSize))
             {

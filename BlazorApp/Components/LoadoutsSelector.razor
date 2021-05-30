@@ -8,43 +8,46 @@
                 <h2>Loadouts Selection</h2>
             </HeaderTemplate>
             <ChildContent>
-                <table>
-                    <tr>
-                        <td>
-                            <WeaponEditor Weapon="@Player1.Weapon" />
-                        </td>
-                        <td>
-                            <WeaponEditor Weapon="@Player2.Weapon" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <TargetEditor Target="@Player1.Target" Title="Target 1" />
-                        </td>
-                        <td>
-                            <TargetEditor Target="@Player2.Target" Title="Target 2" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
-                        </td>
-                        <td>
-                            <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <RadzenCard>
-                                <span>Range between the players
-                                    <RadzenNumeric TValue="int" Min="0" Max="400" Step="50" Format="0 m"
-                                    @bind-Value=@Range />
-                                </span><br />
-                                <RadzenSlider @bind-Value=@Range TValue="int" Min="0" Max="400" Style="width:100%" />
-                            </RadzenCard>
-                        </td>
-                    </tr>
-                </table>
+                <div class="table-responsive-xl">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <WeaponEditor Weapon="@Player1.Weapon" />
+                            </td>
+                            <td>
+                                <WeaponEditor Weapon="@Player2.Weapon" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <TargetEditor Target="@Player1.Target" Title="Target 1" />
+                            </td>
+                            <td>
+                                <TargetEditor Target="@Player2.Target" Title="Target 2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
+                            </td>
+                            <td>
+                                <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <RadzenCard>
+                                    <span>
+                                        Range between the players
+                                        <RadzenNumeric TValue="int" Min="0" Max="400" Step="50" Format="0 m"
+                                                       @bind-Value=@Range />
+                                    </span><br />
+                                    <RadzenSlider @bind-Value=@Range TValue="int" Min="0" Max="400" Style="width:100%" />
+                                </RadzenCard>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </ChildContent>
         </RadzenPanel>
     </RadzenCard>

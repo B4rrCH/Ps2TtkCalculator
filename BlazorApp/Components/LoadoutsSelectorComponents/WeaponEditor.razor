@@ -1,7 +1,23 @@
+@using Ps2TtkCalculator.Shared.Dto
+
+@inject DialogService dialogService
+@inject HttpClient httpClient
+
 @if (Weapon != null) {
 <RadzenCard>
-    <h3>@Weapon.Name</h3>
     <table>
+        <tr>
+            <th colspan="2" >
+                <RadzenButton Click="@AskUserForWeapon"><h3>@Weapon.Name</h3></RadzenButton>
+            </th>
+        </tr>
+        @if (Weapon.ImagePath != null) {
+            <tr>
+                <td colspan="2">
+                    <RadzenImage Path="@(censusBaseUri+Weapon.ImagePath)"/>
+                </td>
+            </tr>
+        }
         <tr>
             <td>Headshot multiplier</td>
             <td>
@@ -56,5 +72,46 @@
 
 @code {
     [Parameter]
-    public Weapon Weapon { get; set; } = null;
+    public Weapon Weapon { get; set; }
+
+    private const string censusBaseUri = "https://census.daybreakgames.com";
+
+    protected override async Task OnInitializedAsync()
+    {
+        const int orionItemId = 80;
+        await SetWeaponFromCensus(orionItemId);
+        await base.OnInitializedAsync();
+    }
+
+    private async Task AskUserForWeapon()
+    {
+        int? ItemId = await dialogService.OpenAsync<WeaponSelector>("Choose a weapon",
+                                                                    options: new DialogOptions() { Width = "90%" });
+        if (ItemId is int itemId)
+        {
+            await SetWeaponFromCensus(itemId);
+        }
+    }
+
+    private async Task SetWeaponFromCensus(int itemId)
+    {
+        var weaponRequestUri = QueryUris.GetWeaponFullRequestUri(itemId);
+        var itemList = await httpClient.GetFromJsonAsync<ItemList>(weaponRequestUri);
+        var item = itemList.Items.FirstOrDefault();
+        var tmp = Weapon.FromItem(item);
+
+        if (tmp != null)
+        {
+            Weapon.DamageModel = tmp.DamageModel;
+            Weapon.Faction = tmp.Faction;
+            Weapon.HeadshotMultiplier = tmp.HeadshotMultiplier;
+            Weapon.ImagePath = tmp.ImagePath;
+            Weapon.MagazineSize = tmp.MagazineSize;
+            Weapon.MuzzleVelocity_mps = tmp.MuzzleVelocity_mps;
+            Weapon.Name = tmp.Name;
+            Weapon.RefireTime_ms = tmp.RefireTime_ms;
+            Weapon.WeaponCategory = tmp.WeaponCategory;
+        }
+
+    }
 }

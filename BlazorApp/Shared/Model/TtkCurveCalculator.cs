@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 using CurvePoint = System.Tuple<double, double>;
 
@@ -12,7 +11,6 @@ namespace Ps2TtkCalculator.Shared.Model
     {
         private readonly Weapon weapon;
         private readonly Target target;
-        private readonly int range_m;
         private readonly double[] weights;
         private readonly int damagePerBodyShot;
         private readonly int damagePerHeadShot;
@@ -23,7 +21,6 @@ namespace Ps2TtkCalculator.Shared.Model
         {
             this.weapon = weapon;
             this.target = target;
-            this.range_m = range_m;
 
             this.weights = new double[]
             {

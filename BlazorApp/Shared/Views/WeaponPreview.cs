@@ -15,7 +15,7 @@ namespace Ps2TtkCalculator.Shared.Views
         public string WeaponCategory { get; set; }
         public string ImagePath { get; set; }
 
-        public static WeaponPreview FromItem(Item item) => new WeaponPreview
+        public static WeaponPreview FromItem(Item item) => new ()
         {
             ItemId = int.Parse(item.ItemId),
             Name = item.Name.En,

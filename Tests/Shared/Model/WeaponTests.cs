@@ -8,11 +8,6 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
 {
     public class WeaponTests
     {
-        private class Counter
-        {
-            public int? returned { get; set; }
-        }
-
         [Fact]
         public void FromJson_SingleQueryResult_CanBeParsed()
         {
