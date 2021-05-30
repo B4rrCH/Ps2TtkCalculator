@@ -1,35 +1,49 @@
-﻿@using Ps2TtkCalculator.Shared.Dto
-@using System.Text.Json 
+﻿@page "/Weapon-Selection-Dialog"
+
+@using Ps2TtkCalculator.Shared.Dto
+
 @inject HttpClient httpClient
+@inject DialogService dialogService 
 
-<h3>WeaponSelector</h3>
-
-@if (Weapons != null)
-{
+@if (Weapons != null) {
 <RadzenDataGrid AllowFiltering="true" TItem="WeaponPreview" AllowPaging="true" PageSize="10" Data="@Weapons" FilterMode="FilterMode.Simple" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" LogicalFilterOperator="LogicalFilterOperator.And">
     <Columns>
-        <RadzenDataGridColumn TItem="WeaponPreview" Property="Name" Title="Name" />
+        <RadzenDataGridColumn TItem="WeaponPreview" Property="Name" Title="Name">
+            <Template Context="weaponPreview">
+                <RadzenButton Click="@((args) => dialogService.Close(weaponPreview.ItemId) )">
+                    @weaponPreview.Name
+                </RadzenButton>
+            </Template>
+        </RadzenDataGridColumn>
         <RadzenDataGridColumn TItem="WeaponPreview" Property="Faction" Title="Faction" />
         <RadzenDataGridColumn TItem="WeaponPreview" Property="WeaponCategory" Title="Weapon Category" />
-        <RadzenDataGridColumn TItem="WeaponPreview" Property="ImagePath" Sortable="false" Filterable="false" Width="256" Frozen="true">
+        <RadzenDataGridColumn TItem="WeaponPreview" Property="ImagePath" Sortable="false" Filterable="false" Width="140px" Frozen="true">
             <Template Context="weaponPreview" >
-                <RadzenImage Path="@(censusUri+weaponPreview.ImagePath)" />
+                <RadzenImage Path="@(censusUri+weaponPreview.ImagePath)" Style="zoom:0.5"/>
             </Template>
         </RadzenDataGridColumn>
     </Columns>
 </RadzenDataGrid>
+} else {
+    <h3>Loading...</h3>
 }
+
+<div class="row">
+    <div class="col-md-12">
+        <RadzenButton Click="@((args) => dialogService.Close(null as int?))" Text="Cancel" ButtonStyle="ButtonStyle.Secondary" />
+    </div>
+</div>
 
 @code {
     const string censusUri = "https://census.daybreakgames.com";
+
     public IEnumerable<WeaponPreview> Weapons { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
+        Console.WriteLine("WeaponSelector OnInitializedAsync called");
         var weaponListQueryUri = QueryUris.GetWeaponListRequestUri();
         var itemList = await httpClient.GetFromJsonAsync<ItemList>(weaponListQueryUri);
-        //var itemListJson = await httpClient.GetAsync(weaponListQueryUri);
-        //var itemList = await itemListJson.Content.ReadFromJsonAsync<ItemList>();
 
         Weapons = itemList.Items.Where(item => !string.IsNullOrEmpty(item.Name?.En)).Select(WeaponPreview.FromItem);
         await base.OnInitializedAsync();

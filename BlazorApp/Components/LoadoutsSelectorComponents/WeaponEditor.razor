@@ -1,60 +1,130 @@
-@if (Weapon != null) {
-<RadzenCard>
-    <h3>@Weapon.Name</h3>
-    <table>
-        <tr>
-            <td>Headshot multiplier</td>
-            <td>
-                <RadzenNumeric TValue="double" Format="0.00" Step="0.5" @bind-Value=@Weapon.HeadshotMultiplier />
-            </td>
-        </tr>
-        <tr>
-            <td>Magazine size</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MagazineSize />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>Refire Time (ms)</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.RefireTime_ms />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>Muzzle Velocity (m/s)</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MuzzleVelocity_mps />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>Max Damage</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamage />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>Max Damage Range (m)</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamageRange_m />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>Min Damage</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamage />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>Min Damage Range (m)</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamageRange_m />
-            </td>
-        </tr>
-    </table>
-</RadzenCard>
+@using Ps2TtkCalculator.Shared.Dto
+
+@inject DialogService dialogService
+@inject HttpClient httpClient
+
+@if (Weapon != null)
+{
+    <RadzenCard>
+        <table>
+            <tr>
+                <th colspan="2">
+                    <h3>@Weapon.Name</h3> <RadzenButton Click="@AskUserForWeapon">Change</RadzenButton>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @if (Weapon.ImagePath != null)
+                    {
+                        <RadzenImage Path="@(censusBaseUri + Weapon.ImagePath)" />
+                    }
+                    else
+                    {
+                        <RadzenImage Path="@(censusBaseUri + defaultImagePath)" />
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>Headshot multiplier</td>
+                <td>
+                    <RadzenNumeric TValue="double" Format="0.00" Step="0.5" @bind-Value=@Weapon.HeadshotMultiplier Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+            <tr>
+                <td>Magazine size</td>
+                <td>
+                    <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MagazineSize Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+            <tr style="margin-top: 1rem">
+                <td>Refire Time (ms)</td>
+                <td>
+                    <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.RefireTime_ms Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+            <tr style="margin-top: 1rem">
+                <td>Muzzle Velocity (m/s)</td>
+                <td>
+                    <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MuzzleVelocity_mps Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+            <tr style="margin-top: 1rem">
+                <td>Max Damage</td>
+                <td>
+                    <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamage Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+            <tr style="margin-top: 1rem">
+                <td>Max Damage Range (m)</td>
+                <td>
+                    <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamageRange_m Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+            <tr style="margin-top: 1rem">
+                <td>Min Damage</td>
+                <td>
+                    <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamage Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+            <tr style="margin-top: 1rem">
+                <td>Min Damage Range (m)</td>
+                <td>
+                    <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamageRange_m Change="@((args) => OnChange())" />
+                </td>
+            </tr>
+        </table>
+    </RadzenCard>
 }
 
 @code {
     [Parameter]
-    public Weapon Weapon { get; set; } = null;
+    public Weapon Weapon { get; set; }
+
+    private const string censusBaseUri = "https://census.daybreakgames.com";
+    private const string defaultImagePath = "/files/ps2/images/static/3655.png";
+
+    protected override async Task OnInitializedAsync()
+    {
+        const int orionItemId = 80;
+        await SetWeaponFromCensus(orionItemId);
+        await base.OnInitializedAsync();
+    }
+
+    private async Task AskUserForWeapon()
+    {
+        int? ItemId = await dialogService.OpenAsync<WeaponSelector>("Choose a weapon",
+                                                                    options: new DialogOptions() { Width = "90%" });
+        if (ItemId is int itemId)
+        {
+            await SetWeaponFromCensus(itemId);
+        }
+    }
+
+    private async Task SetWeaponFromCensus(int itemId)
+    {
+        var weaponRequestUri = QueryUris.GetWeaponFullRequestUri(itemId);
+        var itemList = await httpClient.GetFromJsonAsync<ItemList>(weaponRequestUri);
+        var item = itemList.Items.FirstOrDefault();
+        var tmp = Weapon.FromItem(item);
+
+        if (tmp != null)
+        {
+            Weapon.DamageModel = tmp.DamageModel;
+            Weapon.Faction = tmp.Faction;
+            Weapon.HeadshotMultiplier = tmp.HeadshotMultiplier;
+            Weapon.ImagePath = tmp.ImagePath;
+            Weapon.MagazineSize = tmp.MagazineSize;
+            Weapon.MuzzleVelocity_mps = tmp.MuzzleVelocity_mps;
+            Weapon.Name = tmp.Name;
+            Weapon.RefireTime_ms = tmp.RefireTime_ms;
+            Weapon.WeaponCategory = tmp.WeaponCategory;
+        }
+
+    }
+
+    private void OnChange()
+    {
+        Weapon.Name = "Custom Weapon";
+        Weapon.ImagePath = null;
+    }
 }

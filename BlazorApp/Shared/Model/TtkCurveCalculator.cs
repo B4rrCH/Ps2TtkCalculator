@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 using CurvePoint = System.Tuple<double, double>;
 
@@ -12,18 +11,18 @@ namespace Ps2TtkCalculator.Shared.Model
     {
         private readonly Weapon weapon;
         private readonly Target target;
-        private readonly int range_m;
         private readonly double[] weights;
         private readonly int damagePerBodyShot;
         private readonly int damagePerHeadShot;
         private readonly double bulletTravelTime_s;
 
-        private CurvePoint[] curve = null;
+        private CurvePoint[] density = null;
+        private CurvePoint[] cummulativeDistribution = null;
+
         public TtkCurveCalculator(Weapon weapon, Shooter shooter, Target target, int range_m)
         {
             this.weapon = weapon;
             this.target = target;
-            this.range_m = range_m;
 
             this.weights = new double[]
             {
@@ -40,25 +39,29 @@ namespace Ps2TtkCalculator.Shared.Model
 
         public async Task<IEnumerable<CurvePoint>> GetCurve()
         {
-            return curve ??= (await Task.FromResult(CalculateCurve().ToArray()));
+            return density ??= (await Task.FromResult(CalculateCurve().ToArray()));
+        }
+
+        public async Task<IEnumerable<CurvePoint>> GetCumulativeDistribution()
+        {
+            return cummulativeDistribution ??= (await Task.FromResult(CalculateCummulativeDistribution().ToArray()));
         }
 
         private IEnumerable<CurvePoint> CalculateCurve()
         {
-            var cdf = CummulativeDistribution();
-            foreach ((var earlier, var later) in cdf.Zip(cdf.Skip(1)))
+            cummulativeDistribution = CalculateCummulativeDistribution().ToArray();
+            foreach ((var earlier, var later) in cummulativeDistribution.Zip(cummulativeDistribution.Skip(1)))
             {
-                yield return Tuple.Create(((double)earlier.Time_ms / 1000)
-                                           + bulletTravelTime_s,
-                                          later.Probability - earlier.Probability);
+                yield return Tuple.Create(earlier.Item1, later.Item2 - earlier.Item2);
             }
         }
-        private IEnumerable<(int Time_ms, double Probability)> CummulativeDistribution()
+        private IEnumerable<CurvePoint> CalculateCummulativeDistribution()
         {
             int maxShots = Math.Min(weapon.MagazineSize, 100);
             for (int nrShots = 0; nrShots <= maxShots; ++nrShots)
             {
-                yield return (nrShots * weapon.RefireTime_ms, CummulativeDistributionAt(nrShots));
+                yield return Tuple.Create(nrShots * weapon.RefireTime_ms / 1000.0 + bulletTravelTime_s, 
+                                          CummulativeDistributionAt(nrShots));
             }
         }
 
