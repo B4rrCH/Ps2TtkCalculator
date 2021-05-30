@@ -14,12 +14,12 @@
                     <RadzenMarkers MarkerType="MarkerType.Circle" />
                 </RadzenLineSeries>
                 <RadzenCategoryAxis FormatString="{0:0.00} s" />
-                <RadzenValueAxis FormatString="{0:P2}" />
+                <RadzenValueAxis FormatString="{0:P2}" Min="0.0"/>
             </RadzenChart>
             @if (WinProbabilities != null)
             {
                 <table class="table">
-                    <tr><th>Event</th><th>Probability</th></tr>
+                    <tr><th>Outcome</th><th>Probability</th></tr>
                     <tr><td>Player 1 wins</td><td>@($"{WinProbabilities.Player1Wins:P1}")</td></tr>
                     <tr><td>Player 2 wins</td><td>@($"{WinProbabilities.Player2Wins:P1}")</td></tr>
                     <tr><td>Kill trade</td>  <td>@($"{WinProbabilities.Trade:P1}")</td></tr>
