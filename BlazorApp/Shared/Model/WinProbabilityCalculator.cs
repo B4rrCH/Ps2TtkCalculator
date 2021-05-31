@@ -28,11 +28,12 @@ namespace Ps2TtkCalculator.Shared.Model
         private static double GetProbabilityPlayer1Wins(IEnumerable<CurvePoint> density1,
                                                         IEnumerable<CurvePoint> cummulativeDistribution2)
         {
-            // P(X < Y) = ∑ P(Y < t) * P(X = t)
+            // P(X < Y) = ∑ P(X = t) * P(t < Y)
             double RiemanStiltjesFormula(CurvePoint time_density)
             {
+                CurvePoint firstAfter = cummulativeDistribution2.FirstOrDefault(t => t.Item1 > time_density.Item1);
                 CurvePoint lastBefore = cummulativeDistribution2.LastOrDefault(t => t.Item1 <= time_density.Item1);
-                return time_density.Item2 * (lastBefore?.Item2 ?? 0.0);
+                return time_density.Item2 * (1.0 - (firstAfter ?? cummulativeDistribution2.Last()).Item2);
             }
             
             return density1.Sum(RiemanStiltjesFormula);
@@ -41,7 +42,7 @@ namespace Ps2TtkCalculator.Shared.Model
         private static double GetProbabilityOfKillTrade(IEnumerable<CurvePoint> density1,
                                                         IEnumerable<CurvePoint> density2)
         {
-            // P(X = Y) = ∑ P(Y = t) * P(X = t)
+            // P(X = Y) = ∑ P(X = t) * P(Y = t) 
             double RiemanStiltjesFormula(CurvePoint time_density)
             {
                 double p1 = time_density.Item2;

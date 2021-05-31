@@ -1,45 +1,107 @@
-@if (Target != null) {
-<RadzenCard>
-    <h3>@Title</h3>
-    <table>
-        <tr style="margin-top: 1rem">
-            <td>HP Pool</td>
-            <td>
-                <RadzenNumeric TValue="int" Min="0" Step="100" @bind-Value=@Target.MaxHp />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>
-                Small arms resistance<br />
-                Bodyshot
-            </td>
+@using System.ComponentModel
+@using Ps2TtkCalculator.Shared.ExtensionMethods
 
-            <td>
-                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.05" Format="P1" @bind-Value=@Target.ResistanceBodyshot />
-            </td>
-        </tr>
-        <tr style="margin-top: 1rem">
-            <td>
-                Small arms resistance<br />
-                Headshot
-
-            </td>
-            <td>
-                <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.05" Format="P1" @bind-Value=@Target.ResistanceHeadshot />
-            </td>
-
-        </tr>
-    </table>
-</RadzenCard>
+@if (Target != null)
+{
+<tr>
+    <td>HP Pool</td>
+    <td>
+        <RadzenDropDown TValue="@HealthType" Data="@(Enum.GetValues<HealthType>())" @bind-Value=@Health Change="@((args) => OnChange())">
+            <Template>
+                @(((HealthType)context).GetDescription())
+            </Template>
+        </RadzenDropDown>
+    </td>
+</tr>
+<tr>
+    <td>Resistance type</td>
+    <td>
+        <RadzenDropDown TValue="@ResistanceType" Data="@(Enum.GetValues<ResistanceType>())" @bind-Value=@Resistance Change="@((args) => OnChange())">
+            <Template>
+                @(((ResistanceType)context).GetDescription())
+            </Template>
+        </RadzenDropDown>
+    </td>
+</tr>
 }
 
 @code {
+    enum HealthType
+    {
+        [Description("Normal (1000)")]
+        Normal,
+        [Description("NMG/Adren Shield (1450)")]
+        NanomeshGenerator,
+        [Description("Infiltrator (900)")]
+        Infiltrator
+    }
 
+    enum ResistanceType
+    {
+        [Description("Normal (0%)")]
+        Normal,
+        [Description("Nanoweave Armor (20% body-only)")]
+        NanoWeaveArmor,
+        [Description("Symbiote (20%)")]
+        Symbiote,
+        [Description("ResistShield (35%)")]
+        ReistShield
+    }
+
+    private HealthType Health { get; set; }
+    private ResistanceType Resistance { get; set; }
 
     [Parameter]
     public Target Target { get; set; }
 
-    [Parameter]
-    public string Title { get; set; }
+    private void OnChange()
+    {
+        Target.MaxHp = Health switch
+        {
+            HealthType.Normal => 1000,
+            HealthType.NanomeshGenerator => 1450,
+            HealthType.Infiltrator => 900,
+            _ => throw new ArgumentException(nameof(Health))
+        };
+
+        Target.ResistanceBodyshot = Resistance switch
+        {
+            ResistanceType.Normal => 0.0,
+            ResistanceType.NanoWeaveArmor => 0.2,
+            ResistanceType.Symbiote => 0.2,
+            ResistanceType.ReistShield => 0.35,
+            _ => throw new ArgumentException(nameof(Resistance))
+        };
+
+        Target.ResistanceHeadshot = Resistance switch
+        {
+            ResistanceType.Normal => 0.0,
+            ResistanceType.NanoWeaveArmor => 0.0,
+            ResistanceType.Symbiote => 0.2,
+            ResistanceType.ReistShield => 0.35,
+            _ => throw new ArgumentException(nameof(Resistance))
+        };
+    }
+
+    private static string GetDescription(Enum value)
+    {
+        Type type = value.GetType();
+        string name = Enum.GetName(type, value);
+        if (name != null)
+        {
+            System.Reflection.FieldInfo field = type.GetField(name);
+            if (field != null)
+            {
+                DescriptionAttribute attr =
+                       Attribute.GetCustomAttribute(field,
+                         typeof(DescriptionAttribute)) as DescriptionAttribute;
+                if (attr != null)
+                {
+                    return attr.Description;
+                }
+            }
+        }
+        return null;
+    }
 }
 

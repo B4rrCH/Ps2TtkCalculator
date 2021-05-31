@@ -12,26 +12,42 @@
                     <table class="table">
                         <tr>
                             <td>
-                                <WeaponEditor Weapon="@Player1.Weapon" />
+                                <RadzenCard>
+                                    <h2 style="text-align: center">Player 1</h2>
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <th colspan="2">Weapon</th>
+                                        </tr>
+                                        <WeaponEditor Weapon="@Player1.Weapon" />
+                                        <tr>
+                                            <th colspan="2">Target</th>
+                                        </tr>
+                                        <TargetEditor Target="@Player1.Target" />
+                                        <tr>
+                                            <th colspan="2">Shooter</th>
+                                        </tr>
+                                        <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
+                                    </table>
+                                </RadzenCard>
                             </td>
                             <td>
-                                <WeaponEditor Weapon="@Player2.Weapon" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <TargetEditor Target="@Player1.Target" Title="Target 1" />
-                            </td>
-                            <td>
-                                <TargetEditor Target="@Player2.Target" Title="Target 2" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
-                            </td>
-                            <td>
-                                <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
+                                <RadzenCard>
+                                    <h2 style="text-align: center">Player 2</h2>
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <th colspan="2">Weapon</th>
+                                        </tr>
+                                        <WeaponEditor Weapon="@Player2.Weapon" />
+                                        <tr>
+                                            <th colspan="2">Target</th>
+                                        </tr>
+                                        <TargetEditor Target="@Player2.Target" />
+                                        <tr>
+                                            <th colspan="2">Shooter</th>
+                                        </tr>
+                                        <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
+                                    </table>
+                                </RadzenCard>
                             </td>
                         </tr>
                         <tr>
