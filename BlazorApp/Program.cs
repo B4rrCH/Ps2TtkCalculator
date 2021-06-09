@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Radzen;
+using MudBlazor.Services;
 
 namespace Ps2TtkCalculator
 {
@@ -20,6 +21,8 @@ namespace Ps2TtkCalculator
             builder.Services.AddScoped<NotificationService>();
             builder.Services.AddScoped<TooltipService>();
             builder.Services.AddScoped<ContextMenuService>();
+
+            builder.Services.AddMudServices();
 
             await builder.Build().RunAsync();
         }
