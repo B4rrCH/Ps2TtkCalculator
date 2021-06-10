@@ -1,33 +1,53 @@
-@if (Shooter != null) {
-<tr>
-    <td>
-        <span>Accuracy</span>
-    </td>
-    <td>
-        <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" Format="P0" @bind-Value=@Shooter.Acc />
-    </td>
-</tr>
-<tr>
-    <td colspan="2">
-        <RadzenSlider @bind-Value=@Shooter.Acc TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />
-    </td>
-</tr>
-<tr>
-    <td>
-        <span>Headshot Ratio</span>
-    </td>
-    <td>
-        <RadzenNumeric TValue="double" Min="0" Max="1" Step="0.1" Format="P0" @bind-Value=@Shooter.Hsr />
-    </td>
-</tr>
-<tr>
-    <td colspan="2">
-        <RadzenSlider @bind-Value=@Shooter.Hsr TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />
-    </td>
-</tr>
+@using MudBlazor
+
+@if (Shooter != null)
+{
+    <tr>
+        <td colspan="2">
+            <MudSlider @bind-Value=@AccurracyPercent Min="0" Max="100" Step="1" Label>
+                <MudNumericField @bind-Value=@AccurracyPercent
+                                 Format="0"
+                                 Step="10"
+                                 Label="Accuracy"
+                                 Min="0"
+                                 Max="100"
+                                 AdornmentText="%"
+                                 Adornment="MudBlazor.Adornment.End" />
+            </MudSlider>
+            @*<RadzenSlider @bind-Value=@Shooter.Acc TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />*@
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <MudSlider @bind-Value=@HsrPercent Min="0" Max="100" Step="1" Label>
+                <MudNumericField @bind-Value=@HsrPercent
+                                 Format="0"
+                                 Step="10"
+                                 Label="Headshot Ratio"
+                                 Min="0"
+                                 Max="100"
+                                 AdornmentText="%"
+                                 Adornment="MudBlazor.Adornment.End" />
+            </MudSlider>
+            @*<RadzenSlider @bind-Value=@Shooter.Hsr TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />*@
+        </td>
+    </tr>
 }
 
 @code {
     [Parameter]
     public Shooter Shooter { get; set; }
+
+    public double AccurracyPercent
+    {
+        get => Shooter.Acc * 100;
+        set => Shooter.Acc = value / 100;
+    }
+
+    public double HsrPercent
+    {
+        get => Shooter.Hsr * 100;
+        set => Shooter.Hsr = value / 100;
+    }
 }

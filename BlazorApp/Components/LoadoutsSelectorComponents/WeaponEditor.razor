@@ -9,7 +9,7 @@
     <tr>
         <th colspan="2">
             <MudTooltip Text="Change">
-                <MudBlazor.MudButton OnClick="@AskUserForWeapon" Variant="MudBlazor.Variant.Filled">@Weapon.Name</MudBlazor.MudButton>
+                <MudButton OnClick="@AskUserForWeapon" Variant="MudBlazor.Variant.Filled">@Weapon.Name</MudButton>
             </MudTooltip>
         </th>
     </tr>
@@ -77,7 +77,6 @@
                              Label="Maximum Damage" />
         </td>
         <td>
-
             <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamageRange_m
                              Format="0"
                              Step="5"
@@ -96,7 +95,6 @@
                              Label="Minimum Damage" />
         </td>
         <td>
-
             <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamageRange_m
                              Format="0"
                              Step="5"
