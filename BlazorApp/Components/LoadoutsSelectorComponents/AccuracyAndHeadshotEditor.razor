@@ -4,7 +4,7 @@
 {
     <tr>
         <td colspan="2">
-            <MudSlider @bind-Value=@AccurracyPercent Min="0" Max="100" Step="1" Label>
+            <MudSlider @bind-Value=@AccurracyPercent Min="0" Max="100" Step="1" >
                 <MudNumericField @bind-Value=@AccurracyPercent
                                  Format="0"
                                  Step="10"
@@ -14,13 +14,12 @@
                                  AdornmentText="%"
                                  Adornment="MudBlazor.Adornment.End" />
             </MudSlider>
-            @*<RadzenSlider @bind-Value=@Shooter.Acc TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />*@
         </td>
     </tr>
 
     <tr>
         <td colspan="2">
-            <MudSlider @bind-Value=@HsrPercent Min="0" Max="100" Step="1" Label>
+            <MudSlider @bind-Value=@HsrPercent Min="0" Max="100" Step="1">
                 <MudNumericField @bind-Value=@HsrPercent
                                  Format="0"
                                  Step="10"
@@ -30,7 +29,6 @@
                                  AdornmentText="%"
                                  Adornment="MudBlazor.Adornment.End" />
             </MudSlider>
-            @*<RadzenSlider @bind-Value=@Shooter.Hsr TValue="double" Min="0" Max="1" Step="0.01" Style="width:100%" />*@
         </td>
     </tr>
 }

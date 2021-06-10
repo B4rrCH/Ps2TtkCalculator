@@ -3,73 +3,59 @@
 
 @if (Player1 != null && Player2 != null)
 {
-<MudCard>
-    <RadzenPanel AllowCollapse="true" Style="">
-        <HeaderTemplate>
-            <h2>Loadouts Selection</h2>
-        </HeaderTemplate>
-        <ChildContent>
-            <div class="table-responsive-xl">
-                <table style="width:95%">
-                    <tr>
-                        <td>
-                            <MudCard>
-                                <h2 style="text-align: center">Player 1</h2>
-                                <table style="width: 95%">
-                                    <tr>
-                                        <th colspan="2">Weapon</th>
-                                    </tr>
-                                    <WeaponEditor Weapon="@Player1.Weapon" />
-                                    <tr>
-                                        <th colspan="2">Target</th>
-                                    </tr>
-                                    <TargetEditor Target="@Player1.Target" />
-                                    <tr>
-                                        <th colspan="2">Shooter</th>
-                                    </tr>
-                                    <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
-                                </table>
-                            </MudCard>
-                        </td>
-                        <td>
-                            <MudCard>
-                                <h2 style="text-align: center">Player 2</h2>
-                                <table style="width: 95%">
-                                    <tr>
-                                        <th colspan="2">Weapon</th>
-                                    </tr>
-                                    <WeaponEditor Weapon="@Player2.Weapon" />
-                                    <tr>
-                                        <th colspan="2">Target</th>
-                                    </tr>
-                                    <TargetEditor Target="@Player2.Target" />
-                                    <tr>
-                                        <th colspan="2">Shooter</th>
-                                    </tr>
-                                    <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
-                                </table>
-                            </MudCard>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <MudSlider @bind-Value=@Range Min="0" Max="400" Step="1" Label>
-                                <MudNumericField @bind-Value=@Range
-                                                 Format="0"
-                                                 Step="10"
-                                                 Label="Range"
-                                                 Min="0"
-                                                 Max="400"
-                                                 AdornmentText="m"
-                                                 Adornment="MudBlazor.Adornment.End" />
-                            </MudSlider>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </ChildContent>
-    </RadzenPanel>
-</MudCard>
+    <MudCard>
+        <RadzenPanel AllowCollapse="true" Style="">
+            <HeaderTemplate>
+                <h2>Loadouts Selection</h2>
+            </HeaderTemplate>
+            <ChildContent>
+                <div class="table-responsive-xl">
+                    <table style="width:95%">
+                        <tr>
+                            <td>
+                                <MudCard>
+                                    <MudCardContent>
+                                        <h2 style="text-align: center">Player 1</h2>
+                                        <table style="width: 100%">
+                                            <WeaponEditor Weapon="@Player1.Weapon" />
+                                            <TargetEditor Target="@Player1.Target" />
+                                            <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
+                                        </table>
+                                    </MudCardContent>
+                                </MudCard>
+                            </td>
+                            <td>
+                                <MudCard>
+                                    <MudCardContent>
+                                        <h2 style="text-align: center">Player 2</h2>
+                                        <table style="width: 100% ">
+                                            <WeaponEditor Weapon="@Player2.Weapon" />
+                                            <TargetEditor Target="@Player2.Target" />
+                                            <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
+                                        </table>
+                                    </MudCardContent>
+                                </MudCard>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <MudSlider @bind-Value=@Range Min="0" Max="400" Step="1" Label>
+                                    <MudNumericField @bind-Value=@Range
+                                                     Format="0"
+                                                     Step="10"
+                                                     Label="Range"
+                                                     Min="0"
+                                                     Max="400"
+                                                     AdornmentText="m"
+                                                     Adornment="MudBlazor.Adornment.End" />
+                                </MudSlider>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </ChildContent>
+        </RadzenPanel>
+    </MudCard>
 }
 
 @code {

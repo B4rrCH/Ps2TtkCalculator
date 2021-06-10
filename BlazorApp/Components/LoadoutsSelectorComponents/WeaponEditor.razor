@@ -15,14 +15,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            @if (Weapon.ImagePath != null)
-            {
-                <img src="@(censusBaseUri + Weapon.ImagePath)" />
-            }
-            else
-            {
-                <img src="@(censusBaseUri + defaultImagePath)" />
-            }
+            <img src="@(censusBaseUri + (Weapon.ImagePath ?? defaultImagePath))" />
         </td>
     </tr>
     <tr>
@@ -113,6 +106,8 @@
     private const string censusBaseUri = "https://census.daybreakgames.com";
     private const string defaultImagePath = "/files/ps2/images/static/3655.png";
 
+    private bool onChangeEnabled = false;
+
     protected override async Task OnInitializedAsync()
     {
         const int orionItemId = 80;
@@ -122,12 +117,14 @@
 
     private async Task AskUserForWeapon()
     {
+        onChangeEnabled = false;
         int? ItemId = await dialogService.OpenAsync<WeaponSelector>("Choose a weapon",
-                                                                    options: new Radzen.DialogOptions() { Width = "90%" });
+                                                                options: new Radzen.DialogOptions() { Width = "90%" });
         if (ItemId is int itemId)
         {
             await SetWeaponFromCensus(itemId);
         }
+        onChangeEnabled = true;
     }
 
     private async Task SetWeaponFromCensus(int itemId)
@@ -149,12 +146,14 @@
             Weapon.RefireTime_ms = tmp.RefireTime_ms;
             Weapon.WeaponCategory = tmp.WeaponCategory;
         }
-
     }
 
     private void OnChange()
     {
-        Weapon.Name = "Custom Weapon";
-        Weapon.ImagePath = null;
+        if (onChangeEnabled)
+        {
+            Weapon.Name = "Custom Weapon";
+            Weapon.ImagePath = null;
+        }
     }
 }
