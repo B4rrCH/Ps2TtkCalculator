@@ -4,24 +4,22 @@
 
 @if (Target != null)
 {
-    <tr>
-        <td>
-            <MudSelect T="@HealthType" @bind-Value="@Health" Label="HP Pool">
-                @foreach(var healthType in Enum.GetValues<HealthType>())
-                {
-                    <MudSelectItem Value="@healthType">@healthType.GetDescription()</MudSelectItem> 
-                }
-            </MudSelect>
-        </td>
-        <td>
-            <MudSelect T="@ResistanceType" @bind-Value="@Resistance" Label="Resistance type">
-                @foreach (var resistanceType in Enum.GetValues<ResistanceType>())
-                {
-                    <MudSelectItem Value="@resistanceType">@resistanceType.GetDescription()</MudSelectItem>
-                }
-            </MudSelect>
-        </td>
-    </tr>
+    <MudItem xs="6">
+        <MudSelect T="@HealthType" @bind-Value="@Health" Label="HP Pool">
+            @foreach (var healthType in Enum.GetValues<HealthType>())
+            {
+                <MudSelectItem Value="@healthType">@healthType.GetDescription()</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
+    <MudItem xs="6">
+        <MudSelect T="@ResistanceType" @bind-Value="@Resistance" Label="Resistance type">
+            @foreach (var resistanceType in Enum.GetValues<ResistanceType>())
+            {
+                <MudSelectItem Value="@resistanceType">@resistanceType.GetDescription()</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
 }
 
 @code {

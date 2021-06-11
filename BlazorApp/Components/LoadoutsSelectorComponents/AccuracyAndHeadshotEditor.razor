@@ -2,35 +2,30 @@
 
 @if (Shooter != null)
 {
-    <tr>
-        <td colspan="2">
-            <MudSlider @bind-Value=@AccurracyPercent Min="0" Max="100" Step="1" >
-                <MudNumericField @bind-Value=@AccurracyPercent
-                                 Format="0"
-                                 Step="10"
-                                 Label="Accuracy"
-                                 Min="0"
-                                 Max="100"
-                                 AdornmentText="%"
-                                 Adornment="MudBlazor.Adornment.End" />
-            </MudSlider>
-        </td>
-    </tr>
-
-    <tr>
-        <td colspan="2">
-            <MudSlider @bind-Value=@HsrPercent Min="0" Max="100" Step="1">
-                <MudNumericField @bind-Value=@HsrPercent
-                                 Format="0"
-                                 Step="10"
-                                 Label="Headshot Ratio"
-                                 Min="0"
-                                 Max="100"
-                                 AdornmentText="%"
-                                 Adornment="MudBlazor.Adornment.End" />
-            </MudSlider>
-        </td>
-    </tr>
+    <MudItem xs="12">
+        <MudSlider @bind-Value=@AccurracyPercent Min="0" Max="100" Step="1">
+            <MudNumericField @bind-Value=@AccurracyPercent
+                             Format="0"
+                             Step="10"
+                             Label="Accuracy"
+                             Min="0"
+                             Max="100"
+                             AdornmentText="%"
+                             Adornment="MudBlazor.Adornment.End" />
+        </MudSlider>
+    </MudItem>
+    <MudItem xs="12">
+        <MudSlider @bind-Value=@HsrPercent Min="0" Max="100" Step="1">
+            <MudNumericField @bind-Value=@HsrPercent
+                             Format="0"
+                             Step="10"
+                             Label="Headshot Ratio"
+                             Min="0"
+                             Max="100"
+                             AdornmentText="%"
+                             Adornment="MudBlazor.Adornment.End" />
+        </MudSlider>
+    </MudItem>
 }
 
 @code {

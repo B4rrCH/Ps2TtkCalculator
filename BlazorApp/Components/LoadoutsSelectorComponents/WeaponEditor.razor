@@ -6,97 +6,94 @@
 
 @if (Weapon != null)
 {
-    <tr>
-        <th colspan="2">
-            <MudTooltip Text="Change">
-                <MudButton OnClick="@AskUserForWeapon" Variant="MudBlazor.Variant.Filled">@Weapon.Name</MudButton>
-            </MudTooltip>
-        </th>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <img src="@(censusBaseUri + (Weapon.ImagePath ?? defaultImagePath))" />
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <MudNumericField @bind-Value=@Weapon.HeadshotMultiplier
-                             Format="0.00"
-                             Step="0.5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Headshot Multiplier" />
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <MudNumericField @bind-Value=@Weapon.MagazineSize
-                             Format="0"
-                             Step="5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Magazine size" />
-        </td>
-    </tr>
-    <tr style="margin-top: 1rem">
-        <td colspan="2">
-            <MudNumericField @bind-Value=@Weapon.RefireTime_ms
-                             Format="0"
-                             Min="1"
-                             Step="5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Refire Time"
-                             HelperText="@($"RPM = {60000 / Weapon.RefireTime_ms}")"
-                             AdornmentText="ms"
-                             Adornment="MudBlazor.Adornment.End" />
-        </td>
-    </tr>
-    <tr style="margin-top: 1rem">
-        <td colspan="2">
-            <MudNumericField @bind-Value=@Weapon.MuzzleVelocity_mps
-                             Min="0"
-                             Format="0"
-                             Step="5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Muzzle Velocity"
-                             AdornmentText="m/s"
-                             Adornment="MudBlazor.Adornment.End" />
-        </td>
-    </tr>
-    <tr style="margin-top: 1rem">
-        <td>
-            <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamage
-                             Format="0"
-                             Step="5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Maximum Damage" />
-        </td>
-        <td>
-            <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamageRange_m
-                             Format="0"
-                             Step="5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Maximum Damage Range"
-                             AdornmentText="m"
-                             Adornment="MudBlazor.Adornment.End" />
-        </td>
-    </tr>
-    <tr style="margin-top: 1rem">
-        <td>
-            <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamage
-                             Format="0"
-                             Step="5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Minimum Damage" />
-        </td>
-        <td>
-            <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamageRange_m
-                             Format="0"
-                             Step="5"
-                             TextChanged="@((args) => OnChange())"
-                             Label="Minimum Damage Range"
-                             AdornmentText="m"
-                             Adornment="MudBlazor.Adornment.End" />
-        </td>
-    </tr>
+    <MudItem xs="12">
+        <MudTooltip Text="Change">
+            <MudButton OnClick="@AskUserForWeapon" Variant="MudBlazor.Variant.Filled">@Weapon.Name</MudButton>
+        </MudTooltip>
+    </MudItem>
+    @if (onChangeEnabled)
+    {
+        <MudItem xs="12">
+            <MudCard>
+                <MudCardMedia Title="@Weapon.Name" Image="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" Height="250" />
+            </MudCard>
+        </MudItem>
+    }
+    else
+    {
+        <MudItem xs="12">
+            <MudCard>
+                <MudProgressCircular Indeterminate="true" Size="Size.Large" />
+            </MudCard>
+        </MudItem>
+    }
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.HeadshotMultiplier
+                         Format="0.00"
+                         Step="0.5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Headshot Multiplier" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.MagazineSize
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Magazine size" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.RefireTime_ms
+                         Format="0"
+                         Min="1"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Refire Time"
+                         HelperText="@($"RPM = {60000 / Weapon.RefireTime_ms}")"
+                         AdornmentText="ms"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.MuzzleVelocity_mps
+                         Min="0"
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Muzzle Velocity"
+                         AdornmentText="m/s"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamage
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Maximum Damage" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamageRange_m
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Maximum Damage Range"
+                         AdornmentText="m"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamage
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Minimum Damage" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamageRange_m
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Minimum Damage Range"
+                         AdornmentText="m"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
 }
 
 @code {
@@ -112,14 +109,15 @@
     {
         const int orionItemId = 80;
         await SetWeaponFromCensus(orionItemId);
+        onChangeEnabled = true;
         await base.OnInitializedAsync();
     }
 
     private async Task AskUserForWeapon()
     {
-        onChangeEnabled = false;
         int? ItemId = await dialogService.OpenAsync<WeaponSelector>("Choose a weapon",
                                                                 options: new Radzen.DialogOptions() { Width = "90%" });
+        onChangeEnabled = false;
         if (ItemId is int itemId)
         {
             await SetWeaponFromCensus(itemId);
