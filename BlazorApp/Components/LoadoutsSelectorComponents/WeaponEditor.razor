@@ -1,7 +1,8 @@
 @using MudBlazor
 @using Ps2TtkCalculator.Shared.Dto
 
-@inject Radzen.DialogService dialogService
+@inject Radzen.DialogService radzenDialogService
+@inject IDialogService DialogService
 @inject HttpClient httpClient
 
 @if (Weapon != null)
@@ -14,17 +15,14 @@
     @if (onChangeEnabled)
     {
         <MudItem xs="12">
-            <MudCard>
-                <MudCardMedia Title="@Weapon.Name" Image="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" Height="250" />
-            </MudCard>
+            <img src="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" />
+            @*<MudCardMedia Title="@Weapon.Name" Image="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" Height="250" />*@
         </MudItem>
     }
     else
     {
         <MudItem xs="12">
-            <MudCard>
-                <MudProgressCircular Indeterminate="true" Size="Size.Large" />
-            </MudCard>
+            <MudProgressCircular Indeterminate="true" Size="Size.Large" />
         </MudItem>
     }
     <MudItem xs="6">
@@ -115,10 +113,19 @@
 
     private async Task AskUserForWeapon()
     {
-        int? ItemId = await dialogService.OpenAsync<WeaponSelector>("Choose a weapon",
-                                                                options: new Radzen.DialogOptions() { Width = "90%" });
+        //int? ItemId = await radzenDialogService.OpenAsync<WeaponSelector>("Choose a weapon",
+        //                                                        options: new Radzen.DialogOptions() { Width = "90%" });
+        MudBlazor.DialogOptions options = new MudBlazor.DialogOptions() 
+        { 
+            FullWidth = true, 
+            CloseButton = true,
+            MaxWidth = MaxWidth.ExtraLarge,
+        };
+        var dialog = DialogService.Show<WeaponSelectorMud>("Select Weapon", options);
+        var res = await dialog.Result;
+
         onChangeEnabled = false;
-        if (ItemId is int itemId)
+        if (!res.Cancelled && res.Data is int itemId)
         {
             await SetWeaponFromCensus(itemId);
         }
@@ -146,12 +153,15 @@
         }
     }
 
-    private void OnChange()
+    private async Task OnChange()
     {
         if (onChangeEnabled)
         {
+            onChangeEnabled = false;
             Weapon.Name = "Custom Weapon";
             Weapon.ImagePath = null;
+            await Task.Delay(1);
+            onChangeEnabled = true;
         }
     }
 }

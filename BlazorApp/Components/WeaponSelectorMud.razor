@@ -1,0 +1,95 @@
+﻿@using MudBlazor
+@using Ps2TtkCalculator.Shared.Dto
+
+@inject IDialogService DialogService
+@inject HttpClient httpClient
+
+<MudDialog Style="height: 90%">
+    <DialogContent>
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0" DebounceInterval="200"></MudTextField>
+        @if (Weapons != null)
+        {
+            <MudTable T="WeaponPreview"
+                      Items="@Weapons"
+                      Dense="true"
+                      Hover="true"
+                      Striped="true"
+                      Filter="new Func<WeaponPreview, bool>(FilterFunc)"
+                      FixedHeader="true"
+                      FixedFooter="true"
+                      @bind-SelectedItem="@selectedWeapon"
+                      OnRowClick="(args) => SelectWeapon(args.Item.ItemId)"
+                      >
+                <HeaderContent>
+                    <MudTh>
+                        <MudTableSortLabel SortBy="new Func<WeaponPreview, object>(x=>x.Name)">Name</MudTableSortLabel>
+                    </MudTh>
+                    <MudTh>
+                        <MudTableSortLabel SortBy="new Func<WeaponPreview, object>(x=>x.Faction)">Faction</MudTableSortLabel>
+                    </MudTh>
+                    <MudTh>
+                        <MudTableSortLabel SortBy="new Func<WeaponPreview, object>(x=>x.WeaponCategory)">Weapon Category</MudTableSortLabel>
+                    </MudTh>
+                    <MudTh Style="width: 128px"></MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Name">@context.Name</MudTd>
+                    <MudTd DataLabel="Faction">@context.Faction</MudTd>
+                    <MudTd DataLabel="Weapon Category">@context.WeaponCategory</MudTd>
+                    <MudTd><img srcset="@(censusUri + context.ImagePath)" style="height: 64px; width: 128px"/></MudTd>
+                </RowTemplate>
+                <PagerContent>
+                    <MudTablePager RowsPerPageString="Weapons Per Page:" />
+                </PagerContent>
+            </MudTable>
+        }
+        else
+        {
+            <MudProgressCircular Indeterminate="true" Size="Size.Large"/>
+        }
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    const string censusUri = "https://census.daybreakgames.com";
+
+    public IEnumerable<WeaponPreview> Weapons { get; set; }
+    WeaponPreview selectedWeapon;
+
+    string searchString { get; set; } = "";
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private void SelectWeapon(int itemId)
+    {
+        MudDialog.Close(DialogResult.Ok(itemId, typeof(int?)));
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("WeaponSelector OnInitializedAsync called");
+        var weaponListQueryUri = QueryUris.GetWeaponListRequestUri();
+        var itemList = await httpClient.GetFromJsonAsync<ItemList>(weaponListQueryUri);
+
+        Weapons = itemList.Items.Where(item => !string.IsNullOrEmpty(item.Name?.En)).Select(WeaponPreview.FromItem);
+        await base.OnInitializedAsync();
+    }
+
+    private bool FilterFunc(WeaponPreview weapon)
+    {
+        return weapon.Name.Contains(searchString ?? "", StringComparison.InvariantCultureIgnoreCase);
+    }
+}
