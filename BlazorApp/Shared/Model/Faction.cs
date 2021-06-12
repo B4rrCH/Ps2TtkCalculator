@@ -7,6 +7,7 @@ namespace Ps2TtkCalculator.Shared.Model
         NaniteSystems = 0,
         VanuSovergnity = 1,
         NewConglomerate = 2,
-        TerranRepublic = 3
+        TerranRepublic = 3,
+        NaniteSystemsOperatives = 4
     }
 }
