@@ -21,7 +21,7 @@ namespace Ps2TtkCalculator.Shared.ExtensionMethods
                     }
                 }
             }
-            return null;
+            return value.ToString();
         }
     }
 }

@@ -69,6 +69,8 @@
     </MudItem>
     <MudItem xs="6">
         <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamageRange_m
+                         Min="0"
+                         Max="Weapon.DamageModel.MaxDamageRange_m"
                          Format="0"
                          Step="5"
                          TextChanged="@((args) => OnChange())"
@@ -85,6 +87,7 @@
     </MudItem>
     <MudItem xs="6">
         <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamageRange_m
+                         Min="@Weapon.DamageModel.MaxDamageRange_m"
                          Format="0"
                          Step="5"
                          TextChanged="@((args) => OnChange())"

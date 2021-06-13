@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Ps2TtkCalculator.Shared.Model;
 using Ps2TtkCalculator.Shared.Dto;
+using Ps2TtkCalculator.Shared.ExtensionMethods;
 
 namespace Ps2TtkCalculator.Shared.Views
 {
@@ -19,8 +20,8 @@ namespace Ps2TtkCalculator.Shared.Views
         {
             ItemId = int.Parse(item.ItemId),
             Name = item.Name.En,
-            Faction = Enum.Parse<Faction>(item.Faction ?? "NaniteSystems").ToString(),
-            WeaponCategory = Enum.Parse<WeaponCategory>(item.WeaponCategory).ToString(),
+            Faction = Enum.Parse<Faction>(item.Faction ?? "NaniteSystems").GetDescription(),
+            WeaponCategory = Enum.Parse<WeaponCategory>(item.WeaponCategory).GetDescription(),
             ImagePath = item.ImagePath
         };
     }
