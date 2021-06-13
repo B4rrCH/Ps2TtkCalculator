@@ -1,34 +1,53 @@
 @using CurvePoint = System.Tuple<double, double>
+@using Radzen.Blazor
+@using MudBlazor
 
-<RadzenCard>
-    <RadzenPanel AllowCollapse="true">
-        <HeaderTemplate>
-            <h2>Probabilities</h2>
-        </HeaderTemplate>
-        <ChildContent>
-            <RadzenChart Visible=@(Curve1 != null && Curve2 != null)>
-                <RadzenLineSeries Data=Curve1 CategoryProperty="Item1" ValueProperty="Item2" Title="First Player">
-                    <RadzenMarkers MarkerType="MarkerType.Circle" />
-                </RadzenLineSeries>
-                <RadzenLineSeries Data=Curve2 CategoryProperty="Item1" ValueProperty="Item2" Title="Second Player">
-                    <RadzenMarkers MarkerType="MarkerType.Circle" />
-                </RadzenLineSeries>
-                <RadzenCategoryAxis FormatString="{0:0.00} s" />
-                <RadzenValueAxis FormatString="{0:P2}" Min="0.0"/>
-            </RadzenChart>
-            @if (WinProbabilities != null)
-            {
-                <table class="table">
-                    <tr><th>Outcome</th><th>Probability</th></tr>
-                    <tr><td>Player 1 wins</td><td>@($"{WinProbabilities.Player1Wins:P1}")</td></tr>
-                    <tr><td>Player 2 wins</td><td>@($"{WinProbabilities.Player2Wins:P1}")</td></tr>
-                    <tr><td>Kill trade</td>  <td>@($"{WinProbabilities.Trade:P1}")</td></tr>
-                    <tr><td>Draw (Both players run out of ammo)</td><td>@($"{WinProbabilities.Draw:P1}")</td> </tr>
-                </table>
-            }
-        </ChildContent>
-    </RadzenPanel>
-</RadzenCard>
+<MudCard>
+    <MudCardHeader>
+        <MudText Typo="Typo.h4">Probabilities</MudText>
+    </MudCardHeader>
+    <MudCardContent>
+        <RadzenChart Visible=@(Curve1 != null && Curve2 != null)>
+            <RadzenLineSeries Data=Curve1 CategoryProperty="Item1" ValueProperty="Item2" Title="First Player">
+                <RadzenMarkers MarkerType="MarkerType.Circle" />
+            </RadzenLineSeries>
+            <RadzenLineSeries Data=Curve2 CategoryProperty="Item1" ValueProperty="Item2" Title="Second Player">
+                <RadzenMarkers MarkerType="MarkerType.Circle" />
+            </RadzenLineSeries>
+            <RadzenCategoryAxis FormatString="{0:0.00} s" />
+            <RadzenValueAxis FormatString="{0:P2}" Min="0.0"/>
+        </RadzenChart>
+        @if (WinProbabilities != null)
+        {
+            <MudSimpleTable Dense="true" Outlined="true" Striped="true">
+                <thead>
+                    <tr>
+                        <th>Outcome</th>
+                        <th>Probability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Player 1 wins</td>
+                        <td>@($"{WinProbabilities.Player1Wins:P1}")</td>
+                    </tr>
+                    <tr>
+                        <td>Player 2 wins</td>
+                        <td>@($"{WinProbabilities.Player2Wins:P1}")</td>
+                    </tr>
+                    <tr>
+                        <td>Kill trade</td>
+                        <td>@($"{WinProbabilities.Trade:P1}")</td>
+                    </tr>
+                    <tr>
+                        <td>Draw (Both players run out of ammo)</td>
+                        <td>@($"{WinProbabilities.Draw:P1}")</td>
+                    </tr>
+                </tbody>
+            </MudSimpleTable>
+        }
+    </MudCardContent>
+</MudCard>
 
 @code{
     [Parameter]
