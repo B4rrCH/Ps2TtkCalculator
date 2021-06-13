@@ -115,9 +115,9 @@
     {
         //int? ItemId = await radzenDialogService.OpenAsync<WeaponSelector>("Choose a weapon",
         //                                                        options: new Radzen.DialogOptions() { Width = "90%" });
-        MudBlazor.DialogOptions options = new MudBlazor.DialogOptions() 
-        { 
-            FullWidth = true, 
+        MudBlazor.DialogOptions options = new MudBlazor.DialogOptions()
+        {
+            FullWidth = true,
             CloseButton = true,
             MaxWidth = MaxWidth.ExtraLarge,
         };
@@ -155,8 +155,9 @@
 
     private async Task OnChange()
     {
-        if (onChangeEnabled)
+        if (onChangeEnabled && Weapon.Name != "Custom Weapon")
         {
+            await Task.Delay(1);
             onChangeEnabled = false;
             Weapon.Name = "Custom Weapon";
             Weapon.ImagePath = null;
