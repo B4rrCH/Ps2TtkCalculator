@@ -1,5 +1,6 @@
 @using CurvePoint = System.Tuple<double, double>
 @using Radzen.Blazor
+@using ChartJs.Blazor.LineChart
 
 <MudCard>
     <MudCardHeader>
@@ -16,6 +17,7 @@
             <RadzenCategoryAxis FormatString="{0:0.00} s" />
             <RadzenValueAxis FormatString="{0:P2}" Min="0.0"/>
         </RadzenChart>
+        <Chart Config="_config"/>
         @if (WinProbabilities != null)
         {
             <MudSimpleTable Dense="true" Outlined="true" Striped="true">
@@ -49,10 +51,129 @@
 </MudCard>
 
 @code{
+    private IEnumerable<CurvePoint> curve1;
+    private IEnumerable<CurvePoint> curve2;
+
+    private IDataset<TimePoint> dataset1;
+    private IDataset<TimePoint> dataset2;
+
     [Parameter]
-    public IEnumerable<CurvePoint> Curve1 { get; set; }
+    public IEnumerable<CurvePoint> Curve1
+    {
+        get => curve1;
+        set
+        {
+            curve1 = value;
+            dataset1 ??= new LineDataset<TimePoint>()
+            {
+                Label = "Player 1",
+                BorderColor = "blue"
+            };
+            if (value != null)
+            {
+                dataset1.Clear();
+                foreach (var timePoint in value.Select(ToTimePoint))
+                {
+                    dataset1.Add(timePoint);
+                }
+            }
+        }
+    }
     [Parameter]
-    public IEnumerable<CurvePoint> Curve2 { get; set; }
+    public IEnumerable<CurvePoint> Curve2
+    {
+        get => curve2;
+        set
+        {
+            curve2 = value;
+            dataset2 ??= new LineDataset<TimePoint>()
+            {
+                Label = "Player 2",
+                BorderColor = "skyblue"
+            };
+
+            if (value != null)
+            {
+                dataset2.Clear();
+                foreach (var timePoint in value.Select(ToTimePoint))
+                {
+                    dataset2.Add(timePoint);
+                }
+            }
+        }
+    }
     [Parameter]
     public WinProbabilities WinProbabilities { get; set; }
+
+    private LineConfig _config;
+
+    protected override void OnInitialized()
+    {
+        _config = new LineConfig
+        {
+            Options = new LineOptions
+            {
+                Responsive = true,
+                Tooltips = new Tooltips
+                {
+                    Mode = InteractionMode.Nearest,
+                    Intersect = true
+                },
+                Hover = new Hover
+                {
+                    Mode = InteractionMode.Nearest,
+                    Intersect = true
+                },
+                Scales = new Scales
+                {
+                    XAxes = new List<CartesianAxis>
+                    {
+                        new TimeAxis
+                        {
+                            Distribution = TimeDistribution.Linear,
+                            ScaleLabel = new ScaleLabel
+                            {
+                                LabelString = "Time"
+                            },
+                            Time = new TimeOptions
+                            {
+                                TooltipFormat = "ss.sss",
+                                Unit = TimeMeasurement.Millisecond,
+                            },
+                            
+                        }
+                    },
+                    YAxes = new List<CartesianAxis>
+                    {
+                        new LinearCartesianAxis
+                        {
+                            ScaleLabel = new ScaleLabel
+                            {
+                                LabelString = "Value"
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        _config.Data.Datasets.Add(dataset1);
+        _config.Data.Datasets.Add(dataset2);
+        base.OnInitialized();
+    }
+
+    private TimePoint ToTimePoint(CurvePoint curvePoint)
+    {
+        return new TimePoint(
+            new DateTime(
+                2000,
+                1,
+                1,
+                0,
+                0,
+                (int)curvePoint.Item1,
+                (int)(curvePoint.Item1 * 1000) % 1000
+                ),
+            curvePoint.Item2
+            );
+    }
 }
