@@ -113,15 +113,13 @@
 
     private async Task AskUserForWeapon()
     {
-        //int? ItemId = await radzenDialogService.OpenAsync<WeaponSelector>("Choose a weapon",
-        //                                                        options: new Radzen.DialogOptions() { Width = "90%" });
         MudBlazor.DialogOptions options = new MudBlazor.DialogOptions()
         {
             FullWidth = true,
             CloseButton = true,
             MaxWidth = MaxWidth.ExtraLarge,
         };
-        var dialog = DialogService.Show<WeaponSelectorMud>("Select Weapon", options);
+        var dialog = DialogService.Show<WeaponSelector>("Select Weapon", options);
         var res = await dialog.Result;
 
         onChangeEnabled = false;
