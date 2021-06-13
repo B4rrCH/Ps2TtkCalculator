@@ -1,75 +1,99 @@
 @using Ps2TtkCalculator.Shared.Dto
 
-@inject DialogService dialogService
+@inject Radzen.DialogService radzenDialogService
+@inject IDialogService DialogService
 @inject HttpClient httpClient
 
 @if (Weapon != null)
 {
-<tr>
-    <th colspan="2">
-        <h3>@Weapon.Name</h3> <RadzenButton Click="@AskUserForWeapon">Change</RadzenButton>
-    </th>
-</tr>
-<tr>
-    <td colspan="2">
-        @if (Weapon.ImagePath != null)
-        {
-            <RadzenImage Path="@(censusBaseUri + Weapon.ImagePath)" />
-        }
-        else
-        {
-            <RadzenImage Path="@(censusBaseUri + defaultImagePath)" />
-        }
-    </td>
-</tr>
-<tr>
-    <td>Headshot multiplier</td>
-    <td>
-        <RadzenNumeric TValue="double" Format="0.00" Step="0.5" @bind-Value=@Weapon.HeadshotMultiplier Change="@((args) => OnChange())" />
-    </td>
-</tr>
-<tr>
-    <td>Magazine size</td>
-    <td>
-        <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MagazineSize Change="@((args) => OnChange())" />
-    </td>
-</tr>
-<tr style="margin-top: 1rem">
-    <td>Refire Time (ms)</td>
-    <td>
-        <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.RefireTime_ms Change="@((args) => OnChange())" />
-    </td>
-</tr>
-<tr style="margin-top: 1rem">
-    <td>Muzzle Velocity (m/s)</td>
-    <td>
-        <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.MuzzleVelocity_mps Change="@((args) => OnChange())" />
-    </td>
-</tr>
-<tr style="margin-top: 1rem">
-    <td>Max Damage</td>
-    <td>
-        <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamage Change="@((args) => OnChange())" />
-    </td>
-</tr>
-<tr style="margin-top: 1rem">
-    <td>Max Damage Range (m)</td>
-    <td>
-        <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MaxDamageRange_m Change="@((args) => OnChange())" />
-    </td>
-</tr>
-<tr style="margin-top: 1rem">
-    <td>Min Damage</td>
-    <td>
-        <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamage Change="@((args) => OnChange())" />
-    </td>
-</tr>
-<tr style="margin-top: 1rem">
-    <td>Min Damage Range (m)</td>
-    <td>
-        <RadzenNumeric TValue="int" Min="0" @bind-Value=@Weapon.DamageModel.MinDamageRange_m Change="@((args) => OnChange())" />
-    </td>
-</tr>
+    <MudItem xs="12">
+        <MudTooltip Text="Change">
+            <MudButton OnClick="@AskUserForWeapon" Variant="MudBlazor.Variant.Filled">@Weapon.Name</MudButton>
+        </MudTooltip>
+    </MudItem>
+    @if (onChangeEnabled)
+    {
+        <MudItem xs="12">
+            <img src="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" />
+            @*<MudCardMedia Title="@Weapon.Name" Image="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" Height="250" />*@
+        </MudItem>
+    }
+    else
+    {
+        <MudItem xs="12">
+            <MudProgressCircular Indeterminate="true" Size="Size.Large" />
+        </MudItem>
+    }
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.HeadshotMultiplier
+                         Format="0.00"
+                         Step="0.5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Headshot Multiplier" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.MagazineSize
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Magazine size" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.RefireTime_ms
+                         Format="0"
+                         Min="1"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Refire Time"
+                         HelperText="@($"RPM = {60000 / Weapon.RefireTime_ms}")"
+                         AdornmentText="ms"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.MuzzleVelocity_mps
+                         Min="0"
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Muzzle Velocity"
+                         AdornmentText="m/s"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamage
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Maximum Damage" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MaxDamageRange_m
+                         Min="0"
+                         Max="Weapon.DamageModel.MaxDamageRange_m"
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Maximum Damage Range"
+                         AdornmentText="m"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamage
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Minimum Damage" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudNumericField @bind-Value=@Weapon.DamageModel.MinDamageRange_m
+                         Min="@Weapon.DamageModel.MaxDamageRange_m"
+                         Format="0"
+                         Step="5"
+                         TextChanged="@((args) => OnChange())"
+                         Label="Minimum Damage Range"
+                         AdornmentText="m"
+                         Adornment="MudBlazor.Adornment.End" />
+    </MudItem>
 }
 
 @code {
@@ -79,21 +103,33 @@
     private const string censusBaseUri = "https://census.daybreakgames.com";
     private const string defaultImagePath = "/files/ps2/images/static/3655.png";
 
+    private bool onChangeEnabled = false;
+
     protected override async Task OnInitializedAsync()
     {
         const int orionItemId = 80;
         await SetWeaponFromCensus(orionItemId);
+        onChangeEnabled = true;
         await base.OnInitializedAsync();
     }
 
     private async Task AskUserForWeapon()
     {
-        int? ItemId = await dialogService.OpenAsync<WeaponSelector>("Choose a weapon",
-                                                                    options: new DialogOptions() { Width = "90%" });
-        if (ItemId is int itemId)
+        MudBlazor.DialogOptions options = new MudBlazor.DialogOptions()
+        {
+            FullWidth = true,
+            CloseButton = true,
+            MaxWidth = MaxWidth.ExtraLarge,
+        };
+        var dialog = DialogService.Show<WeaponSelector>("Select Weapon", options);
+        var res = await dialog.Result;
+
+        onChangeEnabled = false;
+        if (!res.Cancelled && res.Data is int itemId)
         {
             await SetWeaponFromCensus(itemId);
         }
+        onChangeEnabled = true;
     }
 
     private async Task SetWeaponFromCensus(int itemId)
@@ -115,12 +151,18 @@
             Weapon.RefireTime_ms = tmp.RefireTime_ms;
             Weapon.WeaponCategory = tmp.WeaponCategory;
         }
-
     }
 
-    private void OnChange()
+    private async Task OnChange()
     {
-        Weapon.Name = "Custom Weapon";
-        Weapon.ImagePath = null;
+        if (onChangeEnabled && Weapon.Name != "Custom Weapon")
+        {
+            await Task.Delay(1);
+            onChangeEnabled = false;
+            Weapon.Name = "Custom Weapon";
+            Weapon.ImagePath = null;
+            await Task.Delay(1);
+            onChangeEnabled = true;
+        }
     }
 }

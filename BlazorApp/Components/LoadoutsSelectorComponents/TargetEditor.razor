@@ -3,26 +3,22 @@
 
 @if (Target != null)
 {
-<tr>
-    <td>HP Pool</td>
-    <td>
-        <RadzenDropDown TValue="@HealthType" Data="@(Enum.GetValues<HealthType>())" @bind-Value=@Health Change="@((args) => OnChange())">
-            <Template>
-                @(((HealthType)context).GetDescription())
-            </Template>
-        </RadzenDropDown>
-    </td>
-</tr>
-<tr>
-    <td>Resistance type</td>
-    <td>
-        <RadzenDropDown TValue="@ResistanceType" Data="@(Enum.GetValues<ResistanceType>())" @bind-Value=@Resistance Change="@((args) => OnChange())">
-            <Template>
-                @(((ResistanceType)context).GetDescription())
-            </Template>
-        </RadzenDropDown>
-    </td>
-</tr>
+    <MudItem xs="6">
+        <MudSelect T="@HealthType" @bind-Value="@Health" Label="HP Pool">
+            @foreach (var healthType in Enum.GetValues<HealthType>())
+            {
+                <MudSelectItem Value="@healthType">@healthType.GetDescription()</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
+    <MudItem xs="6">
+        <MudSelect T="@ResistanceType" @bind-Value="@Resistance" Label="Resistance type">
+            @foreach (var resistanceType in Enum.GetValues<ResistanceType>())
+            {
+                <MudSelectItem Value="@resistanceType">@resistanceType.GetDescription()</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
 }
 
 @code {
@@ -48,40 +44,52 @@
         ReistShield
     }
 
-    private HealthType Health { get; set; }
-    private ResistanceType Resistance { get; set; }
+    private HealthType health;
+    private HealthType Health
+    {
+        get => health;
+        set
+        {
+            health = value;
+            Target.MaxHp = Health switch
+            {
+                HealthType.Normal => 1000,
+                HealthType.NanomeshGenerator => 1450,
+                HealthType.Infiltrator => 900,
+                _ => throw new ArgumentException(nameof(Health))
+            };
+        }
+    }
+
+    private ResistanceType resistance;
+    private ResistanceType Resistance
+    {
+        get => resistance;
+        set
+        {
+            resistance = value;
+            Target.ResistanceBodyshot = Resistance switch
+            {
+                ResistanceType.Normal => 0.0,
+                ResistanceType.NanoWeaveArmor => 0.2,
+                ResistanceType.Symbiote => 0.2,
+                ResistanceType.ReistShield => 0.35,
+                _ => throw new ArgumentException(nameof(Resistance))
+            };
+
+            Target.ResistanceHeadshot = Resistance switch
+            {
+                ResistanceType.Normal => 0.0,
+                ResistanceType.NanoWeaveArmor => 0.0,
+                ResistanceType.Symbiote => 0.2,
+                ResistanceType.ReistShield => 0.35,
+                _ => throw new ArgumentException(nameof(Resistance))
+            };
+        }
+    }
 
     [Parameter]
     public Target Target { get; set; }
-
-    private void OnChange()
-    {
-        Target.MaxHp = Health switch
-        {
-            HealthType.Normal => 1000,
-            HealthType.NanomeshGenerator => 1450,
-            HealthType.Infiltrator => 900,
-            _ => throw new ArgumentException(nameof(Health))
-        };
-
-        Target.ResistanceBodyshot = Resistance switch
-        {
-            ResistanceType.Normal => 0.0,
-            ResistanceType.NanoWeaveArmor => 0.2,
-            ResistanceType.Symbiote => 0.2,
-            ResistanceType.ReistShield => 0.35,
-            _ => throw new ArgumentException(nameof(Resistance))
-        };
-
-        Target.ResistanceHeadshot = Resistance switch
-        {
-            ResistanceType.Normal => 0.0,
-            ResistanceType.NanoWeaveArmor => 0.0,
-            ResistanceType.Symbiote => 0.2,
-            ResistanceType.ReistShield => 0.35,
-            _ => throw new ArgumentException(nameof(Resistance))
-        };
-    }
 
     private static string GetDescription(Enum value)
     {

@@ -1,72 +1,55 @@
-@using CurvePoint = System.Tuple<int, double>
-
 @if (Player1 != null && Player2 != null)
 {
-    <RadzenCard>
-        <RadzenPanel AllowCollapse="true" Style="">
-            <HeaderTemplate>
-                <h2>Loadouts Selection</h2>
-            </HeaderTemplate>
-            <ChildContent>
-                <div class="table-responsive-xl">
-                    <table style="width:95%">
-                        <tr>
-                            <td>
-                                <RadzenCard>
-                                    <h2 style="text-align: center">Player 1</h2>
-                                    <table style="width: 100%">
-                                        <tr>
-                                            <th colspan="2">Weapon</th>
-                                        </tr>
-                                        <WeaponEditor Weapon="@Player1.Weapon" />
-                                        <tr>
-                                            <th colspan="2">Target</th>
-                                        </tr>
-                                        <TargetEditor Target="@Player1.Target" />
-                                        <tr>
-                                            <th colspan="2">Shooter</th>
-                                        </tr>
-                                        <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
-                                    </table>
-                                </RadzenCard>
-                            </td>
-                            <td>
-                                <RadzenCard>
-                                    <h2 style="text-align: center">Player 2</h2>
-                                    <table style="width: 100%">
-                                        <tr>
-                                            <th colspan="2">Weapon</th>
-                                        </tr>
-                                        <WeaponEditor Weapon="@Player2.Weapon" />
-                                        <tr>
-                                            <th colspan="2">Target</th>
-                                        </tr>
-                                        <TargetEditor Target="@Player2.Target" />
-                                        <tr>
-                                            <th colspan="2">Shooter</th>
-                                        </tr>
-                                        <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
-                                    </table>
-                                </RadzenCard>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <RadzenCard>
-                                    <span>
-                                        Range between the players
-                                        <RadzenNumeric TValue="int" Min="0" Max="400" Step="50" Format="0 m"
-                                                       @bind-Value=@Range />
-                                    </span><br />
-                                    <RadzenSlider @bind-Value=@Range TValue="int" Min="0" Max="400" Style="width:100%" />
-                                </RadzenCard>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </ChildContent>
-        </RadzenPanel>
-    </RadzenCard>
+    <MudCard>
+        <MudCardContent>
+            <MudGrid Spacing="2" Justify="Justify.Center">
+                <MudItem md="6" sm="12">
+                    <MudCard>
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h3">Player 1</MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudGrid Spacing="2" Justify="Justify.Center">
+                                <WeaponEditor Weapon="@Player1.Weapon" />
+                                <TargetEditor Target="@Player1.Target" />
+                                <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+                <MudItem md="6" sm="12">
+                    <MudCard>
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h3">Player 2</MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudGrid Spacing="2" Justify="Justify.Center">
+                                <WeaponEditor Weapon="@Player2.Weapon" />
+                                <TargetEditor Target="@Player2.Target" />
+                                <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12">
+                    <MudSlider @bind-Value=@Range Min="0" Max="400" Step="1" Label>
+                        <MudNumericField @bind-Value=@Range
+                                         Format="0"
+                                         Step="10"
+                                         Label="Range"
+                                         Min="0"
+                                         Max="400"
+                                         AdornmentText="m"
+                                         Adornment="MudBlazor.Adornment.End" />
+                    </MudSlider>
+                </MudItem>
+            </MudGrid>
+        </MudCardContent>
+    </MudCard>
 }
 
 @code {
