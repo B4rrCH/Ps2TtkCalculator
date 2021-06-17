@@ -8,6 +8,6 @@ The current state can be found at https://b4rrch.github.io/Ps2TtkCalculator/.
   - [x] Auto deploy to github pages.
   - [x] to calculate the TTK distribution based on
     - [x] weapon stats gotten from the [Daybreak Games Census API](http://census.daybreakgames.com/),
-    - [ ] the target's loadout (nanoweave armor, HA shields, health pool, symbiote),
+    - [x] the target's loadout (nanoweave armor, HA shields, health pool, symbiote),
     - [x] headshot rate, accuracy and range,
   - [x] and calculating the win probabilites in engagements.
