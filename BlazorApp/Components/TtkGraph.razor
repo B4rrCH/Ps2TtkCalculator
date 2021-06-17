@@ -1,21 +1,14 @@
 @using CurvePoint = System.Tuple<double, double>
-@using Radzen.Blazor
+@using ChartJs.Blazor.LineChart
+@using ChartJs.Blazor.ScatterChart
+@using Newtonsoft.Json.Linq;
 
 <MudCard>
     <MudCardHeader>
         <MudText Typo="Typo.h4">Probabilities</MudText>
     </MudCardHeader>
     <MudCardContent>
-        <RadzenChart Visible=@(Curve1 != null && Curve2 != null)>
-            <RadzenLineSeries Data=Curve1 CategoryProperty="Item1" ValueProperty="Item2" Title="First Player">
-                <RadzenMarkers MarkerType="MarkerType.Circle" />
-            </RadzenLineSeries>
-            <RadzenLineSeries Data=Curve2 CategoryProperty="Item1" ValueProperty="Item2" Title="Second Player">
-                <RadzenMarkers MarkerType="MarkerType.Circle" />
-            </RadzenLineSeries>
-            <RadzenCategoryAxis FormatString="{0:0.00} s" />
-            <RadzenValueAxis FormatString="{0:P2}" Min="0.0"/>
-        </RadzenChart>
+        <Chart Config="_config" />
         @if (WinProbabilities != null)
         {
             <MudSimpleTable Dense="true" Outlined="true" Striped="true">
@@ -49,10 +42,113 @@
 </MudCard>
 
 @code{
+    private IEnumerable<CurvePoint> curve1;
+    private IEnumerable<CurvePoint> curve2;
+
+    private IDataset<Point> dataset1;
+    private IDataset<Point> dataset2;
+
     [Parameter]
-    public IEnumerable<CurvePoint> Curve1 { get; set; }
+    public IEnumerable<CurvePoint> Curve1
+    {
+        get => curve1;
+        set
+        {
+            curve1 = value;
+            dataset1 ??= new LineDataset<Point>()
+            {
+                Label = "Player 1",
+                BorderColor = "blue",
+                LineTension = 0
+            };
+            if (value != null)
+            {
+                dataset1.Clear();
+                foreach (var timePoint in value)
+                {
+                    dataset1.Add(new Point(timePoint.Item1, timePoint.Item2));
+                }
+            }
+        }
+    }
+
     [Parameter]
-    public IEnumerable<CurvePoint> Curve2 { get; set; }
+    public IEnumerable<CurvePoint> Curve2
+    {
+        get => curve2;
+        set
+        {
+            curve2 = value;
+            dataset2 ??= new LineDataset<Point>()
+            {
+                Label = "Player 2",
+                BorderColor = "skyblue",
+                LineTension = 0
+            };
+            if (value != null)
+            {
+                dataset2.Clear();
+                foreach (var timePoint in value)
+                {
+                    dataset2.Add(new Point(timePoint.Item1, timePoint.Item2));
+                }
+            }
+        }
+    }
+
     [Parameter]
     public WinProbabilities WinProbabilities { get; set; }
+
+    private ScatterConfig _config;
+
+    protected override void OnInitialized()
+    {
+        _config = new ScatterConfig
+        {
+            Options = new LineOptions
+            {
+                Responsive = true,
+                Tooltips = new Tooltips
+                {
+                    Mode = InteractionMode.Nearest,
+                    Intersect = true
+                },
+                Hover = new Hover
+                {
+                    Mode = InteractionMode.Nearest,
+                    Intersect = true
+                },
+                Scales = new Scales
+                {
+                    XAxes = new List<CartesianAxis>
+                    {
+                        new LinearCartesianAxis
+                        {
+                            ScaleLabel = new ScaleLabel
+                            {
+                                LabelString = "Time (s)",
+                                Display = true
+                            },
+                            Display = AxisDisplay.True,
+                        },
+                    },
+                    YAxes = new List<CartesianAxis>
+                    {
+                        new LinearCartesianAxis
+                        {
+                            ScaleLabel = new ScaleLabel
+                            {
+                                LabelString = "Probability of kill at time after first shot",
+                                Display = true
+                            },
+                            Display = AxisDisplay.True,
+                        }
+                    }
+                },
+            }
+        };
+        _config.Data.Datasets.Add(dataset1);
+        _config.Data.Datasets.Add(dataset2);
+        base.OnInitialized();
+    }
 }

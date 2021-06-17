@@ -3,10 +3,11 @@
 @inject IDialogService DialogService
 @inject HttpClient httpClient
 
-@if (Weapons != null)
-{
-    <MudDialog>
-        <DialogContent>
+
+<MudDialog>
+    <DialogContent>
+        @if (Weapons != null)
+        {
             <MudTable T="WeaponPreview"
                       Items="@Weapons"
                       Dense="true"
@@ -43,14 +44,14 @@
                     <MudTablePager RowsPerPageString="Weapons Per Page:" />
                 </PagerContent>
             </MudTable>
+        }
         </DialogContent>
         <DialogActions>
-            <MudText>Selected weapon: @selectedWeapon?.Name</MudText>
             <MudAppBarSpacer />
             <MudButton OnClick="Cancel">Cancel</MudButton>
         </DialogActions>
     </MudDialog>
-}
+
 
 @code {
     [CascadingParameter] MudDialogInstance MudDialog { get; set; }

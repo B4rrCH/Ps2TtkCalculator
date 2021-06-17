@@ -22,28 +22,6 @@
 }
 
 @code {
-    enum HealthType
-    {
-        [Description("Normal (1000)")]
-        Normal,
-        [Description("NMG/Adren Shield (1450)")]
-        NanomeshGenerator,
-        [Description("Infiltrator (900)")]
-        Infiltrator
-    }
-
-    enum ResistanceType
-    {
-        [Description("Normal (0%)")]
-        Normal,
-        [Description("Nanoweave Armor (20% body-only)")]
-        NanoWeaveArmor,
-        [Description("Symbiote (20%)")]
-        Symbiote,
-        [Description("ResistShield (35%)")]
-        ReistShield
-    }
-
     private HealthType health;
     private HealthType Health
     {
@@ -54,7 +32,7 @@
             Target.MaxHp = Health switch
             {
                 HealthType.Normal => 1000,
-                HealthType.NanomeshGenerator => 1450,
+                HealthType.NanomeshGenerator => 1425,
                 HealthType.Infiltrator => 900,
                 _ => throw new ArgumentException(nameof(Health))
             };
