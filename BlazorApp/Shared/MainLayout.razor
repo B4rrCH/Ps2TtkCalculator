@@ -1,4 +1,5 @@
 @inherits LayoutComponentBase
+@inject IJSRuntime js
 
 <MudThemeProvider Theme="_currentTheme" />
 <MudDialogProvider />
@@ -27,21 +28,33 @@
 
 
 @code{
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        _currentTheme = _darkTheme;
-    }
-
-    private void ToggleDarkMode()
-    {
-        System.Console.WriteLine("Toggled Dark Mode");
-        if (_currentTheme == _lightTheme)
+        var darkModeSaved = await js.InvokeAsync<string>("BlazorExtensions.getFromLocalStorage", "darkMode");
+        var darkModePreferred = await js.InvokeAsync<string>("BlazorExtensions.isDarkMode");
+        if (darkModeSaved == "true" || 
+            (string.IsNullOrEmpty(darkModeSaved) && darkModePreferred == "true"))
         {
             _currentTheme = _darkTheme;
         }
         else
         {
             _currentTheme = _lightTheme;
+        }
+    }
+
+    private async Task ToggleDarkMode()
+    {
+        System.Console.WriteLine("Toggled Dark Mode");
+        if (_currentTheme == _lightTheme)
+        {
+            _currentTheme = _darkTheme;
+            await js.InvokeVoidAsync("BlazorExtensions.addToLocalStorage", "darkMode", "true");
+        }
+        else
+        {
+            _currentTheme = _lightTheme;
+            await js.InvokeVoidAsync("BlazorExtensions.addToLocalStorage", "darkMode", "false");
         }
     }
 

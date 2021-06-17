@@ -25,6 +25,19 @@
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script>
+        window.BlazorExtensions = {
+            addToLocalStorage: (key, value) => {
+                localStorage[key] = value;
+            },
+            getFromLocalStorage : (key) => {
+                return localStorage[key];
+            },
+            isDarkMode : () => {
+                return (!!window.matchMedia('(prefers-color-scheme: dark)').matches).toString();
+            }
+        }
+    </script>
 </body>
 
 </html>
