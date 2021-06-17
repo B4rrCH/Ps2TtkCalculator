@@ -1,23 +1,14 @@
 @using CurvePoint = System.Tuple<double, double>
-@using Radzen.Blazor
 @using ChartJs.Blazor.LineChart
+@using ChartJs.Blazor.ScatterChart
+@using Newtonsoft.Json.Linq;
 
 <MudCard>
     <MudCardHeader>
         <MudText Typo="Typo.h4">Probabilities</MudText>
     </MudCardHeader>
     <MudCardContent>
-        <RadzenChart Visible=@(Curve1 != null && Curve2 != null)>
-            <RadzenLineSeries Data=Curve1 CategoryProperty="Item1" ValueProperty="Item2" Title="First Player">
-                <RadzenMarkers MarkerType="MarkerType.Circle" />
-            </RadzenLineSeries>
-            <RadzenLineSeries Data=Curve2 CategoryProperty="Item1" ValueProperty="Item2" Title="Second Player">
-                <RadzenMarkers MarkerType="MarkerType.Circle" />
-            </RadzenLineSeries>
-            <RadzenCategoryAxis FormatString="{0:0.00} s" />
-            <RadzenValueAxis FormatString="{0:P2}" Min="0.0"/>
-        </RadzenChart>
-        <Chart Config="_config"/>
+        <Chart Config="_config" />
         @if (WinProbabilities != null)
         {
             <MudSimpleTable Dense="true" Outlined="true" Striped="true">
@@ -54,8 +45,8 @@
     private IEnumerable<CurvePoint> curve1;
     private IEnumerable<CurvePoint> curve2;
 
-    private IDataset<TimePoint> dataset1;
-    private IDataset<TimePoint> dataset2;
+    private IDataset<Point> dataset1;
+    private IDataset<Point> dataset2;
 
     [Parameter]
     public IEnumerable<CurvePoint> Curve1
@@ -64,21 +55,23 @@
         set
         {
             curve1 = value;
-            dataset1 ??= new LineDataset<TimePoint>()
+            dataset1 ??= new LineDataset<Point>()
             {
                 Label = "Player 1",
-                BorderColor = "blue"
+                BorderColor = "blue",
+                LineTension = 0
             };
             if (value != null)
             {
                 dataset1.Clear();
-                foreach (var timePoint in value.Select(ToTimePoint))
+                foreach (var timePoint in value)
                 {
-                    dataset1.Add(timePoint);
+                    dataset1.Add(new Point(timePoint.Item1, timePoint.Item2));
                 }
             }
         }
     }
+
     [Parameter]
     public IEnumerable<CurvePoint> Curve2
     {
@@ -86,30 +79,31 @@
         set
         {
             curve2 = value;
-            dataset2 ??= new LineDataset<TimePoint>()
+            dataset2 ??= new LineDataset<Point>()
             {
                 Label = "Player 2",
-                BorderColor = "skyblue"
+                BorderColor = "skyblue",
+                LineTension = 0
             };
-
             if (value != null)
             {
                 dataset2.Clear();
-                foreach (var timePoint in value.Select(ToTimePoint))
+                foreach (var timePoint in value)
                 {
-                    dataset2.Add(timePoint);
+                    dataset2.Add(new Point(timePoint.Item1, timePoint.Item2));
                 }
             }
         }
     }
+
     [Parameter]
     public WinProbabilities WinProbabilities { get; set; }
 
-    private LineConfig _config;
+    private ScatterConfig _config;
 
     protected override void OnInitialized()
     {
-        _config = new LineConfig
+        _config = new ScatterConfig
         {
             Options = new LineOptions
             {
@@ -128,20 +122,15 @@
                 {
                     XAxes = new List<CartesianAxis>
                     {
-                        new TimeAxis
+                        new LinearCartesianAxis
                         {
-                            Distribution = TimeDistribution.Linear,
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Time"
+                                LabelString = "Time (s)",
+                                Display = true
                             },
-                            Time = new TimeOptions
-                            {
-                                TooltipFormat = "ss.sss",
-                                Unit = TimeMeasurement.Millisecond,
-                            },
-                            
-                        }
+                            Display = AxisDisplay.True,
+                        },
                     },
                     YAxes = new List<CartesianAxis>
                     {
@@ -149,31 +138,17 @@
                         {
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Value"
-                            }
+                                LabelString = "Probability of kill at time after first shot",
+                                Display = true
+                            },
+                            Display = AxisDisplay.True,
                         }
                     }
-                }
+                },
             }
         };
         _config.Data.Datasets.Add(dataset1);
         _config.Data.Datasets.Add(dataset2);
         base.OnInitialized();
-    }
-
-    private TimePoint ToTimePoint(CurvePoint curvePoint)
-    {
-        return new TimePoint(
-            new DateTime(
-                2000,
-                1,
-                1,
-                0,
-                0,
-                (int)curvePoint.Item1,
-                (int)(curvePoint.Item1 * 1000) % 1000
-                ),
-            curvePoint.Item2
-            );
     }
 }
