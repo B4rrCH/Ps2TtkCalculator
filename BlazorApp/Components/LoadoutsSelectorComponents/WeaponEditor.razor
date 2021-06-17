@@ -1,6 +1,5 @@
 @using Ps2TtkCalculator.Shared.Dto
 
-@inject Radzen.DialogService radzenDialogService
 @inject IDialogService DialogService
 @inject HttpClient httpClient
 
@@ -15,7 +14,6 @@
     {
         <MudItem xs="12">
             <img src="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" />
-            @*<MudCardMedia Title="@Weapon.Name" Image="@(censusBaseUri + (Weapon?.ImagePath ?? defaultImagePath))" Height="250" />*@
         </MudItem>
     }
     else
