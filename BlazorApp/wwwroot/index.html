@@ -9,9 +9,10 @@
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="Ps2TtkCalculator.styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
 </head>
 
 <body>
@@ -24,18 +25,19 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="_content/ChartJs.Blazor.Fork/ChartJsBlazorInterop.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
     <script>
         window.BlazorExtensions = {
             addToLocalStorage: (key, value) => {
                 localStorage[key] = value;
             },
-            getFromLocalStorage : (key) => {
+            getFromLocalStorage: (key) => {
                 return localStorage[key];
             },
-            isDarkMode : () => {
+            isDarkMode: () => {
                 return (!!window.matchMedia('(prefers-color-scheme: dark)').matches).toString();
             }
         }
