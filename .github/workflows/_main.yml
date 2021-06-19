@@ -24,7 +24,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity quiet
         
     - name: Publish
       run: dotnet publish ./BlazorApp/Ps2TtkCalculator.csproj -c -Release -o release
