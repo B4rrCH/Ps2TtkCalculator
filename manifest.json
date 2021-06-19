@@ -1,0 +1,15 @@
+{
+  "name": "Planetside 2 TTK Calculator",
+  "short_name": "PS2 TTK Calc",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#27272f",
+  "theme_color": "#0061b0",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
