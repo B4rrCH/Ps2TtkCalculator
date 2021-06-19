@@ -1,9 +1,15 @@
 @using CurvePoint = System.Tuple<double, double>
 
 @page "/"
-<LoadoutsSelector Player1=@Player1 Player2=@Player2 @ref=@Selector PropertiesChanged="@OnPropertiesChanged" />
-<TtkGraph Curve1="@Density1" Curve2="Density2" WinProbabilities="@WinProbabilities" />
 
+<MudGrid Spacing="2" Justify="Justify.Center">
+    <MudItem xs="12">
+        <LoadoutsSelector Player1=@Player1 Player2=@Player2 @ref=@Selector PropertiesChanged="@OnPropertiesChanged" />
+    </MudItem>
+    <MudItem xs="12">
+        <TtkGraph Curve1="@Density1" Curve2="Density2" WinProbabilities="@WinProbabilities" />
+    </MudItem>
+</MudGrid>
 @code {
 
     public Player Player1 { get; set; } = new();

@@ -8,7 +8,9 @@
         <MudText Typo="Typo.h4">Probabilities</MudText>
     </MudCardHeader>
     <MudCardContent>
-        <Chart Config="_config" />
+        <div style="width: 99%">
+            <Chart Config="_config" />
+        </div>
         @if (WinProbabilities != null)
         {
             <MudSimpleTable Dense="true" Outlined="true" Striped="true">
@@ -41,7 +43,7 @@
     </MudCardContent>
 </MudCard>
 
-@code{
+@code {
     private IEnumerable<CurvePoint> curve1;
     private IEnumerable<CurvePoint> curve2;
 
@@ -121,29 +123,29 @@
                 Scales = new Scales
                 {
                     XAxes = new List<CartesianAxis>
+                {
+                    new LinearCartesianAxis
                     {
-                        new LinearCartesianAxis
+                        ScaleLabel = new ScaleLabel
                         {
-                            ScaleLabel = new ScaleLabel
-                            {
-                                LabelString = "Time (s)",
-                                Display = true
-                            },
-                            Display = AxisDisplay.True,
+                            LabelString = "Time (s)",
+                            Display = true
                         },
+                        Display = AxisDisplay.True,
                     },
+                },
                     YAxes = new List<CartesianAxis>
+                {
+                    new LinearCartesianAxis
                     {
-                        new LinearCartesianAxis
+                        ScaleLabel = new ScaleLabel
                         {
-                            ScaleLabel = new ScaleLabel
-                            {
-                                LabelString = "Probability of kill at time after first shot",
-                                Display = true
-                            },
-                            Display = AxisDisplay.True,
-                        }
+                            LabelString = "Probability of kill at time after first shot",
+                            Display = true
+                        },
+                        Display = AxisDisplay.True,
                     }
+                }
                 },
             }
         };
