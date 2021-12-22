@@ -10,7 +10,7 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
         private const int maxDamageRange = 100;
         private const int minDamageRange = 200;
 
-        Weapon TestWeapon { get; } = new Weapon
+        Weapon TestWeapon => new Weapon
         {
             Name = "Test Weapon",
             DamageModel = new DamageModel
