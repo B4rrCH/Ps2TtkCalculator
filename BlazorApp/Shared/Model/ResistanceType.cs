@@ -10,7 +10,7 @@ namespace Ps2TtkCalculator.Shared.Model
         NanoWeaveArmor,
         [Description("Symbiote (20%)")]
         Symbiote,
-        [Description("ResistShield (35%)")]
+        [Description("Resist Shield (35%)")]
         ReistShield
     }
 }

@@ -5,29 +5,29 @@ namespace Ps2TtkCalculator.Shared.Model
 {
     public class Shooter
     {
-        private double acc = 1.0;
-        private double hsr = 0.0;
+        private double accuracy = 1.0;
+        private double headshotRatio = 0.0;
 
-        public double Acc
+        public double Accuracy
         {
-            get => acc;
+            get => accuracy;
             set
             {
-                if (acc != value)
+                if (accuracy != value)
                 {
-                    acc = value;
+                    accuracy = value;
                     PropertiesChanged.InvokeAsync();
                 }
             }
         }
-        public double Hsr
+        public double HeadshotRatio
         {
-            get => hsr;
+            get => headshotRatio;
             set
             {
-                if (hsr != value)
+                if (headshotRatio != value)
                 {
-                    hsr = value;
+                    headshotRatio = value;
                     PropertiesChanged.InvokeAsync();
                 }
             }

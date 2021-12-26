@@ -29,10 +29,10 @@ namespace Ps2TtkCalculator.Shared.Model
                                                         IEnumerable<CurvePoint> cummulativeDistribution2)
         {
             // P(X < Y) = ∑ P(X = t) * P(t < Y)
+            //          = ∑ P(X = t) * (1 - P(t >= Y))
             double RiemanStiltjesFormula(CurvePoint time_density)
             {
-                CurvePoint firstAfter = cummulativeDistribution2.FirstOrDefault(t => t.Item1 > time_density.Item1);
-                CurvePoint lastBefore = cummulativeDistribution2.LastOrDefault(t => t.Item1 <= time_density.Item1);
+                var firstAfter = cummulativeDistribution2.FirstOrDefault(t => t.Item1 > time_density.Item1);
                 return time_density.Item2 * (1.0 - (firstAfter ?? cummulativeDistribution2.Last()).Item2);
             }
             
@@ -45,8 +45,8 @@ namespace Ps2TtkCalculator.Shared.Model
             // P(X = Y) = ∑ P(X = t) * P(Y = t) 
             double RiemanStiltjesFormula(CurvePoint time_density)
             {
-                double p1 = time_density.Item2;
-                double p2 = density2.FirstOrDefault(t => t.Item1 == time_density.Item1)?.Item2 ?? 0.0;
+                var p1 = time_density.Item2;
+                var p2 = density2.FirstOrDefault(t => t.Item1 == time_density.Item1)?.Item2 ?? 0.0;
                 return p1 * p2;
             }
             return density1.Sum(RiemanStiltjesFormula);

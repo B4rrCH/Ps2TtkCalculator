@@ -1,0 +1,29 @@
+﻿@typeparam T
+
+<div class="d-flex flex-row align-stretch">
+	<MudTooltip Text="@Label"
+				Class="d-inline-flex flex-grow-0">
+		<div class="d-flex flex-column justify-center mr-4"
+			 style="height:100%">
+			@Icon
+		</div>
+	</MudTooltip>
+	<div Class="d-inline-flex flex-grow-1">
+		<MudSlider T="@T"
+				   @bind-Value=@Value
+				   Min="@Min"
+				   Max="@Max"
+				   Step="@Step">
+			<MudNumericField T="@T"
+							 @bind-Value=@Value
+							 Format="0"
+							 Step="@Step"
+							 Min="@Max"
+							 Max="@Min"
+							 Label="@Label"
+							 AdornmentText="@Unit"
+							 Adornment="MudBlazor.Adornment.End"
+							 Class="mt-0 pt-0" />
+		</MudSlider>
+	</div>
+</div>
