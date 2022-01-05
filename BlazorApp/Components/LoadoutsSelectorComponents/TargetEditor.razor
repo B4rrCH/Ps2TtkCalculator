@@ -7,15 +7,15 @@
         <MudSelect T="@HealthType" @bind-Value="@Health" Label="HP Pool">
             @foreach (var healthType in Enum.GetValues<HealthType>())
             {
-                <MudSelectItem Value="@healthType">@healthType.GetDescription()</MudSelectItem>
+                <MudSelectItem Value="@healthType">@EnumExtensions.GetDescription(healthType)</MudSelectItem>
             }
         </MudSelect>
     </MudItem>
     <MudItem xs="6">
-        <MudSelect T="@ResistanceType" @bind-Value="@Resistance" Label="Resistance type">
+        <MudSelect T="@ResistanceType" @bind-Value="@ResistanceType" Label="Resistance type">
             @foreach (var resistanceType in Enum.GetValues<ResistanceType>())
             {
-                <MudSelectItem Value="@resistanceType">@resistanceType.GetDescription()</MudSelectItem>
+                <MudSelectItem Value="@resistanceType">@EnumExtensions.GetDescription(resistanceType)</MudSelectItem>
             }
         </MudSelect>
     </MudItem>
@@ -29,7 +29,7 @@
         set
         {
             health = value;
-            Target.MaxHp = Health switch
+            Target.MaxHealthPoints = Health switch
             {
                 HealthType.Normal => 1000,
                 HealthType.NanomeshGenerator => 1425,
@@ -39,55 +39,34 @@
         }
     }
 
-    private ResistanceType resistance;
-    private ResistanceType Resistance
+    private ResistanceType resistanceType;
+    private ResistanceType ResistanceType
     {
-        get => resistance;
+        get => resistanceType;
         set
         {
-            resistance = value;
-            Target.ResistanceBodyshot = Resistance switch
+            resistanceType = value;
+            Target.ResistanceBodyshot = ResistanceType switch
             {
                 ResistanceType.Normal => 0.0,
                 ResistanceType.NanoWeaveArmor => 0.2,
                 ResistanceType.Symbiote => 0.2,
                 ResistanceType.ReistShield => 0.35,
-                _ => throw new ArgumentException(nameof(Resistance))
+                _ => throw new ArgumentException(nameof(resistanceType))
             };
 
-            Target.ResistanceHeadshot = Resistance switch
+            Target.ResistanceHeadshot = ResistanceType switch
             {
                 ResistanceType.Normal => 0.0,
                 ResistanceType.NanoWeaveArmor => 0.0,
                 ResistanceType.Symbiote => 0.2,
                 ResistanceType.ReistShield => 0.35,
-                _ => throw new ArgumentException(nameof(Resistance))
+                _ => throw new ArgumentException(nameof(resistanceType))
             };
         }
     }
 
     [Parameter]
     public Target Target { get; set; }
-
-    private static string GetDescription(Enum value)
-    {
-        Type type = value.GetType();
-        string name = Enum.GetName(type, value);
-        if (name != null)
-        {
-            System.Reflection.FieldInfo field = type.GetField(name);
-            if (field != null)
-            {
-                DescriptionAttribute attr =
-                       Attribute.GetCustomAttribute(field,
-                         typeof(DescriptionAttribute)) as DescriptionAttribute;
-                if (attr != null)
-                {
-                    return attr.Description;
-                }
-            }
-        }
-        return null;
-    }
 }
 

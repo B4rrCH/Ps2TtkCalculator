@@ -26,9 +26,9 @@ namespace Ps2TtkCalculator.Shared.Model
 
             this.weights = new double[]
             {
-                shooter.Acc * (1 - shooter.Hsr), // Bodyshot 
-                shooter.Acc * shooter.Hsr,       // Headshot
-                1 - shooter.Acc                  // Miss
+                shooter.Accuracy * (1 - shooter.HeadshotRatio), // Bodyshot 
+                shooter.Accuracy * shooter.HeadshotRatio,       // Headshot
+                1 - shooter.Accuracy                  // Miss
             };
 
             this.damagePerBodyShot = DamageCalculator.DamagePerBodyShot(weapon, target, range_m);
@@ -87,7 +87,7 @@ namespace Ps2TtkCalculator.Shared.Model
         {
             return (damagePerBodyShot * nrBodyshots
                    + damagePerHeadShot * nrHeadshots)
-                   < target.MaxHp;
+                   < target.MaxHealthPoints;
         }
     }
 }

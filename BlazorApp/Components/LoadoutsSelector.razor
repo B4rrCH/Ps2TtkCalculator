@@ -1,111 +1,111 @@
-@if (Player1 != null && Player2 != null)
+﻿@if (Player1 != null && Player2 != null)
 {
-    <MudCard>
-        <MudCardContent>
-            <MudGrid Spacing="2" Justify="Justify.Center">
-                <MudItem md="6" sm="12">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h3">Player 1</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <MudGrid Spacing="2" Justify="Justify.Center">
-                                <WeaponEditor Weapon="@Player1.Weapon" />
-                                <TargetEditor Target="@Player1.Target" />
-                                <AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
-                            </MudGrid>
-                        </MudCardContent>
-                    </MudCard>
-                </MudItem>
-                <MudItem md="6" sm="12">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h3">Player 2</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <MudGrid Spacing="2" Justify="Justify.Center">
-                                <WeaponEditor Weapon="@Player2.Weapon" />
-                                <TargetEditor Target="@Player2.Target" />
-                                <AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
-                            </MudGrid>
-                        </MudCardContent>
-                    </MudCard>
-                </MudItem>
-                <MudItem xs="12">
-                    <MudSlider @bind-Value=@Range Min="0" Max="400" Step="1" Label>
-                        <MudNumericField @bind-Value=@Range
-                                         Format="0"
-                                         Step="10"
-                                         Label="Range"
-                                         Min="0"
-                                         Max="400"
-                                         AdornmentText="m"
-                                         Adornment="MudBlazor.Adornment.End" />
-                    </MudSlider>
-                </MudItem>
-            </MudGrid>
-        </MudCardContent>
-    </MudCard>
+	<MudCard>
+		<MudCardContent>
+			<MudGrid Spacing="2" Justify="Justify.Center">
+				<MudItem md="6" sm="12">
+					<MudCard>
+						<MudCardHeader>
+							<CardHeaderContent>
+								<MudText Typo="Typo.h3">Player 1</MudText>
+							</CardHeaderContent>
+						</MudCardHeader>
+						<MudCardContent>
+							<MudGrid Spacing="2" Justify="Justify.Center">
+								<WeaponEditor Weapon="@Player1.Weapon" />
+								<TargetEditor Target="@Player1.Target" />
+								<AccuracyAndHeadshotEditor Shooter=@Player1.Shooter />
+							</MudGrid>
+						</MudCardContent>
+					</MudCard>
+				</MudItem>
+				<MudItem md="6" sm="12">
+					<MudCard>
+						<MudCardHeader>
+							<CardHeaderContent>
+								<MudText Typo="Typo.h3">Player 2</MudText>
+							</CardHeaderContent>
+						</MudCardHeader>
+						<MudCardContent>
+							<MudGrid Spacing="2" Justify="Justify.Center">
+								<WeaponEditor Weapon="@Player2.Weapon" />
+								<TargetEditor Target="@Player2.Target" />
+								<AccuracyAndHeadshotEditor Shooter=@Player2.Shooter />
+							</MudGrid>
+						</MudCardContent>
+					</MudCard>
+				</MudItem>
+				<MudItem xs="12">
+					<NumericSlider @bind-Value=@Range
+							   Step="10"
+							   Min="0"
+							   Max="400"
+							   Unit="m"
+							   Label="Range">
+						<Icon>
+							<MudIcon Icon="@Icons.Material.Filled.SocialDistance" Size="@Size.Large" />
+						</Icon>
+					</NumericSlider>
+				</MudItem>
+			</MudGrid>
+		</MudCardContent>
+	</MudCard>
 }
 
 @code {
-    private int range;
-    private Player player1;
-    private Player player2;
+	private int range;
+	private Player player1;
+	private Player player2;
 
-    [Parameter]
-    public Player Player1
-    {
-        get => player1;
-        set
-        {
-            if (player1 != value)
-            {
-                player1 = value;
-                PropertiesChanged.InvokeAsync();
-            }
-        }
-    }
-    [Parameter]
-    public Player Player2
-    {
-        get => player2;
-        set
-        {
-            if (player2 != value)
-            {
-                player2 = value;
-                PropertiesChanged.InvokeAsync();
-            }
-        }
-    }
+	[Parameter]
+	public Player Player1
+	{
+		get => player1;
+		set
+		{
+			if (player1 != value)
+			{
+				player1 = value;
+				PropertiesChanged.InvokeAsync();
+			}
+		}
+	}
+	[Parameter]
+	public Player Player2
+	{
+		get => player2;
+		set
+		{
+			if (player2 != value)
+			{
+				player2 = value;
+				PropertiesChanged.InvokeAsync();
+			}
+		}
+	}
 
-    [Parameter]
-    public int Range
-    {
-        get => range;
-        set
-        {
-            if (range != value)
-            {
-                range = value;
-                PropertiesChanged.InvokeAsync();
-            }
-        }
-    }
-    [Parameter]
-    public EventCallback PropertiesChanged { get; set; }
+	[Parameter]
+	public int Range
+	{
+		get => range;
+		set
+		{
+			if (range != value)
+			{
+				range = value;
+				PropertiesChanged.InvokeAsync();
+			}
+		}
+	}
+	[Parameter]
+	public EventCallback PropertiesChanged { get; set; }
 
-    protected override Task OnInitializedAsync()
-    {
-        if (Player1 != null)
-            Player1.PropertiesChanged = this.PropertiesChanged;
-        if (Player2 != null)
-            Player2.PropertiesChanged = this.PropertiesChanged;
-        return base.OnInitializedAsync();
-    }
+	protected override Task OnInitializedAsync()
+	{
+		if (Player1 != null)
+			Player1.PropertiesChanged = this.PropertiesChanged;
+		if (Player2 != null)
+			Player2.PropertiesChanged = this.PropertiesChanged;
+		return base.OnInitializedAsync();
+	}
 }

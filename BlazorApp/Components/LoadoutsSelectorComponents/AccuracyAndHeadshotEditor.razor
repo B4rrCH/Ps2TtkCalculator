@@ -1,44 +1,44 @@
-@if (Shooter != null)
+﻿@if (Shooter != null)
 {
-    <MudItem xs="12">
-        <MudSlider @bind-Value=@AccurracyPercent Min="0" Max="100" Step="1">
-            <MudNumericField @bind-Value=@AccurracyPercent
-                             Format="0"
-                             Step="10"
-                             Label="Accuracy"
-                             Min="0"
-                             Max="100"
-                             AdornmentText="%"
-                             Adornment="MudBlazor.Adornment.End" />
-        </MudSlider>
-    </MudItem>
-    <MudItem xs="12">
-        <MudSlider @bind-Value=@HsrPercent Min="0" Max="100" Step="1">
-            <MudNumericField @bind-Value=@HsrPercent
-                             Format="0"
-                             Step="10"
-                             Label="Headshot Ratio"
-                             Min="0"
-                             Max="100"
-                             AdornmentText="%"
-                             Adornment="MudBlazor.Adornment.End" />
-        </MudSlider>
-    </MudItem>
+	<MudItem xs="12">
+		<NumericSlider @bind-Value=@AccurracyPercent
+				   Step="10"
+				   Min="0"
+				   Max="100"
+				   Unit="%"
+				   Label="Accuracy">
+			<Icon>
+				<MudIcon Icon="@Icons.Material.Filled.Adjust" Size="@Size.Large"/>
+			</Icon>
+		</NumericSlider>
+	</MudItem>
+	<MudItem xs="12">
+		<NumericSlider @bind-Value=@HsrPercent
+				   Label="Headshot Ratio"
+				   Step="10"
+				   Min="0"
+				   Max="100"
+				   Unit="%">
+			<Icon>
+				<MudIcon Icon="@Icons.Filled.FaceRetouchingNatural" Size="@Size.Large"/>
+			</Icon>
+		</NumericSlider>
+	</MudItem>
 }
 
 @code {
-    [Parameter]
-    public Shooter Shooter { get; set; }
+	[Parameter]
+	public Shooter Shooter { get; set; }
 
-    public double AccurracyPercent
-    {
-        get => Shooter.Acc * 100;
-        set => Shooter.Acc = value / 100;
-    }
+	public double AccurracyPercent
+	{
+		get => Shooter.Accuracy * 100;
+		set => Shooter.Accuracy = value / 100;
+	}
 
-    public double HsrPercent
-    {
-        get => Shooter.Hsr * 100;
-        set => Shooter.Hsr = value / 100;
-    }
+	public double HsrPercent
+	{
+		get => Shooter.HeadshotRatio * 100;
+		set => Shooter.HeadshotRatio = value / 100;
+	}
 }

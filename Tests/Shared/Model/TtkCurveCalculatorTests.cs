@@ -17,8 +17,8 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
 
             var shooter = new Shooter()
             {
-                Acc = 1.0,
-                Hsr = 1.0
+                Accuracy = 1.0,
+                HeadshotRatio = 1.0
             };
             var target = new Target();
 
@@ -41,8 +41,8 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
 
             var shooter = new Shooter()
             {
-                Acc = 0.0,
-                Hsr = 0.0
+                Accuracy = 0.0,
+                HeadshotRatio = 0.0
             };
             var target = new Target();
 
@@ -66,8 +66,8 @@ namespace Ps2TtkCalculator.Shared.Model.Tests
 
             var shooter = new Shooter()
             {
-                Acc = 0.5,
-                Hsr = 0.5
+                Accuracy = 0.5,
+                HeadshotRatio = 0.5
             };
             var target = new Target();
 

@@ -4,18 +4,18 @@ namespace Ps2TtkCalculator.Shared.Model
 {
     public class Target
     {
-        private int maxHp = 1000;
+        private int maxHealthPoints = 1000;
         private double resistanceHeadshot = 0.0;
         private double resistanceBodyshot = 0.0;
 
-        public int MaxHp
+        public int MaxHealthPoints
         {
-            get => maxHp;
+            get => maxHealthPoints;
             set
             {
-                if (maxHp != value)
+                if (maxHealthPoints != value)
                 {
-                    maxHp = value;
+                    maxHealthPoints = value;
                     PropertiesChanged.InvokeAsync();
                 }
             }
